@@ -1,0 +1,82 @@
+///Mixin de media query
+@mixin response($breakpoint) {
+    @if($breakpoint ==xl) {
+        @media(max-widdth:1200px) {
+            @content;
+        }
+    }
+
+    @if($breakpoint ==lg) {
+        @media(max-widdth:992px) {
+            @content;
+        }
+    }
+
+    @if($breakpoint ==md) {
+        @media(max-widdth:768px) {
+            @content;
+        }
+    }
+
+    @if($breakpoint ==sm) {
+        @media(max-widdth:576px) {
+            @content;
+        }
+    }
+}
+
+///Mixin de posicionamiento con flexbox
+///@parameter {String} $direction [row] --valor para direction
+///@parameter {String} $align [center] --valor para align
+///@parameter {String} $justify [center] --valor para justify
+///@example
+///     .footer{
+///         @include flex(row, center, space-around);
+///     }
+@mixin flex($direction: row, $align: center, $justify: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: wrap;
+}
+
+///Mixin de estilo del navigation
+///@example
+///     .nav{
+///         @include navigation();
+///     }
+@mixin navigation() {
+    &-list {
+        list-style-type: none;
+        @include flex();
+    }
+
+    &-item {
+        margin: 1rem;
+    }
+}
+
+///Mixin de generación de colores aleatorios de fondo
+///@example
+///     .div{
+///         @include random-rgb();
+///     }
+@mixin random-rgb() {
+    background: rgb(random(255), random(255), random(255));
+}
+
+%borde {
+    border: 1px solid get-color("primary");
+}
+
+%borde-round {
+    border: 1px solid get-color("primary");
+    border-radius: 25px;
+}
+
+%borde-shadow {
+    border: 1px solid get-color("primary");
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px black;
+}

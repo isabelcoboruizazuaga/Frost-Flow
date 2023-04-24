@@ -1,0 +1,70 @@
+////Proyecto: TFG DAW Gestión de congeladores
+////@author Isa
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Dancing+Script:wght@700&display=swap');
+
+
+///mapa de colores 
+///@group colores
+$colores: (
+    "primary":#7EBF88,
+    "secondary":#5697A6,
+    "encabezadosPeques":#BF6576,
+    "botones":#648C6E,
+    "a":#C1545B,
+    "b":#055C75,
+    "c":#E299A2,
+    "fondo":#ffffff,
+    "black":#000000,
+    "elementos":#ffffff
+);
+
+///Función que devuelve un color del vector colores
+///@group colores
+///@param {String} $color-name  --nombre color del vector colores
+///@return {color} --color en hexadecimal
+@function get-color ($color-name) {
+    @return map-get($colores, $color-name);
+}
+
+///mapa de tamaños de fuentes
+///@group tamanios
+$fonts: (
+    "xxl":6rem,
+    "xl":3rem,
+    "l":2.5,
+    "m":2rem,
+    "s":1.8rem,
+    "xs":1.6rem
+);
+
+///Función que devuelve un tamaños del vector fuentes
+///@group tamanios
+///@param {String} $font-size  --nombre tamaño del vector fuentes
+///@return {font} --tamaño en rem
+@function get-font ($font-size) {
+    @return map-get($fonts, $font-size);
+}
+
+///mapa de pesos de fuentes
+///@group pesos
+$font-weights: (
+    "light": 300,
+    "regular":400,
+    "bold":700);
+
+  
+///Función que devuelve un peso del vector peso
+///@group pesos
+///@param {String} $font-weight  --nombre peso del vector pesos
+///@return {font-weight} --peso
+@function get-weight ($font-weight) {
+    @return map-get($font-weights, $font-weight);
+}  
+
+///Fuente Cormorant Garamond
+$garamond: 'Cormorant Garamond', serif;
+
+
+///Fuente Dancing Script
+$dancing: 'Dancing Script', cursive;

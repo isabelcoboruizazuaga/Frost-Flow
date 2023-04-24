@@ -1,0 +1,8 @@
+.random{
+
+    h1{
+        @include random-rgb();
+        @extend %borde-round;
+
+    }
+}

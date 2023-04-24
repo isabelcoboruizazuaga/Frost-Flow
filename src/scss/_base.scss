@@ -1,0 +1,47 @@
+::before *,
+::after * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.8;
+
+}
+
+:root {
+    font-family: $garamond;
+    color: get-color("black");
+
+}
+
+body {
+    font-size: get-font("s");
+    background-color: get-color("fondo");;
+}
+
+/*
+h1 {
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 200%;    
+}
+li p, h2,h1{
+    
+    font-family: 'Cinzel', serif;
+}*/
+
+a {
+    text-decoration: none;
+}
+
+ul{    
+  list-style-type: none;
+}
+
+body{
+    margin: 0;
+    
+    /*Display*/
+    display: grid;
+    grid-template-rows: minmax(20vh, 26vh) repeat(6,minmax(min-content,max-content)) minmax(20vh, 26vh) ;
+}
