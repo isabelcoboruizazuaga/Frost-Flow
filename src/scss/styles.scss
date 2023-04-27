@@ -3,10 +3,12 @@
 @import '_mixin.scss';
 @import '_base.scss';
 @import '../app/app.component.scss';
-//@import './partials/_header.scss';
+@import '../app/cabecera/cabecera.component.scss';
 
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 
 @import "../../node_modules/bootstrap/scss/buttons";
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

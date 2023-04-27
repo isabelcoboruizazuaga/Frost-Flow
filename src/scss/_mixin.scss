@@ -80,3 +80,15 @@
     border-radius: 10px;
     box-shadow: 10px 5px 5px black;
 }
+
+
+
+///Mixin que cambia el color de una imagen al predeterminado
+///@example
+///     .img{
+///         @include colorIcono();
+///     }
+@mixin colorIcono(){
+    filter: invert(78%) sepia(50%) saturate(381%) hue-rotate(153deg) brightness(98%) contrast(91%);
+    //https://isotropic.co/tool/hex-color-to-css-filter/
+}

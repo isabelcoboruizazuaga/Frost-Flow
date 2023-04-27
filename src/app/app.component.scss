@@ -6,3 +6,7 @@
 
     }
 }
+
+.icon{
+    @include colorIcono();
+}
