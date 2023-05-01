@@ -14,7 +14,7 @@
 }
 
 body {
-    font-size: get-font("s");
+    font-size: get-font("m");
     background-color: get-color("fondo");;
 }
 
@@ -36,12 +36,4 @@ a {
 
 ul{    
   list-style-type: none;
-}
-
-body{
-    margin: 0;
-    
-    /*Display*/
-    display: grid;
-    grid-template-rows: minmax(20vh, 26vh) repeat(6,minmax(min-content,max-content)) minmax(20vh, 26vh) ;
 }

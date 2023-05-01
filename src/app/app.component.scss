@@ -1,12 +1,32 @@
-.random{
+@import '../scss/mixin';
 
-    h1{
-        @include random-rgb();
-        @extend %borde-round;
+
+.container-fluid {
+    padding: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    /*Display*/
+    display: grid;
+    grid-template-rows: 8vh, minmax(90vh, auto), 5vh;
+
+    app-cabecera {
+
+        grid-area: 1 / 1 / 2 / 2;
+    }
+}
+
+
+
+.random {
+
+    h1 {
+        /*@include random-rgb();
+        @extend %borde-round;*/
 
     }
 }
 
-.icon{
+.icon {
     @include colorIcono();
 }

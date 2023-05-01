@@ -1,22 +1,49 @@
-.header{
-    @include flex(row,center,space-between);
+@import '../../scss/mixin';
+
+.header {    
+
+    @include flex(row, center, space-between);
 
     width: 100%;
-    height: 10rem;
+    height: 100%;
 
 
-    .identificacion{        
-        @include flex();
-    }
-
-    .navbar ul{
+    .identificacion {
         @include flex();
 
+        .logo{
+            height: 10vh;
+            width: 10rem;
+
+            margin-right: 1rem;
+        }
+
+        h1{
+            color: get-color(secondary);
+        }
+
     }
 
-    .icon{
-        height: 2rem;
-        width: 2rem;
+    .navbar {
+
+        ul {
+            @include flex();
+
+            li {
+                margin-left: 1rem;
+
+                .btn {
+                    all: unset;
+                    @include flex();
+                }
+            }
+        }
+
+    }
+
+    .icon {
+        height: 3rem;
+        width: 3rem;
     }
 
 }

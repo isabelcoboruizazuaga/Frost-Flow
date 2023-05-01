@@ -7,8 +7,8 @@
 ///mapa de colores 
 ///@group colores
 $colores: (
-    "primary":#7EBF88,
-    "secondary":#85dcf0,
+    "primary":#79E8F5,
+    "secondary":#35869A,
     "encabezadosPeques":#BF6576,
     "botones":#648C6E,
     "a":#C1545B,
@@ -33,9 +33,9 @@ $fonts: (
     "xxl":6rem,
     "xl":3rem,
     "l":2.5,
-    "m":2rem,
-    "s":1.8rem,
-    "xs":1.6rem
+    "m":16px,
+    "s":12px,
+    "xs":10px
 );
 
 ///Función que devuelve un tamaños del vector fuentes
