@@ -1,31 +1,122 @@
-.fadein img {
-    position:absolute;
-    top:0;
-    -webkit-animation-name: fade;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 4s;
-    animation-name: fade;
-    animation-iteration-count: infinite;
-    animation-duration: 4s;
+@import '../../scss/mixin';
 
-    height:20rem;
+section {
+    display: grid;
+
+    justify-items: center;
+    align-items: center;
+
+    margin:1rem;
+
+    img {
+        height: 50rem;
+    }
 }
 
+.gestiona{
+    grid-template-columns: fit-content(10%) 1fr;
+
+    //Animación de nevera abriéndose y cerrándose
+    img {
+        grid-area: 1/1/2/2;
+        top: 0;
+        -webkit-animation-name: fade;
+        //-webkit-animation-iteration-count: infinite;
+        -webkit-animation-duration: 6s;
+        animation-name: fade;
+        //animation-iteration-count: infinite;
+        animation-duration: 6s;
+    }
+
+    h1 {
+        grid-area: 1/2/2/3;
+    }
+
+}
+
+.personaliza,
+.familia  {
+    grid-template-columns: 1fr fit-content(40%);
+
+    img{
+        grid-area: 1/2/2/3;
+    }
+
+    //Animación productos
+    %img {
+        /* top: 0;
+            -webkit-animation-name: fade;
+            //-webkit-animation-iteration-count: infinite;
+            -webkit-animation-duration: 6s;
+            animation-name: fade;
+            //animation-iteration-count: infinite;
+            animation-duration: 6s;*/
+    }
+
+    h1 {
+        grid-area: 1/1/2/2;
+    }
+}
+
+.productos{
+    h1{
+        margin: 3rem;
+    }
+}
+
+.registrarse{
+    @include flex();
+
+    button{
+        @extend %borde-round;
+    }
+}
+
+//Detalles de la primera animación
 @-webkit-keyframes fade {
-    0% {opacity: 0;}
-    20% {opacity: 1;}
-    33% {opacity: 1;}
-    53% {opacity: 1;}
-    100% {opacity: 0;}
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    53% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
+
 @keyframes fade {
-    0% {opacity: 0;}
-    20% {opacity: 1;}
-    33% {opacity: 1;}
-    53% {opacity: 1;}
-    100% {opacity: 0;}
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    53% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 #f2 {
-    -webkit-animation-delay: -2s;
+    -webkit-animation-delay: -3s;
 }
