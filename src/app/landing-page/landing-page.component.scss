@@ -6,25 +6,25 @@ section {
     justify-items: center;
     align-items: center;
 
-    margin:1rem;
+    margin: 1rem;
 
     img {
-        height: 50rem;
+        height: 60vh;
+        width: 30vw;
     }
 }
 
-.gestiona{
+.gestiona {
     grid-template-columns: fit-content(10%) 1fr;
 
     //Animación de nevera abriéndose y cerrándose
     img {
         grid-area: 1/1/2/2;
-        top: 0;
         -webkit-animation-name: fade;
-        //-webkit-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
         -webkit-animation-duration: 6s;
         animation-name: fade;
-        //animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
         animation-duration: 6s;
     }
 
@@ -35,10 +35,10 @@ section {
 }
 
 .personaliza,
-.familia  {
+.familia {
     grid-template-columns: 1fr fit-content(40%);
 
-    img{
+    img {
         grid-area: 1/2/2/3;
     }
 
@@ -58,17 +58,24 @@ section {
     }
 }
 
-.productos{
-    h1{
+.productos {
+    h1 {
         margin: 3rem;
     }
 }
 
-.registrarse{
+.registrarse {
     @include flex();
 
-    button{
+    button {
         @extend %borde-round;
+        margin-left: 3rem;
+        padding: 1rem;
+        width: 10vw;
+
+        font-size: get-font("xl");
+
+
     }
 }
 

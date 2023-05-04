@@ -1,17 +1,17 @@
 <div class="header">
-  <div class="identificacion">    
+  <div class="identificacion"  routerLink="/inicio">    
     <img src="/assets/icons/logo1.png" class="logo" alt="image">      
     <h1>Frost Flow</h1>
   </div>
   <nav class="navbar">
     <ul>
-      <li>
+      <li  routerLink="/neveras">
         <img src="/assets/icons/fridge.png" class="icon" alt="image">
       </li>
-      <li>
-        <img src="/assets/icons/family.png" class="icon" alt="image">
+      <li routerLink="/familia">
+        <img src="/assets/icons/family.png" class="icon" alt="image" >
       </li>
-      <li ngbDropdown class="d-inline-block">
+      <li ngbDropdown class="d-inline-block" routerLink="/registro">
         <button type="button" class="btn midropdown" id="dropdownBasic1" ngbDropdownToggle>
           <img src="/assets/icons/user.png" class="icon" alt="image">
           Nombre usuario

@@ -1,0 +1,8 @@
+@import '../../scss/mixin';
+.title{
+    @include flex();
+}
+
+.neveras{
+    @include flex()
+}
