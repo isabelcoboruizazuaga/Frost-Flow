@@ -12,6 +12,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { FamiliaComponent } from './familia/familia.component';
 import { NeverasComponent } from './neveras/neveras.component';
 import { NeveraItemComponent } from './partials/nevera-item/nevera-item.component';
+import { CarouselComponent } from './partials/carousel/carousel.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { NeveraItemComponent } from './partials/nevera-item/nevera-item.componen
     AppComponent,
     CabeceraComponent,
     LandingPageComponent,
+    CarouselComponent,
     PruebasComponent,
     PieComponent,
     RegistroComponent,
