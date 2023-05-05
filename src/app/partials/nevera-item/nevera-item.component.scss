@@ -1,0 +1,44 @@
+@import '../../../scss/mixin';
+
+.nevera-item {
+    width: 35vw;
+    margin-bottom: 3vh;
+
+    @extend %borde;
+
+    @include flex(row, center, space-around);
+
+    img {
+        width: 15vw;
+    }
+
+    .info {
+        width: 15vw;
+
+        @include flex(column);
+
+        .title{
+            width: 100%;
+            text-align: center; 
+            
+            border: none;
+            font-weight: bold;
+            font-size: get-font(l);
+
+
+        }
+
+        .actions {
+            width: 100%;
+
+            @include flex(row,center,space-around);
+
+            .icon {
+                margin-top: 3vh;
+                width: 5vw;
+            }
+
+        }
+
+    }
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nevera-item',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class NeveraItemComponent {
 
+  constructor(private router: Router){
+
+  }
+
+  verNevera(){    
+   this.router.navigate(['/nevera','Nevera 1']);
+  }
+  editar(){    
+    
+    alert("editado");
+   }
+   borrar(){    
+    alert("Borrado");
+   }
 }

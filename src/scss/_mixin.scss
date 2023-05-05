@@ -1,3 +1,5 @@
+@import './variables';
+
 ///Mixin de media query
 @mixin response($breakpoint) {
     @if($breakpoint ==xl) {
@@ -67,11 +69,11 @@
 }
 
 %borde {
-    border: 1px solid get-color("primary");
+    border: 1px solid get-color("black");
 }
 
 %borde-round {
-    border: 1px solid get-color("primary");
+    border: 1px solid get-color("black");
     border-radius: 25px;
 }
 

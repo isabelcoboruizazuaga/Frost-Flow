@@ -13,7 +13,8 @@
     app-cabecera {
         grid-area: 1 / 1 / 2 / 2;
     }
-    app-landing-page{
+
+    app-landing-page {
         grid-area: 2 / 1 / 3/ 2;
     }
 }
@@ -31,4 +32,5 @@
 
 .icon {
     //@include colorIcono();
+    cursor: pointer;
 }

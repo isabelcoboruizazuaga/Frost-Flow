@@ -1,8 +1,11 @@
 @import '../../scss/mixin';
 .title{
-    @include flex();
+    @include flex(row, center, space-between);
+
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 .neveras{
-    @include flex()
+    @include flex(row,center,space-around)
 }
