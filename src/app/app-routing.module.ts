@@ -6,6 +6,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { FamiliaComponent } from './familia/familia.component';
 import { NeverasComponent } from './neveras/neveras.component';
 import { NeveraComponent } from './nevera/nevera.component';
+import { CajonComponent } from './cajon/cajon.component';
 
 
 const routes: Routes=[
@@ -16,6 +17,7 @@ const routes: Routes=[
   {path: 'familia', component: FamiliaComponent},
   {path: 'neveras', component: NeverasComponent},
   {path: 'nevera/:id', component: NeveraComponent},
+  {path: 'cajon/:id', component: CajonComponent},
 ]
 
 

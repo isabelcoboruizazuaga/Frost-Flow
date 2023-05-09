@@ -14,6 +14,8 @@ import { NeverasComponent } from './neveras/neveras.component';
 import { NeveraItemComponent } from './partials/nevera-item/nevera-item.component';
 import { CarouselComponent } from './partials/carousel/carousel.component';
 import { NeveraComponent } from './nevera/nevera.component';
+import { CajonComponent } from './cajon/cajon.component';
+import { CajonItemComponent } from './partials/cajon-item/cajon-item.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { NeveraComponent } from './nevera/nevera.component';
     FamiliaComponent,
     NeverasComponent,
     NeveraItemComponent,
-    NeveraComponent
+    NeveraComponent,
+    CajonComponent,
+    CajonItemComponent
   ],
   imports: [
     BrowserModule,

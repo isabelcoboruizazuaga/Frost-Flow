@@ -26,11 +26,15 @@
 
         width: 50vw;
 
-        .cajon {
+        app-cajon-item{
             width: 20vw;
 
             margin-left: 5vw;
             margin-top: 5vh;
+        }
+
+        .cajon {
+            
 
             
             img {
