@@ -1,0 +1,43 @@
+@import '../../scss/mixin';
+
+.familia {
+    @include flex(column, flex-start, flex-start);
+
+    margin-left: 10vw;
+    margin-right: 10vw;
+
+    .fam {
+        @include flex(row, center,flex-start);
+        width: 100%;
+
+        .codigo {
+            @include flex(column);
+
+            img{
+                width: 30vw;
+            }
+        }
+
+
+        .familiares {
+            margin-left: 10vw;
+
+            .persona {
+                @include flex();
+                margin-bottom: 3vh;
+
+                img {
+                    width: 5vw;
+                }
+            }
+
+        }
+    }
+
+    .cambio{
+        @include flex();
+        align-self: center;
+    }
+
+
+}

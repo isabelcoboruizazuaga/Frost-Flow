@@ -1,0 +1,18 @@
+@import '../../scss/mixin';
+
+section{
+    @include flex(row, center, space-evenly);
+
+    height: 80vh;
+
+    div{
+        @include flex(column);
+
+        input{
+            margin-top: 5vh;
+        }
+        button{
+            margin-top: 5vh;
+        }
+    }
+}
