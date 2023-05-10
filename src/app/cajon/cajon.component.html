@@ -1,1 +1,29 @@
-<p>cajon works!</p>
+<div class="cajon">
+    <div class="acciones ">
+        <div class="caj">
+            <img src="/assets/images/cajonNeveraLl.png">
+            <h1>{{id}}</h1>
+        </div>
+        <button>Borrar cajón</button>
+
+    </div>
+    <div class="div2 overflow-auto">
+        <div class="ordenar">
+            <p>ordenar por...</p>
+            <select name="orden">
+                <option value="fecha" selected>Fecha de caducidad</option>
+                <option value="nombre">Nombre</option>
+                <option value="cantidad">Cantidad</option>
+            </select>
+        </div>
+        <div class="productos">
+            <app-producto-cajon></app-producto-cajon>
+            <app-producto-cajon></app-producto-cajon>
+            <app-producto-cajon></app-producto-cajon>
+            <app-producto-cajon></app-producto-cajon>
+            <app-producto-cajon></app-producto-cajon>
+            <app-producto-cajon></app-producto-cajon>
+            <app-producto-cajon></app-producto-cajon>
+        </div>
+    </div>
+</div>

@@ -18,14 +18,9 @@
         @include flex(column);
 
         .title{
-            width: 100%;
-            text-align: center; 
-            
-            border: none;
-            font-weight: bold;
-            font-size: get-font(l);
+           @extend %input-hide;
 
-
+           width: 100%;
         }
 
         .actions {

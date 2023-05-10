@@ -1,0 +1,23 @@
+@import '../../../scss/mixin';
+.prod{
+    @include flex(row, center,space-evenly);
+
+    height: 100%;
+    width: 100%;
+
+    div{
+        @include flex(column);
+    }
+
+    .icon{
+        width: 3vw;
+    }
+    .fotoProd{
+        width: 8vw;
+    }
+
+    input{        
+        @extend %input-hide;
+        width: 15vw;
+    }
+}

@@ -83,6 +83,13 @@
     box-shadow: 10px 5px 5px black;
 }
 
+%input-hide{
+    text-align: center; 
+    
+    border: none;
+    font-weight: bold;
+    font-size: get-font(l);
+}
 
 
 ///Mixin que cambia el color de una imagen al predeterminado

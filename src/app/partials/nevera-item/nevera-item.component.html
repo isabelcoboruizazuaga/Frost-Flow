@@ -1,7 +1,7 @@
 <div class="nevera-item" (click)="verNevera()">
     <img src="/assets/images/productos/lechuga.jpg" alt="">
     <div class="info">
-        <input type="text" class="title" value="Nevera 1">
+        <input type="text" class="title" value="Nevera 1" (click)="$event.stopPropagation()">
         <div class="actions">
             <img src="/assets/icons/edit.png" class="icon" alt="image" (click)="editar()" (click)="$event.stopPropagation()">
             <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="borrar()" (click)="$event.stopPropagation()">

@@ -16,6 +16,8 @@ import { CarouselComponent } from './partials/carousel/carousel.component';
 import { NeveraComponent } from './nevera/nevera.component';
 import { CajonComponent } from './cajon/cajon.component';
 import { CajonItemComponent } from './partials/cajon-item/cajon-item.component';
+import { ProductoCajonComponent } from './partials/producto-cajon/producto-cajon.component';
+import { ProductosFamComponent } from './productos-fam/productos-fam.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { CajonItemComponent } from './partials/cajon-item/cajon-item.component';
     NeveraItemComponent,
     NeveraComponent,
     CajonComponent,
-    CajonItemComponent
+    CajonItemComponent,
+    ProductoCajonComponent,
+    ProductosFamComponent
   ],
   imports: [
     BrowserModule,

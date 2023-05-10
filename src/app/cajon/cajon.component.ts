@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cajon',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./cajon.component.scss']
 })
 export class CajonComponent {
+  id: any;
 
+  constructor(private router: ActivatedRoute) {
+
+  }
+
+  ngOnInit() {
+    this.router.params.subscribe(params => {
+      this.id = params['id'];
+    })
+  }
 }
