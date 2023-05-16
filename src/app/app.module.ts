@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
+import { environment } from 'src/environments/environment.prod';
+import { AuthService } from "./shared/services/auth.service";
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -25,10 +24,8 @@ import { CajonComponent } from './cajon/cajon.component';
 import { CajonItemComponent } from './partials/cajon-item/cajon-item.component';
 import { ProductoCajonComponent } from './partials/producto-cajon/producto-cajon.component';
 import { ProductosFamComponent } from './productos-fam/productos-fam.component';
-import { AuthService } from "./shared/services/auth.service";
 import { InicioSesionComponent } from './partials/inicio-sesion/inicio-sesion.component';
 import { SesionRegistroComponent } from './sesion-registro/sesion-registro.component';
-import { environment } from 'src/environments/environment.prod';
 
 
 @NgModule({
@@ -55,13 +52,11 @@ import { environment } from 'src/environments/environment.prod';
     BrowserModule, 
     AppRoutingModule,
     NgbModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
-  providers: [AuthService, { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
