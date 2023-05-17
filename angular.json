@@ -36,7 +36,8 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"]
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -60,7 +61,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -103,7 +110,18 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"]
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "tfg_congelador:build:production",
+            "firebaseProject": "tfg-congelador",
+            "firebaseHostingSite": "tfg-congelador"
           }
         }
       }

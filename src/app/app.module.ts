@@ -8,7 +8,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PruebasComponent } from './pruebas/pruebas.component';
 import { PieComponent } from './pie/pie.component';
-import { RegistroComponent } from './registro/registro.component';
+import { RegistroComponent } from './partials/registro/registro.component';
 import { FamiliaComponent } from './familia/familia.component';
 import { NeverasComponent } from './neveras/neveras.component';
 import { NeveraItemComponent } from './partials/nevera-item/nevera-item.component';
@@ -18,6 +18,13 @@ import { CajonComponent } from './cajon/cajon.component';
 import { CajonItemComponent } from './partials/cajon-item/cajon-item.component';
 import { ProductoCajonComponent } from './partials/producto-cajon/producto-cajon.component';
 import { ProductosFamComponent } from './productos-fam/productos-fam.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { SesionRegistroComponent } from './sesion-registro/sesion-registro.component';
+import { InicioSesionComponent } from './partials/inicio-sesion/inicio-sesion.component';
 
 
 @NgModule({
@@ -36,12 +43,18 @@ import { ProductosFamComponent } from './productos-fam/productos-fam.component';
     CajonComponent,
     CajonItemComponent,
     ProductoCajonComponent,
-    ProductosFamComponent
+    ProductosFamComponent,
+    SesionRegistroComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]

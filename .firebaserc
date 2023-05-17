@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "tfg-congelador"
+  },
+  "targets": {
+    "tfg-congelador": {
+      "hosting": {
+        "tfg_congelador": [
+          "tfg-congelador"
+        ]
+      }
+    }
+  }
+}

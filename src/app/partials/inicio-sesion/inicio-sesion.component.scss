@@ -1,0 +1,11 @@
+@import '../../../scss/mixin';
+div{
+    @include flex(column);
+
+    input{
+        margin-top: 5vh;
+    }
+    button{
+        margin-top: 5vh;
+    }
+}
