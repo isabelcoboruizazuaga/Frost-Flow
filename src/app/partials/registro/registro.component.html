@@ -1,6 +1,6 @@
 <h1>Registrarse</h1>
 <input type="text" placeholder="Nombre">
-<input type="email" placeholder="Correo electrónico">
-<input type="password" placeholder="Contraseña">
-<button>Registrarse</button>
-<button>Registrarse con google</button>
+<input type="email" placeholder="Correo electrónico" #email required>
+<input type="password" placeholder="Contraseña"  #contrasenia required>
+<button (click)="authService.Registrarse(email.value, contrasenia.value)">Registrarse</button>
+<button class="btn googleBtn" (click)="authService.GoogleAuth()">Registrarse con google</button>

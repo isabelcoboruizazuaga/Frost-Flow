@@ -3,4 +3,4 @@
 <input type="email" placeholder="Correo electrónico" #correo required>
 <input type="password" placeholder="Contraseña" #contrasenia required>
 <button (click)="authService.InicioSesion(correo.value, contrasenia.value)">Iniciar sesión</button>
-<button (click)="authService.GoogleAuth()">Iniciar sesión con google</button>
+<button class="btn googleBtn btn-danger" (click)="authService.GoogleAuth()">Iniciar sesión con google</button>
