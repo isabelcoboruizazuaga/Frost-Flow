@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, Auth,  getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
-import { Firestore, doc, setDoc } from '@angular/fire/firestore';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, Auth, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
+import { Firestore, doc, getFirestore, setDoc } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Usuario } from './usuario';
 
@@ -10,10 +10,11 @@ import { Usuario } from './usuario';
 export class AuthService {
   usuarioData: any;
   constructor(
-    public auth:Auth = getAuth(),
+    public auth: Auth = getAuth(),
     public router: Router,
-    public afs: Firestore//Servicio de Firestore
+    public db: Firestore = getFirestore(),
   ) {
+
 
     /*Guardamos los datos de usuario en localstorage cuando la sesión se inicia y se borran al cerrarla*/
     onAuthStateChanged(auth, (usuario) => {
@@ -31,11 +32,25 @@ export class AuthService {
     });
   }
 
+
+  async probandoFirestore() {
+    const db = getFirestore();
+    await setDoc(doc(db, "cities", "LA"), {
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA"
+    });
+    return 0;
+  }
+
   //Inicio de sesión  con email y contraseña
   InicioSesion(email: string, password: string) {
+    console.log("aaaaaaaa")
+
     signInWithEmailAndPassword(this.auth, email, password)
-      .then((result) => {
-        this.SetUsuarioData(result.user);
+      .then((userCredential) => {
+        console.log("bbbbbb");
+        this.SetUsuarioData(userCredential.user);
       })
       .catch((error) => {
         window.alert(error.message);
@@ -74,6 +89,7 @@ export class AuthService {
          window.alert(error);
        });
    }*/
+
   // Devuelve true cuando el usuario está logeado y se ha verificado el correo
   get isLoogeado(): boolean {
     const user = JSON.parse(localStorage.getItem('usuario')!);
@@ -99,7 +115,7 @@ export class AuthService {
 
   /* Guardando datos de usuario en firestore*/
   SetUsuarioData(user: any) {
-    const userRef = doc(this.afs, 'usuarios', user.uid);
+    const userRef = doc(this.db, 'usuarios', user.uid);
 
 
     const datoUsuario: Usuario = {
