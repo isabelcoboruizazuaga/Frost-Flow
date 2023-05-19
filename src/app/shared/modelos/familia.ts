@@ -21,5 +21,9 @@ export class Familia{
         this.listaUsuarios.push(usuario);
     }
 
+    addNevera(nevera:Nevera){
+        this.listaNeveras.push(nevera);
+    }
+
     
 }
