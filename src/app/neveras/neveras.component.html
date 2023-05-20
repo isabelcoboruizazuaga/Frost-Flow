@@ -1,6 +1,6 @@
 <div class="title">
     <h1>Mis neveras</h1>
-    <button (click)="nuevaNevera()">Nueva Nevera</button>
+    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Nueva nevera</button>
 </div>
 
 <div class="neveras">
@@ -10,3 +10,29 @@
     <app-nevera-item></app-nevera-item>
     <app-nevera-item></app-nevera-item>
 </div>
+
+<!--Modal de nueva nevera-->
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Nueva Nevera</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="mb-3">     
+            
+            <label for="nombre">Nombre Nevera</label>
+            <div class="input-group">
+                <input [(ngModel)]="nombre" id="nombre" class="form-control" placeholder="nombre" name="nombre" type="text" />
+            </div>           
+            
+            <label for="imagen">Selecciona una imagen</label>
+            <div class="input-group">
+                <input id="imagen" class="form-control"  type="file" accept="image/*" (change)="onFileSelected($event)"/><!--(change)="processFile(imageInput)"-->
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn  btn-outline-danger" (click)="modal.close('cancelar')">Cancelar</button>
+        <button type="button" class="btn btn-outline-success" (click)="modal.close('submit')">Crear</button>
+    </div>
+</ng-template>

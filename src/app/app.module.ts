@@ -25,6 +25,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { SesionRegistroComponent } from './sesion-registro/sesion-registro.component';
 import { InicioSesionComponent } from './partials/inicio-sesion/inicio-sesion.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { InicioSesionComponent } from './partials/inicio-sesion/inicio-sesion.co
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
