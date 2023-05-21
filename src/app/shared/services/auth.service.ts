@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, Auth, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, Auth, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, getAdditionalUserInfo } from '@angular/fire/auth';
 import { DocumentData, Firestore, collection, doc, getDocs, getFirestore, query, setDoc, where } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Usuario } from '../modelos/usuario';
@@ -86,8 +86,12 @@ export class AuthService {
   authInicioSes(provider: any) {
     signInWithPopup(this.auth, provider)
       .then((result) => {
+        const isNewUser  = getAdditionalUserInfo(result)?.isNewUser;
+        if(isNewUser){
+          console.log(isNewUser);
+          this.setUsuarioFirestore(result.user);
+        }
         this.router.navigate(['inicio']);
-        this.setUsuarioFirestore(result.user);
       })
       .catch((error) => {
         window.alert(error);
@@ -99,6 +103,20 @@ export class AuthService {
     const datoUsuario: Usuario = new Usuario(user.uid, user.displayName || this.nombre, user.email, user.photoURL);
     this.generaFamilia(datoUsuario);
   }
+
+  // Cerrar sesion
+  cerrarSesion() {
+    return this.auth.signOut().then(() => {
+      localStorage.removeItem('usuario');
+      this.router.navigate(['registro']);
+    });
+  }
+
+  //Devuelve el usuario logeado
+  getUsuarioActual() {
+    return this.usuarioData;
+  }
+
 
   generaFamilia(usuario: Usuario) {
     //Creación de id único
@@ -136,50 +154,6 @@ export class AuthService {
 
     return fam;
   }
-
-  // Cerrar sesion
-  cerrarSesion() {
-    return this.auth.signOut().then(() => {
-      localStorage.removeItem('usuario');
-      this.router.navigate(['registro']);
-    });
-  }
-
-  getUsuarioActual() {
-    return this.usuarioData;
-  }
-
-  subirArchivo(file: File, ruta: string) {
-    const storage = getStorage();
-    const storageRef = ref(storage, ruta);
-
-    uploadBytes(storageRef, file).then((snapshot) => {
-      console.log('Subido a ' + ruta);
-    });
-  }
-
-  subirNevera(neve:any){    
-    const neveraRef = doc(this.db, 'neveras', neve.idNevera);
-    setDoc(neveraRef, neve, { merge: true });
-  }
-
-
-  async recuperarFamiliaID(uID: string) {
-    let fId = "";
-    const q = query(collection(this.db, "usuarios"), where("uid", "==", uID));
-
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-      //console.log(doc.id, " => ", doc.data());
-
-      fId = doc.data()['familiaId'];
-    });
-    return (fId);
-
-  }
-
-
-
 
   /* //Enviar email de verificación
    EnviarVerificacion() {

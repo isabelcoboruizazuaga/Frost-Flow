@@ -3,6 +3,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../shared/services/auth.service';
 import { Nevera } from '../shared/modelos/nevera';
 import { v4 as uuidv4 } from 'uuid';
+import { FirestoreService } from '../shared/services/firestore.service';
+import { DocumentData } from '@angular/fire/firestore';
 
 
 @Component({
@@ -12,13 +14,14 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class NeverasComponent {
   nombre: string = '';
+  neveras: DocumentData[]=[];
   usuario: any;
   storage: any;
   file: File;
   fid: any = "";
 
 
-  constructor(private modalService: NgbModal, public authService: AuthService) {
+  constructor(private modalService: NgbModal, public authService: AuthService, public firestoreService: FirestoreService) {
     this.file = new File([""], '');
   }
 
@@ -28,7 +31,13 @@ export class NeverasComponent {
     let uid = this.usuario.uid;
 
     //Se obtiene el id de la familia a la que pertenece el usuario 
-    this.authService.recuperarFamiliaID(uid).then(result => this.fid = result)
+    this.firestoreService.recuperarFamiliaID(uid).then(result => {
+      this.fid = result;
+
+      //Se obtiene la lista de neveras
+      this.firestoreService.listarNeveras(this.fid).then(neveras => this.neveras=neveras)
+    })
+
   }
 
   onFileSelected(event: Event): void {
@@ -49,22 +58,22 @@ export class NeverasComponent {
         //Guardar imagen en el storage 
         if (this.file.name) {
           fotoURL = "neveras/" + this.fid + "/" + this.file.name;
-          this.authService.subirArchivo(this.file, fotoURL);
+          this.firestoreService.subirFoto(this.file, fotoURL);
           this.file = new File([""], '');
         }
         //Creación de id único
         let nId = uuidv4();
 
         //Se añade la nevera a la bd
-        let nevera = new Nevera(nId,this.fid,this.nombre,fotoURL);
+        let nevera = new Nevera(nId, this.fid, this.nombre, fotoURL);
         let neve = Object.assign({}, nevera);
-        this.authService.subirNevera(neve);
+        this.firestoreService.subirNevera(neve);
       }
     }, (reason) => {
       // Modal dismissed
     });
   }
 
-  
+
 }
 
