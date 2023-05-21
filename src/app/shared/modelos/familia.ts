@@ -25,5 +25,9 @@ export class Familia{
         this.listaNeveras.push(nevera);
     }
 
+    getUsuarios(){
+        return this.listaUsuarios;
+    }
+
     
 }

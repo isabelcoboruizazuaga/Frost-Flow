@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, Auth, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
-import { Firestore, doc, getFirestore, setDoc } from '@angular/fire/firestore';
+import { DocumentData, Firestore, collection, doc, getDocs, getFirestore, query, setDoc, where } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Usuario } from '../modelos/usuario';
 import { Familia } from '../modelos/familia';
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
+import { getStorage, ref, uploadBytes } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,8 @@ export class AuthService {
         localStorage.setItem('username', JSON.stringify(this.nombre));
         JSON.parse(localStorage.getItem('username')!);
       } else {
+        this.usuarioData = null;
+
         localStorage.setItem('usuario', 'null');
         JSON.parse(localStorage.getItem('usuario')!);
 
@@ -46,7 +49,7 @@ export class AuthService {
 
     signInWithEmailAndPassword(this.auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential.user);
+        this.router.navigate(['inicio']);
       })
       .catch((error) => {
         window.alert(error.message);
@@ -93,36 +96,45 @@ export class AuthService {
 
   /* Guardando datos de usuario en firestore*/
   setUsuarioFirestore(user: any) {
-    //const userRef = doc(this.db, 'usuarios', user.uid);
-
-
-    const datoUsuario: Usuario = {
-      uid: user.uid,
-      email: user.email,
-      nombre: user.displayName || this.nombre,
-      fotoURL: user.photoURL,
-      emailVerificado: true//user.emailVerified,
-    };
-    //return setDoc(userRef, datoUsuario, { merge: true });
-
+    const datoUsuario: Usuario = new Usuario(user.uid, user.displayName || this.nombre, user.email, user.photoURL);
     this.generaFamilia(datoUsuario);
   }
 
-  generaFamilia(usuario:Usuario) {
+  generaFamilia(usuario: Usuario) {
     //Creación de id único
-    let fId=uuidv4();
+    let fId = uuidv4();
 
     //Creación de familia añadiendo el usuario
     let familia = new Familia(fId);
+    usuario.setFamiliaID(fId);
     familia.addUsuario(usuario);
 
-    let fam = Object.assign({}, familia)
+    //Formato de los objetos para almacenarlos
+    let usu = Object.assign({}, usuario);
+    let fam = this.estructurarFamilia(familia);
 
-    console.log(familia);
-    
+    //Adición de usuario a la bd
+    const usuarioaRef = doc(this.db, 'usuarios', fId);
+    setDoc(usuarioaRef, usu, { merge: true });
+
     //Adición de familia a la bd
     const familiaRef = doc(this.db, 'familias', fId);
-    return setDoc(familiaRef,fam,{merge:true});
+    return setDoc(familiaRef, fam, { merge: true });
+
+
+  }
+
+  estructurarFamilia(familia: Familia) {
+    const listaUsu = familia.getUsuarios();
+    const usuarios = listaUsu.map((obj) => { return Object.assign({}, obj) });
+
+    const fam = {
+      idFamilia: familia.idFamilia,
+      nombreFamilia: familia.nombreFamilia,
+      listaUsuarios: usuarios
+    }
+
+    return fam;
   }
 
   // Cerrar sesion
@@ -131,6 +143,39 @@ export class AuthService {
       localStorage.removeItem('usuario');
       this.router.navigate(['registro']);
     });
+  }
+
+  getUsuarioActual() {
+    return this.usuarioData;
+  }
+
+  subirArchivo(file: File, ruta: string) {
+    const storage = getStorage();
+    const storageRef = ref(storage, ruta);
+
+    uploadBytes(storageRef, file).then((snapshot) => {
+      console.log('Subido a ' + ruta);
+    });
+  }
+
+  subirNevera(neve:any){    
+    const neveraRef = doc(this.db, 'neveras', neve.idNevera);
+    setDoc(neveraRef, neve, { merge: true });
+  }
+
+
+  async recuperarFamiliaID(uID: string) {
+    let fId = "";
+    const q = query(collection(this.db, "usuarios"), where("uid", "==", uID));
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      //console.log(doc.id, " => ", doc.data());
+
+      fId = doc.data()['familiaId'];
+    });
+    return (fId);
+
   }
 
 
