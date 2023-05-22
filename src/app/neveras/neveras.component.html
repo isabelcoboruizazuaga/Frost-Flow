@@ -3,12 +3,8 @@
     <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Nueva nevera</button>
 </div>
 
-<div class="neveras">
-    <app-nevera-item></app-nevera-item>
-    <app-nevera-item></app-nevera-item>
-    <app-nevera-item></app-nevera-item>
-    <app-nevera-item></app-nevera-item>
-    <app-nevera-item></app-nevera-item>
+<div class="neveras" >
+    <app-nevera-item *ngFor="let nevera of neveras" [nevera]="nevera"></app-nevera-item>
 </div>
 
 <!--Modal de nueva nevera-->

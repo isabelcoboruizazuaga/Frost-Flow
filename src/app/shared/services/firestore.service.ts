@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 import { Usuario } from '../modelos/usuario';
 import { Familia } from '../modelos/familia';
 import { v4 as uuidv4 } from 'uuid';
-import { getStorage, ref, uploadBytes } from '@angular/fire/storage';
+import { getDownloadURL, getStorage, ref, uploadBytes } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirestoreService {
-
+  storage = getStorage();
   constructor(
     public auth: Auth = getAuth(),
     public router: Router,
@@ -27,12 +27,20 @@ subirNevera(neve:any){
 
 /*Sube una imagen a firestore*/
 subirFoto(file: File, ruta: string) {
-  const storage = getStorage();
-  const storageRef = ref(storage, ruta);
+  const storageRef = ref(this.storage, ruta);
 
   uploadBytes(storageRef, file).then((snapshot) => {
     console.log('Subido a ' + ruta);
   });
+}
+
+getFoto(ruta:string){
+  const storageRef = ref(this.storage, ruta);
+  let urlfoto=""
+
+  getDownloadURL(storageRef).then(url => urlfoto=url );
+
+  return "pepe";
 }
 
 

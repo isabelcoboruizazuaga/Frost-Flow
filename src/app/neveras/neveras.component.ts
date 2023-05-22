@@ -14,7 +14,7 @@ import { DocumentData } from '@angular/fire/firestore';
 })
 export class NeverasComponent {
   nombre: string = '';
-  neveras: DocumentData[]=[];
+  neveras= new Array();
   usuario: any;
   storage: any;
   file: File;
@@ -55,19 +55,24 @@ export class NeverasComponent {
 
         console.log(this.nombre);
 
+        //Creación de id único
+        let nId = uuidv4();
+        
         //Guardar imagen en el storage 
         if (this.file.name) {
-          fotoURL = "neveras/" + this.fid + "/" + this.file.name;
+          fotoURL = "neveras/" + this.fid + "/" + nId;
           this.firestoreService.subirFoto(this.file, fotoURL);
           this.file = new File([""], '');
         }
-        //Creación de id único
-        let nId = uuidv4();
 
         //Se añade la nevera a la bd
         let nevera = new Nevera(nId, this.fid, this.nombre, fotoURL);
         let neve = Object.assign({}, nevera);
         this.firestoreService.subirNevera(neve);
+
+
+        //Se ractualiza la vista
+        this.firestoreService.listarNeveras(this.fid).then(neveras => this.neveras=neveras)
       }
     }, (reason) => {
       // Modal dismissed
