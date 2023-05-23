@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { FirestoreService } from 'src/app/shared/services/firestore.service';
+import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NeverasComponent } from 'src/app/neveras/neveras.component';
 
 @Component({
   selector: 'app-nevera-item',
@@ -11,7 +14,7 @@ export class NeveraItemComponent {
   disabled=true;
   inputNombre: any=null;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private neverasComponent: NeverasComponent, private firestoreService: FirestoreService,private modalService: NgbModal) {
 
   }
 
@@ -37,11 +40,32 @@ export class NeveraItemComponent {
   }
   
   guardarCambios() {
-    alert(this.inputNombre.value);
-    this.inputNombre.focusOut()
+      
+   this.firestoreService.editaNevera(this.nevera.idNevera,"nombreNevera",this.inputNombre.value).then((exito)=>{
+    if (exito==true){
+      alert("editado");
+    }
+   })
+    
+    this.inputNombre.blur()
+    this.disabled=true;
   }
 
   borrar() {
     alert("Borrado");
   }
+
+  open(content: any) {
+		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      if (result === 'borrar') {
+        this.firestoreService.borraNevera(this.nevera.idNevera).then((exito)=>{
+          if (exito==true){
+            alert("borrado");
+            this.neverasComponent.actualizarLista();
+          }
+         })
+      }
+    })
+	}
+
 }

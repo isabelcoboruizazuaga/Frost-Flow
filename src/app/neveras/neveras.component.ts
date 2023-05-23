@@ -36,7 +36,7 @@ export class NeverasComponent {
       this.fid = result;
 
       //Se obtiene la lista de neveras
-      this.firestoreService.listarNeveras(this.fid).then(neveras => this.neveras = neveras)
+      this.actualizarLista()
     })
 
   }
@@ -61,25 +61,30 @@ export class NeverasComponent {
 
         //Guardar imagen en el storage 
         if (this.file.name) {
-          fotoURL = "neveras/" + this.fid + "/" + nId;
-          //this.firestoreService.subirFoto(this.file, fotoURL);
+          if (this.file.size < 5242880) {
+            fotoURL = "neveras/" + this.fid + "/" + nId;
+            //this.firestoreService.subirFoto(this.file, fotoURL);
 
-          /*Sube una imagen a firestore*/
-          const storageRef = ref(getStorage(), fotoURL);
-          uploadBytes(storageRef, this.file).then((snapshot) => {
-            console.log('Subido a ' + fotoURL);
-            //Se obtiene la url
-            getDownloadURL(storageRef).then(url => {
+            /*Sube una imagen a firestore*/
+            const storageRef = ref(getStorage(), fotoURL);
+            uploadBytes(storageRef, this.file).then((snapshot) => {
+              console.log('Subido a ' + fotoURL);
+              //Se obtiene la url
+              getDownloadURL(storageRef).then(url => {
+                console.log(this.file.size);
+                console.log('AHORA SOY ' + url);
+                this.url = url
 
-              this.url = url
+                //Se crea la nevera
+                this.addNevera(nId);
 
-              //Se crea la nevera
-              this.addNevera(nId);
-
-              this.file = new File([""], '');
-            })
-          });
-
+                this.file = new File([""], '');
+              })
+            });
+          }else{
+            alert("La imagen debe pesar menos de 5MB!");
+            this.file = new File([""], '');
+          }
         } else {
           //Se crea la nevera
           this.addNevera(nId);
@@ -100,6 +105,10 @@ export class NeverasComponent {
 
 
     //Se ractualiza la vista
+    this.actualizarLista()
+  }
+
+  actualizarLista(){
     this.firestoreService.listarNeveras(this.fid).then(neveras => this.neveras = neveras)
   }
 

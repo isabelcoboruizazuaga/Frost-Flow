@@ -8,8 +8,27 @@
         <div class="actions">
             <img src="/assets/icons/edit.png" class="icon" alt="image" (click)="editar()"
                 (click)="$event.stopPropagation()">
-            <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="borrar()"
+            <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="open(content)"
                 (click)="$event.stopPropagation()">
         </div>
     </div>
 </div>
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Borrar {{nevera.nombreNevera}}</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<p>Esta acción no se puede deshacer, perderá toda la información guardada en esta nevera</p>
+                <p>¿Desea continuar?</p>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-danger" (click)="modal.close('borrar')">Borrar</button>
+		<button type="button" class="btn btn-outline-success" (click)="modal.dismiss()">Cancelar</button>
+	</div>
+</ng-template>

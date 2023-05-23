@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, Auth, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
-import { DocumentData, Firestore, collection, deleteDoc, doc, getDocs, getFirestore, query, setDoc, where } from '@angular/fire/firestore';
+import { DocumentData, Firestore, collection, deleteDoc, doc, getDocs, getFirestore, query, setDoc, updateDoc, where } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Usuario } from '../modelos/usuario';
 import { Familia } from '../modelos/familia';
@@ -25,10 +25,26 @@ subirNevera(neve:any){
   setDoc(neveraRef, neve, { merge: true });
 }
 
-async borraNevera(){
-  await deleteDoc(doc(this.db, "cities", "DC"));
+async borraNevera(idNevera:string){
+  let exito=false;
+
+  await deleteDoc(doc(this.db, "neveras", idNevera)).then(()=>
+    exito=true
+    );
+  return exito;
 }
 
+async editaNevera(idNevera:string, campoActualizar:string, valor:string){
+  let exito=false;
+  const referencia = doc(this.db, "neveras", idNevera);
+
+ await updateDoc(referencia, {
+    [campoActualizar]: valor
+  }).then(()=>
+    exito=true
+    );
+  return exito;
+}
 
 /*Devuelve una promesa para recuperar el id de familia de un usuario*/
 async recuperarFamiliaID(uID: string) {
