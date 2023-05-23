@@ -5,6 +5,7 @@ import { Nevera } from '../shared/modelos/nevera';
 import { v4 as uuidv4 } from 'uuid';
 import { FirestoreService } from '../shared/services/firestore.service';
 import { DocumentData } from '@angular/fire/firestore';
+import { getDownloadURL, getStorage, ref, uploadBytes } from '@angular/fire/storage';
 
 
 @Component({
@@ -14,9 +15,9 @@ import { DocumentData } from '@angular/fire/firestore';
 })
 export class NeverasComponent {
   nombre: string = '';
-  neveras= new Array();
+  neveras = new Array();
+  url = "";
   usuario: any;
-  storage: any;
   file: File;
   fid: any = "";
 
@@ -35,7 +36,7 @@ export class NeverasComponent {
       this.fid = result;
 
       //Se obtiene la lista de neveras
-      this.firestoreService.listarNeveras(this.fid).then(neveras => this.neveras=neveras)
+      this.firestoreService.listarNeveras(this.fid).then(neveras => this.neveras = neveras)
     })
 
   }
@@ -57,28 +58,50 @@ export class NeverasComponent {
 
         //Creación de id único
         let nId = uuidv4();
-        
+
         //Guardar imagen en el storage 
         if (this.file.name) {
           fotoURL = "neveras/" + this.fid + "/" + nId;
-          this.firestoreService.subirFoto(this.file, fotoURL);
-          this.file = new File([""], '');
+          //this.firestoreService.subirFoto(this.file, fotoURL);
+
+          /*Sube una imagen a firestore*/
+          const storageRef = ref(getStorage(), fotoURL);
+          uploadBytes(storageRef, this.file).then((snapshot) => {
+            console.log('Subido a ' + fotoURL);
+            //Se obtiene la url
+            getDownloadURL(storageRef).then(url => {
+
+              this.url = url
+
+              //Se crea la nevera
+              this.addNevera(nId);
+
+              this.file = new File([""], '');
+            })
+          });
+
+        } else {
+          //Se crea la nevera
+          this.addNevera(nId);
         }
 
-        //Se añade la nevera a la bd
-        let nevera = new Nevera(nId, this.fid, this.nombre, fotoURL);
-        let neve = Object.assign({}, nevera);
-        this.firestoreService.subirNevera(neve);
-
-
-        //Se ractualiza la vista
-        this.firestoreService.listarNeveras(this.fid).then(neveras => this.neveras=neveras)
       }
     }, (reason) => {
       // Modal dismissed
     });
   }
 
+  addNevera(nId: string) {
+
+    //Se añade la nevera a la bd
+    let nevera = new Nevera(nId, this.fid, this.nombre, this.url);
+    let neve = Object.assign({}, nevera);
+    this.firestoreService.subirNevera(neve);
+
+
+    //Se ractualiza la vista
+    this.firestoreService.listarNeveras(this.fid).then(neveras => this.neveras = neveras)
+  }
 
 }
 

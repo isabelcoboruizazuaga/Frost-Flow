@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, Auth, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
-import { DocumentData, Firestore, collection, doc, getDocs, getFirestore, query, setDoc, where } from '@angular/fire/firestore';
+import { DocumentData, Firestore, collection, deleteDoc, doc, getDocs, getFirestore, query, setDoc, where } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Usuario } from '../modelos/usuario';
 import { Familia } from '../modelos/familia';
@@ -25,22 +25,8 @@ subirNevera(neve:any){
   setDoc(neveraRef, neve, { merge: true });
 }
 
-/*Sube una imagen a firestore*/
-subirFoto(file: File, ruta: string) {
-  const storageRef = ref(this.storage, ruta);
-
-  uploadBytes(storageRef, file).then((snapshot) => {
-    console.log('Subido a ' + ruta);
-  });
-}
-
-getFoto(ruta:string){
-  const storageRef = ref(this.storage, ruta);
-  let urlfoto=""
-
-  getDownloadURL(storageRef).then(url => urlfoto=url );
-
-  return "pepe";
+async borraNevera(){
+  await deleteDoc(doc(this.db, "cities", "DC"));
 }
 
 
@@ -70,7 +56,8 @@ async listarNeveras(fId: string) {
     neveras.push(doc.data());
   });
   return (neveras);
-
 }
+
+
 
 }

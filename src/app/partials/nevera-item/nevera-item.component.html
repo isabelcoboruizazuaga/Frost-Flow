@@ -1,10 +1,15 @@
 <div class="nevera-item" (click)="verNevera()">
-    <img src="{{url}}" alt="">
+    <img src="{{nevera.fotoNevera}}" alt="">
     <div class="info">
-        <input type="text" class="title" value="{{nevera.nombreNevera}}" (click)="$event.stopPropagation()">
+        <input type="text" class="title" [attr.id]="'nombre-' +nevera.idNevera" value="{{nevera.nombreNevera}}"
+            (click)="$event.stopPropagation()" 
+            [attr.disabled]="disabled ? '' : null"
+            (keyup.enter)="guardarCambios()">
         <div class="actions">
-            <img src="/assets/icons/edit.png" class="icon" alt="image" (click)="editar()" (click)="$event.stopPropagation()">
-            <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="borrar()" (click)="$event.stopPropagation()">
+            <img src="/assets/icons/edit.png" class="icon" alt="image" (click)="editar()"
+                (click)="$event.stopPropagation()">
+            <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="borrar()"
+                (click)="$event.stopPropagation()">
         </div>
     </div>
 </div>
