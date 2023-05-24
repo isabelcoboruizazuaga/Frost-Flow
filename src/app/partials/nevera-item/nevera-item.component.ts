@@ -13,6 +13,7 @@ export class NeveraItemComponent {
   @Input() nevera: any;
   disabled=true;
   inputNombre: any=null;
+  nombreOriginal=""
 
   constructor(private router: Router,private neverasComponent: NeverasComponent, private firestoreService: FirestoreService,private modalService: NgbModal) {
 
@@ -28,6 +29,9 @@ export class NeveraItemComponent {
   editar() {
     //Se recoge el campo del nombre
     this.inputNombre = document.getElementById('nombre-' +this.nevera.idNevera);  
+
+    //Se guarda el valor original
+    this.nombreOriginal=this.inputNombre.value;
 
     //Se activa para editar
     this.disabled=false;
@@ -55,6 +59,9 @@ export class NeveraItemComponent {
     alert("Borrado");
   }
 
+  focusOutFunction(){
+    this.inputNombre.value=this.nombreOriginal;
+  }
   open(content: any) {
 		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       if (result === 'borrar') {
