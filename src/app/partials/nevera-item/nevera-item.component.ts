@@ -13,7 +13,7 @@ export class NeveraItemComponent {
   @Input() nevera: any;
   disabled=true;
   inputNombre: any=null;
-  nombreOriginal=""
+  nombreOriginal="";
 
   constructor(private router: Router,private neverasComponent: NeverasComponent, private firestoreService: FirestoreService,private modalService: NgbModal) {
 
@@ -44,10 +44,11 @@ export class NeveraItemComponent {
   }
   
   guardarCambios() {
-      
+      let nombre=this.inputNombre.value;
    this.firestoreService.editaNevera(this.nevera.idNevera,"nombreNevera",this.inputNombre.value).then((exito)=>{
     if (exito==true){
       alert("editado");
+      this.inputNombre.value=nombre;
     }
    })
     
@@ -60,7 +61,9 @@ export class NeveraItemComponent {
   }
 
   focusOutFunction(){
-    this.inputNombre.value=this.nombreOriginal;
+      this.inputNombre.value=this.nombreOriginal;
+      this.inputNombre.blur()
+      this.disabled=true;
   }
   open(content: any) {
 		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
