@@ -132,7 +132,7 @@ export class AuthService {
     let fam = this.estructurarFamilia(familia);
 
     //Adición de usuario a la bd
-    const usuarioaRef = doc(this.db, 'usuarios', fId);
+    const usuarioaRef = doc(this.db, 'usuarios', usuario.uid);
     setDoc(usuarioaRef, usu, { merge: true });
 
     //Adición de familia a la bd
