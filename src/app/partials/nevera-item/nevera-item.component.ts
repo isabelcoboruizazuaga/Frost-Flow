@@ -24,7 +24,7 @@ export class NeveraItemComponent {
   }
 
   verNevera() {
-    this.router.navigate(['/nevera', 'Nevera 1']);
+    this.router.navigate(['/nevera', this.nevera.idNevera]);
   }
   editar() {
     //Se recoge el campo del nombre

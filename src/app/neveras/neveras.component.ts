@@ -4,7 +4,6 @@ import { AuthService } from '../shared/services/auth.service';
 import { Nevera } from '../shared/modelos/nevera';
 import { v4 as uuidv4 } from 'uuid';
 import { FirestoreService } from '../shared/services/firestore.service';
-import { DocumentData } from '@angular/fire/firestore';
 import { getDownloadURL, getStorage, ref, uploadBytes } from '@angular/fire/storage';
 
 
@@ -53,8 +52,6 @@ export class NeverasComponent {
       // Handle form submission
       if (result === 'submit') {
         let fotoURL = "";
-
-        console.log(this.nombre);
 
         //Creación de id único
         let nId = uuidv4();

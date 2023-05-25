@@ -26,6 +26,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { SesionRegistroComponent } from './sesion-registro/sesion-registro.component';
 import { InicioSesionComponent } from './partials/inicio-sesion/inicio-sesion.component';
 import { FormsModule } from '@angular/forms';
+import { CajonItemAddComponent } from './partials/cajon-item-add/cajon-item-add.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { FormsModule } from '@angular/forms';
     ProductoCajonComponent,
     ProductosFamComponent,
     SesionRegistroComponent,
-    InicioSesionComponent
+    InicioSesionComponent,
+    CajonItemAddComponent
   ],
   imports: [
     BrowserModule,

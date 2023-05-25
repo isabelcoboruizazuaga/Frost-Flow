@@ -1,14 +1,38 @@
 <div class="nevera">
     <div class="neveraInfo">
-        <h1>{{id}}</h1>
+        <h1>{{nombreNevera}}</h1>
         <img src="/assets/images/neveraC.png">
     </div>
     <div class="cajones">
-        <app-cajon-item></app-cajon-item>
-        <app-cajon-item></app-cajon-item>
-        <app-cajon-item></app-cajon-item>
-        <app-cajon-item></app-cajon-item>
-        <app-cajon-item></app-cajon-item>
-        <app-cajon-item></app-cajon-item>
+        <app-cajon-item-add (click)="open(content)"></app-cajon-item-add>
+        <app-cajon-item *ngFor="let cajon of cajones" [cajon]="cajon"></app-cajon-item>
     </div>
 </div>
+
+
+
+<!--Modal de nuevo cajon-->
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Nuevo Cajón</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="mb-3">     
+            
+            <label for="nombre">Nombre Cajón</label>
+            <div class="input-group">
+                <input [(ngModel)]="nombreCajon" id="nombre" class="form-control" placeholder="nombre" name="nombre" type="text" />
+            </div>           
+            
+            <!--<label for="imagen">Selecciona una imagen</label>
+            <div class="input-group">
+                <input id="imagen" class="form-control"  type="file" accept="image/*" (change)="onFileSelected($event)"/>
+            </div>-->
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn  btn-outline-danger" (click)="modal.close('cancelar')">Cancelar</button>
+        <button type="button" class="btn btn-outline-success" (click)="modal.close('submit')">Crear</button>
+    </div>
+</ng-template>
