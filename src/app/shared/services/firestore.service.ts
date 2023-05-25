@@ -29,8 +29,6 @@ export class FirestoreService {
     } else {
       return "Iniciar Sesión";
     }
-
-
   }
 
   /*Sube una nevera a firestore*/
@@ -76,7 +74,7 @@ export class FirestoreService {
     return (fId);
   }
 
-  /*Devuelve una promesa para recuperar el id de familia de un usuario*/
+  /*Devuelve una promesa para recuperar las neveras de una familia*/
   async listarNeveras(fId: string) {
     let neveras: DocumentData[] = [];
     const q = query(collection(this.db, "neveras"), where("idFamilia", "==", fId));
@@ -89,6 +87,49 @@ export class FirestoreService {
     });
     return (neveras);
   }
+
+  /*Devuelve una promesa para recuperar los cajones de una nevera*/
+  async listarCajones(nId: string) {
+    let cajones: DocumentData[] = [];
+    const q = query(collection(this.db, "cajones"), where("idNevera", "==", nId));
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      cajones.push(doc.data());
+    });
+    return (cajones);
+  }
+
+   /*Sube un cajón a firestore*/
+   subirCajon(caj: any) {
+    const cajonRef = doc(this.db, 'cajones', caj.idCajon);
+    setDoc(cajonRef, caj, { merge: true });
+  }
+
+  /*Devuelve una promesa para recuperar una nevera en concreto de una familia*/
+  async recuperarNevera(nId: string) {
+      const docRef = doc(this.db, "neveras", nId);
+      const docSnap = await getDoc(docRef);
+  
+      if (docSnap.exists()) {   
+        return (docSnap.data());
+      } else {
+        return 0;
+      }
+    }
+
+    /*Devuelve una promesa para recuperar una nevera en concreto de una familia*/
+  async recuperarCajon(cId: string) {
+    const docRef = doc(this.db, "cajones", cId);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {   
+      return (docSnap.data());
+    } else {
+      return 0;
+    }
+  }
+  
 
 
 

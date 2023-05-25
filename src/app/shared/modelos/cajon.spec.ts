@@ -1,7 +1,7 @@
-import { Cajon } from './cajon';
+import { Producto } from './cajon';
 
 describe('Cajon', () => {
   it('should create an instance', () => {
-    expect(new Cajon()).toBeTruthy();
+    expect(new Producto()).toBeTruthy();
   });
 });
