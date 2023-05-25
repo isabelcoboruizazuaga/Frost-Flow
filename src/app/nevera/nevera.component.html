@@ -23,7 +23,14 @@
             <label for="nombre">Nombre Cajón</label>
             <div class="input-group">
                 <input [(ngModel)]="nombreCajon" id="nombre" class="form-control" placeholder="nombre" name="nombre" type="text" />
-            </div>           
+            </div>       
+
+            <label for="nombre">Tipo Cajón</label>
+            <select name="select"  [(ngModel)]="tipoCajon" id="tipoCajon" class="form-select">
+                <option value="neve" selected>Nevera</option>
+                <option value="conge">Congelador</option>
+                <option value="otro">Otro</option>
+              </select>
             
             <!--<label for="imagen">Selecciona una imagen</label>
             <div class="input-group">

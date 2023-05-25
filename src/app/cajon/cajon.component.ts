@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FirestoreService } from '../shared/services/firestore.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-cajon',
@@ -8,14 +10,60 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CajonComponent {
   id: any;
+  nombre: string = "";
+  nombreCajon: string = "";
+  tipoCajon: string = "";
 
-  constructor(private router: ActivatedRoute) {
+  constructor(private router: ActivatedRoute, public miRouter: Router, public firestoreService: FirestoreService, private modalService: NgbModal) {
 
   }
 
   ngOnInit() {
     this.router.params.subscribe(params => {
       this.id = params['id'];
+      this.firestoreService.recuperarCajon(this.id).then((cajon) => {
+        if (cajon != 0) {
+          this.nombre = cajon["nombreCajon"];
+        }
+      })
     })
   }
+
+  borrarCajon() {
+
+  }
+
+  editarCajon() {
+
+  }
+
+  open(content: any) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-borrar' }).result.then((result) => {
+      if (result === 'borrar') {
+        this.firestoreService.borraCajon(this.id).then((exito) => {
+          if (exito == true) {
+            alert("borrado");
+
+            this.miRouter.navigate(['inicio']);
+          }
+        })
+      }
+    })
+  }
+
+
+  abre(content: any) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-editar' }).result.then((result) => {
+      if (result === 'editar') {
+        this.firestoreService.editaCajon(this.id, "nombreCajon", this.nombreCajon).then((exito) => {
+          if (exito == true) {
+            alert("editado");
+            this.nombre=this.nombreCajon;
+          }
+        })
+      }
+    })
+  }
+
+
 }

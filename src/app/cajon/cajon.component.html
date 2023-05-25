@@ -2,9 +2,10 @@
     <div class="acciones ">
         <div class="caj">
             <img src="/assets/images/cajonNeveraLl.png">
-            <h1>{{id}}</h1>
+            <h1>{{nombre}}</h1>
         </div>
-        <button>Borrar cajón</button>
+        <button (click)="abre(micontent)">Editar cajón</button>
+        <button (click)="open(content)">Borrar cajón</button>
 
     </div>
     <div class="div2 overflow-auto">
@@ -27,3 +28,52 @@
         </div>
     </div>
 </div>
+
+<!--Modal de confirmación de borrado-->
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-borrar">Borrar {{nombre}}</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<p>Esta acción no se puede deshacer, perderá toda la información guardada en este cajón</p>
+                <p>¿Desea continuar?</p>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-danger" (click)="modal.close('borrar')">Borrar</button>
+		<button type="button" class="btn btn-outline-success" (click)="modal.dismiss()">Cancelar</button>
+	</div>
+</ng-template>
+
+
+<!--Modal de edición-->
+<ng-template #micontent let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-editar">Editar {{nombre}}</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="mb-3">     
+            
+            <label for="nombre">Nombre Cajón</label>
+            <div class="input-group">
+                <input [(ngModel)]="nombreCajon" value={{nombre}} id="nombre" class="form-control" name="nombre" type="text" />
+            </div>       
+
+            <label for="nombre">Tipo Cajón</label>
+            <select name="select"  [(ngModel)]="tipoCajon" id="tipoCajon" class="form-select">
+                <option value="neve" selected>Nevera</option>
+                <option value="conge">Congelador</option>
+                <option value="otro">Otro</option>
+              </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn  btn-outline-danger" (click)="modal.close('cancelar')">Cancelar</button>
+        <button type="button" class="btn btn-outline-success" (click)="modal.close('editar')">Editar</button>
+    </div>
+</ng-template>

@@ -129,6 +129,29 @@ export class FirestoreService {
       return 0;
     }
   }
+
+  /*Borra un cajón en firestore */
+  async borraCajon(cId: string) {
+    let exito = false;
+
+    await deleteDoc(doc(this.db, "cajones", cId)).then(() =>
+      exito = true
+    );
+    return exito;
+  }
+
+  /*Edita un cajón en firestore */
+  async editaCajon(cId: string, campoActualizar: string, valor: string) {
+    let exito = false;
+    const referencia = doc(this.db, "cajones", cId);
+
+    await updateDoc(referencia, {
+      [campoActualizar]: valor
+    }).then(() =>
+      exito = true
+    );
+    return exito;
+  }
   
 
 

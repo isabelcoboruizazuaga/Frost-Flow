@@ -14,7 +14,8 @@ export class NeveraComponent {
   idNevera: any;
   nevera:any;
   nombreNevera: string = '';
-  nombreCajon:string=""
+  nombreCajon:string="";
+  tipoCajon:string="";
   cajones = new Array();
   constructor(private router: ActivatedRoute, private modalService: NgbModal, public firestoreService: FirestoreService) {
   
@@ -39,7 +40,7 @@ export class NeveraComponent {
     let cId = uuidv4();
 
     //Se añade el cajón a la bd
-    let cajon = new Cajon(cId, this.idNevera,this.nombreCajon, "tipo");
+    let cajon = new Cajon(cId, this.idNevera,this.nombreCajon, this.tipoCajon);
     let caj = Object.assign({}, cajon);
     this.firestoreService.subirCajon(caj);
 
