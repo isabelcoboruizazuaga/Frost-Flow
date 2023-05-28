@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateParserFormatter, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PruebasComponent } from './pruebas/pruebas.component';
 import { PieComponent } from './pie/pie.component';
 import { RegistroComponent } from './partials/registro/registro.component';
@@ -29,6 +29,7 @@ import { FormsModule } from '@angular/forms';
 import { CajonItemAddComponent } from './partials/cajon-item-add/cajon-item-add.component';
 import { AddProductosAdminComponent } from './add-productos-admin/add-productos-admin.component';
 import { ProductoItemComponent } from './partials/producto-item/producto-item.component';
+import { NgbDateCustomParserFormatter } from './shared/ngb-date-custom-parser-formatter';
 
 
 @NgModule({
@@ -64,7 +65,9 @@ import { ProductoItemComponent } from './partials/producto-item/producto-item.co
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage())
   ],
-  providers: [],
+  providers: [
+    { provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
