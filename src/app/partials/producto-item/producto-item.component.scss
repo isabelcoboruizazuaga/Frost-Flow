@@ -1,0 +1,31 @@
+@import '../../../scss/mixin';
+.produ{
+    @include flex(row, center,space-evenly);
+
+    height: 100%;
+    width: 100%;
+
+    // div{
+    //     @include flex(column);
+    // }
+    .cadu{
+        @include flex(column);
+
+        .cadu-picker{
+            @include flex();
+        }
+    }
+
+
+    .icon{
+        width: 3vw;
+    }
+    .fotoProd{
+        width: 8vw;
+    }
+
+    input{        
+        @extend %input-hide;
+        width: 15vw;
+    }
+}

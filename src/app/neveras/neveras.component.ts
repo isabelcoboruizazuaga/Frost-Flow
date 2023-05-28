@@ -65,11 +65,9 @@ export class NeverasComponent {
             /*Sube una imagen a firestore*/
             const storageRef = ref(getStorage(), fotoURL);
             uploadBytes(storageRef, this.file).then((snapshot) => {
-              console.log('Subido a ' + fotoURL);
               //Se obtiene la url
               getDownloadURL(storageRef).then(url => {
                 console.log(this.file.size);
-                console.log('AHORA SOY ' + url);
                 this.url = url
 
                 //Se crea la nevera

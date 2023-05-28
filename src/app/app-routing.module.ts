@@ -8,6 +8,8 @@ import { NeverasComponent } from './neveras/neveras.component';
 import { NeveraComponent } from './nevera/nevera.component';
 import { CajonComponent } from './cajon/cajon.component';
 import { SesionRegistroComponent } from './sesion-registro/sesion-registro.component';
+import { AddProductosAdminComponent } from './add-productos-admin/add-productos-admin.component';
+import { ProductosFamComponent } from './productos-fam/productos-fam.component';
 
 
 const routes: Routes=[
@@ -19,6 +21,7 @@ const routes: Routes=[
   {path: 'neveras', component: NeverasComponent},
   {path: 'nevera/:id', component: NeveraComponent},
   {path: 'cajon/:id', component: CajonComponent},
+  {path: 'productos', component: ProductosFamComponent},
 ]
 
 

@@ -27,6 +27,8 @@ import { SesionRegistroComponent } from './sesion-registro/sesion-registro.compo
 import { InicioSesionComponent } from './partials/inicio-sesion/inicio-sesion.component';
 import { FormsModule } from '@angular/forms';
 import { CajonItemAddComponent } from './partials/cajon-item-add/cajon-item-add.component';
+import { AddProductosAdminComponent } from './add-productos-admin/add-productos-admin.component';
+import { ProductoItemComponent } from './partials/producto-item/producto-item.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { CajonItemAddComponent } from './partials/cajon-item-add/cajon-item-add.
     ProductosFamComponent,
     SesionRegistroComponent,
     InicioSesionComponent,
-    CajonItemAddComponent
+    CajonItemAddComponent,
+    AddProductosAdminComponent,
+    ProductoItemComponent
   ],
   imports: [
     BrowserModule,

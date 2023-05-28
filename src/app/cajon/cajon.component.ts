@@ -29,13 +29,9 @@ export class CajonComponent {
     })
   }
 
-  borrarCajon() {
-
-  }
-
-  editarCajon() {
-
-  }
+  nuevoProducto() {
+    this.miRouter.navigate(['productos']);
+};
 
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-borrar' }).result.then((result) => {

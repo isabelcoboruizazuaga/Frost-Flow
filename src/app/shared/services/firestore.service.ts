@@ -37,6 +37,12 @@ export class FirestoreService {
     setDoc(neveraRef, neve, { merge: true });
   }
 
+  /*Sube un producto a firestore*/
+  subirProducto(produ: any) {
+    const productoRef = doc(this.db, 'productosAdmin', produ.idProducto);
+    setDoc(productoRef, produ, { merge: true });
+  }
+
   /*Borra una nevera en firestore */
   async borraNevera(idNevera: string) {
     let exito = false;

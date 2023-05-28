@@ -1,0 +1,15 @@
+<div class="form">
+    <label for="nombre">Nombre Producto</label>
+    <div class="input-group">
+        <input [(ngModel)]="nombre" id="nombre" class="form-control" placeholder="nombre" name="nombre" type="text" />
+    </div>
+
+    <label for="imagen">Selecciona una imagen</label>
+    <div class="input-group">
+        <input id="imagen" class="form-control" type="file" accept="image/*"
+            (change)="onFileSelected($event)" /><!--(change)="processFile(imageInput)"-->
+    </div>
+</div>
+<div class="aceptar">
+    <button type="button" class="btn btn-outline-success" (click)="crear()">Crear</button>
+</div>

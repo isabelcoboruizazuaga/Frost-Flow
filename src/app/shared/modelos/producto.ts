@@ -1,12 +1,12 @@
-export class ProductoFamilia {
+export class Producto {
     idProducto: string;
-    idFamilia:string;
+    idCajon:string;
     nombreProducto: string;
     fotoProducto: string;
 
-    constructor (idProducto:string, idFamilia: string,nombreProducto: string,fotoProducto:string="" ){
+    constructor (idProducto:string,idCajon: string, nombreProducto: string,fotoProducto:string="" ){
         this.idProducto=idProducto;
-        this.idFamilia=idFamilia;
+        this.idCajon=idCajon;
         this.nombreProducto=nombreProducto;
         this.fotoProducto=fotoProducto;
     }
