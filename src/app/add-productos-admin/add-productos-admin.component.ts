@@ -67,6 +67,6 @@ export class AddProductosAdminComponent {
     //Se añade el producto a la bd
     let producto = new ProductoAdmin(pId, this.nombre, this.url);
     let produ = Object.assign({}, producto);
-    this.firestoreService.subirProducto(produ);
+    this.firestoreService.subirProductoAdmin(produ);
   }
 }

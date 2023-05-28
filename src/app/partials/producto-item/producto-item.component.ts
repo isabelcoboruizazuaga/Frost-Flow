@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-producto-item',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./producto-item.component.scss']
 })
 export class ProductoItemComponent {
+  @Input() producto: any;
+
   model: any=""
 
   aniadir() {

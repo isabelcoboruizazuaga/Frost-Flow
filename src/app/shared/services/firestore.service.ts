@@ -24,7 +24,7 @@ export class FirestoreService {
     const docRef = doc(this.db, "usuarios", uid);
     const docSnap = await getDoc(docRef);
 
-    if (docSnap.exists()) {   
+    if (docSnap.exists()) {
       return (docSnap.data()["nombre"]);
     } else {
       return "Iniciar Sesión";
@@ -38,12 +38,17 @@ export class FirestoreService {
   }
 
   /*Sube un producto a firestore*/
-  subirProducto(produ: any) {
+  subirProductoAdmin(produ: any) {
     const productoRef = doc(this.db, 'productosAdmin', produ.idProducto);
     setDoc(productoRef, produ, { merge: true });
   }
 
-  /*Borra una nevera en firestore */
+  /*Sube un producto a firestore*/
+  subirProductoFam(produ: any) {
+    const productoRef = doc(this.db, 'productosFam', produ.idProducto);
+    setDoc(productoRef, produ, { merge: true });
+  }
+
   async borraNevera(idNevera: string) {
     let exito = false;
 
@@ -106,30 +111,49 @@ export class FirestoreService {
     return (cajones);
   }
 
-   /*Sube un cajón a firestore*/
-   subirCajon(caj: any) {
+  /*Sube un cajón a firestore*/
+  subirCajon(caj: any) {
     const cajonRef = doc(this.db, 'cajones', caj.idCajon);
     setDoc(cajonRef, caj, { merge: true });
   }
 
+
+  /*Devuelve una promesa para recuperar los productos de una familia*/
+  async listarProductos(fId: string) {
+    let productos: DocumentData[] = [];
+    const q = query(collection(this.db, "productosFam"), where("idFamilia", "==", fId));
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      productos.push(doc.data());
+    });
+
+    const querySnapshot2 = await getDocs(collection(this.db, "productosAdmin"));
+    querySnapshot2.forEach((doc) => {
+      productos.push(doc.data());
+    });
+
+    return (productos);
+  }
+
   /*Devuelve una promesa para recuperar una nevera en concreto de una familia*/
   async recuperarNevera(nId: string) {
-      const docRef = doc(this.db, "neveras", nId);
-      const docSnap = await getDoc(docRef);
-  
-      if (docSnap.exists()) {   
-        return (docSnap.data());
-      } else {
-        return 0;
-      }
-    }
+    const docRef = doc(this.db, "neveras", nId);
+    const docSnap = await getDoc(docRef);
 
-    /*Devuelve una promesa para recuperar una nevera en concreto de una familia*/
+    if (docSnap.exists()) {
+      return (docSnap.data());
+    } else {
+      return 0;
+    }
+  }
+
+  /*Devuelve una promesa para recuperar una nevera en concreto de una familia*/
   async recuperarCajon(cId: string) {
     const docRef = doc(this.db, "cajones", cId);
     const docSnap = await getDoc(docRef);
 
-    if (docSnap.exists()) {   
+    if (docSnap.exists()) {
       return (docSnap.data());
     } else {
       return 0;
@@ -158,7 +182,7 @@ export class FirestoreService {
     );
     return exito;
   }
-  
+
 
 
 

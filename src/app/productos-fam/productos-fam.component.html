@@ -1,10 +1,33 @@
 <div>
     <h1>Productos</h1>
-    <button>Crear Nuevo producto</button>
+    <button (click)="open(content)">Crear Nuevo producto</button>
 </div>
 <div class="prod">
-    <app-producto-item></app-producto-item>
-    <app-producto-item></app-producto-item>
-    <app-producto-item></app-producto-item>
-    <app-producto-item></app-producto-item>
+    <app-producto-item *ngFor="let producto of productos" [producto]="producto"></app-producto-item>
 </div>
+
+<!--Modal de nuevo producto-->
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Nuevo Producto</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="mb-3">     
+            
+            <label for="nombre">Nombre Producto</label>
+            <div class="input-group">
+                <input [(ngModel)]="nombre" id="nombre" class="form-control" placeholder="nombre" name="nombre" type="text" />
+            </div>           
+            
+            <label for="imagen">Selecciona una imagen</label>
+            <div class="input-group">
+                <input id="imagen" class="form-control"  type="file" accept="image/*" (change)="onFileSelected($event)"/><!--(change)="processFile(imageInput)"-->
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn  btn-outline-danger" (click)="modal.close('cancelar')">Cancelar</button>
+        <button type="button" class="btn btn-outline-success" (click)="modal.close('submit')">Crear</button>
+    </div>
+</ng-template>
