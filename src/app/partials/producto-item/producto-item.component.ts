@@ -32,8 +32,6 @@ export class ProductoItemComponent {
 
     this.firestoreService.productoExiste(pfId, cId, this.caducidad,cant).then(
       productos => {
-        console.log(productos);
-
         if (productos.length == 0) {
           //Se añade el producto a la bd
           let producto = new Producto(pId, cId, pfId, this.producto.nombreProducto, this.producto.fotoProducto, cant, this.caducidad, this.paquetes);

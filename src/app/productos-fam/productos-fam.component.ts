@@ -103,6 +103,6 @@ export class ProductosFamComponent {
   }
 
   actualizarLista() {
-    this.firestoreService.listarProductos(this.fid).then(productos => this.productos = productos)
+    this.firestoreService.listarProductosFam(this.fid).then(productos => this.productos = productos)
   }
 }

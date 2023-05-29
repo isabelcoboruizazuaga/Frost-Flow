@@ -13,6 +13,7 @@ export class CajonComponent {
   nombre: string = "";
   nombreCajon: string = "";
   tipoCajon: string = "";
+  productos: any;
 
   constructor(private router: ActivatedRoute, public miRouter: Router, public firestoreService: FirestoreService, private modalService: NgbModal) {
 
@@ -25,6 +26,8 @@ export class CajonComponent {
         if (cajon != 0) {
           this.nombre = cajon["nombreCajon"];
         }
+
+        this.actualizarLista();
       })
     })
   }
@@ -59,6 +62,10 @@ export class CajonComponent {
         })
       }
     })
+  }
+
+  actualizarLista() {
+    this.firestoreService.listarProductos(this.id).then(productos => this.productos = productos)
   }
 
 

@@ -18,13 +18,7 @@
             </select>
         </div>
         <div class="productos">
-            <app-producto-cajon></app-producto-cajon>
-            <app-producto-cajon></app-producto-cajon>
-            <app-producto-cajon></app-producto-cajon>
-            <app-producto-cajon></app-producto-cajon>
-            <app-producto-cajon></app-producto-cajon>
-            <app-producto-cajon></app-producto-cajon>
-            <app-producto-cajon></app-producto-cajon>
+            <app-producto-cajon *ngFor="let producto of productos" [producto]="producto" [idCajon]="id"></app-producto-cajon>
         </div>
     </div>
 </div>

@@ -147,7 +147,7 @@ export class FirestoreService {
     return (cajones);
   }
   /*Devuelve una promesa para recuperar los productos de una familia*/
-  async listarProductos(fId: string) {
+  async listarProductosFam(fId: string) {
     let productos: DocumentData[] = [];
     const q = query(collection(this.db, "productosFam"), where("idFamilia", "==", fId));
 
@@ -163,6 +163,19 @@ export class FirestoreService {
 
     return (productos);
   }
+
+ /*Devuelve una promesa para recuperar los productos de unn cajón*/
+ async listarProductos(cId: string) {
+  let productos: DocumentData[] = [];
+  const q = query(collection(this.db, "productos"), where("idCajon", "==", cId));
+
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    productos.push(doc.data());
+  });
+
+  return (productos);
+}
 
   /*Devuelve una promesa para recuperar una nevera en concreto de una familia*/
   async recuperarNevera(nId: string) {

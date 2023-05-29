@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-producto-cajon',
@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./producto-cajon.component.scss']
 })
 export class ProductoCajonComponent {
-
+  @Input() producto: any;
+  @Input() idCajon: any;
 
   editar(){    
     
