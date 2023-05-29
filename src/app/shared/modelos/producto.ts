@@ -1,17 +1,19 @@
 export class Producto {
-    idProducto: string; //FK PK
-    idCajon:string; //PK 
+    idProducto: string;
+    idProductoFam: string;
+    idCajon:string;
 
     nombreProducto: string;
     fotoProducto: string;
 
-    cantidad:[number,""];
+    cantidad:[number,string];
     caducicad:Date;
     paquetes:number;
 
-    constructor (idProducto:string,idCajon: string, nombreProducto: string,fotoProducto:string="", cantidad:[number,""],caducicad:Date, paquetes:number){
+    constructor (idProducto:string,idCajon: string, idProductoFam: string, nombreProducto: string,fotoProducto:string="", cantidad:[number,string],caducicad:Date, paquetes:number){
         this.idProducto=idProducto;
         this.idCajon=idCajon;
+        this.idProductoFam=idProductoFam;
         this.nombreProducto=nombreProducto;
         this.fotoProducto=fotoProducto;
         this.cantidad=cantidad;

@@ -51,9 +51,33 @@ export class FirestoreService {
 
   /*Sube un producto a firestore*/
   subirProducto(prod: any) {
-    const productoRef = doc(this.db, 'productos', prod.idProducto +"-"+prod.idCajon);
+    const productoRef = doc(this.db, 'productos', prod.idProducto);
     setDoc(productoRef, prod, { merge: true });
   }
+
+  /*Devuelve una promesa para comprobar si un producto está ya en el cajón*/
+  async productoExiste(pfId: string, cId: string, caducicad: any, cantidad: any) {
+    let productos: DocumentData[] = [];
+    const q = query(collection(this.db, "productos"),
+      where("idProductoFam", "==", pfId),
+      where("idCajon", "==", cId),
+      where("caducicad", "==", caducicad),
+      where("cantidad", "==", cantidad));
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      //console.log(doc.id, " => ", doc.data());
+
+      productos.push(doc.data());
+    });
+    return (productos);
+  }
+
+  // /*Suma un paquete al producto dado y lo guarda en la bd*/
+  // sumaPaquete(prod:any,numPaquetes:number=1){    
+  //   const productRef = doc(this.db, 'productos', prod.idProducto);
+  //   setDoc(productRef, caj, { merge: true });
+  // }
 
   /*Sube un cajón a firestore*/
   subirCajon(caj: any) {
