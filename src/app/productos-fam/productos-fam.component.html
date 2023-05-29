@@ -3,7 +3,7 @@
     <button (click)="open(content)">Crear Nuevo producto</button>
 </div>
 <div class="prod">
-    <app-producto-item *ngFor="let producto of productos" [producto]="producto"></app-producto-item>
+    <app-producto-item *ngFor="let producto of productos" [producto]="producto" [idCajon]="idCajon"></app-producto-item>
 </div>
 
 <!--Modal de nuevo producto-->

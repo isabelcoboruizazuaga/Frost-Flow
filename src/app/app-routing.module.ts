@@ -21,7 +21,7 @@ const routes: Routes=[
   {path: 'neveras', component: NeverasComponent},
   {path: 'nevera/:id', component: NeveraComponent},
   {path: 'cajon/:id', component: CajonComponent},
-  {path: 'productos', component: ProductosFamComponent},
+  {path: 'productos/:id', component: ProductosFamComponent},
 ]
 
 

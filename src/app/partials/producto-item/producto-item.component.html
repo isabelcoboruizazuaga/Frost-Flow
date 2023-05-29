@@ -1,9 +1,9 @@
 <div class="produ">
     <img src="{{producto.fotoProducto}}" class="fotoProd" alt="image">
     <h2>{{producto.nombreProducto}}</h2>
-    <input type="number" name="cantidad1" id="cantidad1" value="1" required min="1" oninput="this.value = 
-    !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null">
-    <select name="select">
+    <input type="number" name="cantidad1" id="cantidad1" value="1" [(ngModel)]="cantidad" required min="1"
+        oninput="this.value = !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null">
+    <select name="select" [(ngModel)]="descCantidad">
         <option value="kilogramos" selected>Kilogramos</option>
         <option value="gramos">Gramos</option>
         <option value="raciones">Raciones</option>
@@ -13,8 +13,8 @@
     <div class="cadu">
         <label for="caducidad">Caducidad</label>
         <div class="input-group cadu-picker">
-            <input class="form-control" placeholder="dd-mm-yyyy" name="caducidad" required [(ngModel)]="model" ngbDatepicker
-                #d="ngbDatepicker" />
+            <input class="form-control" placeholder="dd/mm/yyyy" name="caducidad" required [(ngModel)]="model"
+                ngbDatepicker #d="ngbDatepicker" />
             <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-calendar-week" viewBox="0 0 16 16">
@@ -26,7 +26,10 @@
             </button>
         </div>
     </div>
-    <input type="number" name="cantidad2" id="cantidad1" value="1" required min="1" oninput="this.value = 
-    !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null">
-    <button (click)="aniadir()">Añadir al cajón</button>
+    <div class="paquetes">
+        <label for="paquetes">Paquetes</label>
+        <input type="number" name="paquetes" id="paquetes" [(ngModel)]="paquetes" value="1" required min="1"
+            oninput="this.value =!!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null">
+    </div>
+    <button type="submit" (click)="aniadir()">Añadir al cajón</button>
 </div>

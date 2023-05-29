@@ -37,16 +37,28 @@ export class FirestoreService {
     setDoc(neveraRef, neve, { merge: true });
   }
 
-  /*Sube un producto a firestore*/
+  /*Sube un productoAdmin a firestore*/
   subirProductoAdmin(produ: any) {
     const productoRef = doc(this.db, 'productosAdmin', produ.idProducto);
     setDoc(productoRef, produ, { merge: true });
   }
 
-  /*Sube un producto a firestore*/
+  /*Sube un productoFam a firestore*/
   subirProductoFam(produ: any) {
     const productoRef = doc(this.db, 'productosFam', produ.idProducto);
     setDoc(productoRef, produ, { merge: true });
+  }
+
+  /*Sube un producto a firestore*/
+  subirProducto(prod: any) {
+    const productoRef = doc(this.db, 'productos', prod.idProducto +"-"+prod.idCajon);
+    setDoc(productoRef, prod, { merge: true });
+  }
+
+  /*Sube un cajón a firestore*/
+  subirCajon(caj: any) {
+    const cajonRef = doc(this.db, 'cajones', caj.idCajon);
+    setDoc(cajonRef, caj, { merge: true });
   }
 
   async borraNevera(idNevera: string) {
@@ -110,14 +122,6 @@ export class FirestoreService {
     });
     return (cajones);
   }
-
-  /*Sube un cajón a firestore*/
-  subirCajon(caj: any) {
-    const cajonRef = doc(this.db, 'cajones', caj.idCajon);
-    setDoc(cajonRef, caj, { merge: true });
-  }
-
-
   /*Devuelve una promesa para recuperar los productos de una familia*/
   async listarProductos(fId: string) {
     let productos: DocumentData[] = [];

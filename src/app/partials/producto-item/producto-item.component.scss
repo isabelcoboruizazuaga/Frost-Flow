@@ -8,7 +8,7 @@
     // div{
     //     @include flex(column);
     // }
-    .cadu{
+    .cadu, .paquetes{
         @include flex(column);
 
         .cadu-picker{

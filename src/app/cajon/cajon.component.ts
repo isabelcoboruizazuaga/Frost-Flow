@@ -30,7 +30,7 @@ export class CajonComponent {
   }
 
   nuevoProducto() {
-    this.miRouter.navigate(['productos']);
+    this.miRouter.navigate(['productos', this.id]);
 };
 
   open(content: any) {
