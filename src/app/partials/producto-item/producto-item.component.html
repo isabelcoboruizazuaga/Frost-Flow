@@ -32,5 +32,27 @@
             oninput="this.value =!!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null">
     </div>
     <button type="submit" (click)="aniadir()">Añadir al cajón</button>
-    <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="borrar()" (click)="$event.stopPropagation()" *ngIf="this.producto.idFamilia">
+    <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="open(content)" (click)="$event.stopPropagation()" *ngIf="this.producto.idFamilia">
 </div>
+
+
+
+<!--Modal de confirmación de borrado-->
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Borrar {{producto.nombreProducto}}</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<p>Esta acción no se puede deshacer, perderá todos los productos con estos datos</p>
+                <p>¿Desea continuar?</p>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-danger" (click)="modal.dismiss()">Cancelar</button>
+		<button type="button" class="btn btn-success" (click)="modal.close('borrar')">Borrar</button>
+	</div>
+</ng-template>

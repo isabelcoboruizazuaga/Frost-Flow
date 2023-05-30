@@ -61,6 +61,31 @@ export class FirestoreService {
     });
     return exito;
   }
+  /*Borra un productoFam en firestore */
+  async borraProductoFam(pId: string) {
+    let exito = false;
+
+    //Elimino el prod familia
+    await deleteDoc(doc(this.db, "productosFam", pId)).then(() => {
+      //Elimino todos los produzcos que salgan de él
+      this.borraProductosConIDFam(pId).then(() => {
+        //Elimino su imagen
+        if (this.borrarImagen('productos/' + pId) == true) {
+          exito = true
+        }
+      })
+    });
+    return exito;
+  }
+
+  /*Borra todos los prodictos que tengan el mismo id fe producto familia */
+  async borraProductosConIDFam(pfId: string) {
+    const q = query(collection(this.db, "productos"), where("idProductoFam", "==", pfId));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((producto) => {
+      this.borraProducto(producto.data()['idProducto']);
+    });
+  }
 
   /*Borrar imagen*/
   borrarImagen(referencia: string) {

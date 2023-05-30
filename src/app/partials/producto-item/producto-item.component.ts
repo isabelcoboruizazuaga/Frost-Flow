@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ProductosFamComponent } from 'src/app/productos-fam/productos-fam.component';
 import { Producto } from 'src/app/shared/modelos/producto';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { v4 as uuidv4 } from 'uuid';
@@ -20,7 +22,7 @@ export class ProductoItemComponent {
 
   disabled=true;
 
-  constructor(public firestoreService: FirestoreService, private router: Router) {
+  constructor(public firestoreService: FirestoreService, private router: Router,public productosFam: ProductosFamComponent,private modalService: NgbModal) {
   }
 
   aniadir() {
@@ -56,9 +58,18 @@ export class ProductoItemComponent {
 
   borrar(){
     if(this.producto.idFamilia){
-      this.disabled=false
-      // this.firestoreService
+      this.firestoreService.borraProductoFam(this.producto.idProducto);
+      this.productosFam.actualizarLista();
     }
   }
+
+  open(content: any) {
+		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      if (result === 'borrar') {        
+        this.borrar()
+      }
+    })
+	}
+
 
 }

@@ -10,6 +10,27 @@
     <img src="/assets/icons/add.png" class="icon" alt="image" (click)="sumarPaquete()" (click)="$event.stopPropagation()">
     <img src="/assets/icons/remove.png" class="icon" alt="image" (click)="restarPaquete()" (click)="$event.stopPropagation()">
     <!-- <img src="/assets/icons/edit.png" class="icon" alt="image" (click)="editar()" (click)="$event.stopPropagation()"> -->
-    <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="borrar()" (click)="$event.stopPropagation()">
+    <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="open(content)" (click)="$event.stopPropagation()">
 
 </div>
+
+
+<!--Modal de confirmación de borrado-->
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Borrar {{producto.nombreProducto}}</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<p>Esta acción no se puede deshacer, se borrará el producto por completo del cajón</p>
+                <p>¿Desea continuar?</p>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-danger" (click)="modal.dismiss()">Cancelar</button>
+		<button type="button" class="btn btn-success" (click)="modal.close('borrar')">Borrar</button>
+	</div>
+</ng-template>

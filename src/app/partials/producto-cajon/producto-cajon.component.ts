@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CajonComponent } from 'src/app/cajon/cajon.component';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 
@@ -12,16 +13,14 @@ export class ProductoCajonComponent {
   @Input() idCajon: any;
 
   
-  constructor(public firestoreService: FirestoreService,private cajonComponent: CajonComponent) {
+  constructor(public firestoreService: FirestoreService,private cajonComponent: CajonComponent,private modalService: NgbModal) {
   }
   
   ngOnInit() {
     let str = JSON.stringify( this.producto);
-    console.log(str);
   }
 
   editar() {
-
     alert("editado");
   }
   borrar() {
@@ -51,4 +50,13 @@ export class ProductoCajonComponent {
       alert("No puedes eliminar más paquetes!")
     }
   }
+  
+
+  open(content: any) {
+		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      if (result === 'borrar') {        
+        this.borrar()
+      }
+    })
+	}
 }
