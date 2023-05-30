@@ -2,10 +2,7 @@ import { Injectable } from '@angular/core';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, Auth, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
 import { DocumentData, Firestore, collection, deleteDoc, doc, getDoc, getDocs, getFirestore, query, setDoc, updateDoc, where } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { Usuario } from '../modelos/usuario';
-import { Familia } from '../modelos/familia';
-import { v4 as uuidv4 } from 'uuid';
-import { getDownloadURL, getStorage, ref, uploadBytes } from '@angular/fire/storage';
+import { deleteObject, getStorage, ref, } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -55,6 +52,27 @@ export class FirestoreService {
     setDoc(productoRef, prod, { merge: true });
   }
 
+  /*Borra un producto*/
+  async borraProducto(idProducto: string) {
+    let exito = false;
+
+    await deleteDoc(doc(this.db, "productos", idProducto)).then(() => {
+      exito = true
+    });
+    return exito;
+  }
+
+  /*Borrar imagen*/
+  borrarImagen(referencia: string) {
+    let exito = false;
+    let refe = ref(this.storage, referencia);
+    deleteObject(refe).then(() => {
+      exito = true;
+    }).catch((error) => {
+      exito = false;
+    });
+    return exito;
+  }
   /*Devuelve una promesa para comprobar si un producto está ya en el cajón*/
   async productoExiste(pfId: string, cId: string, caducicad: any, cantidad: any) {
     let productos: DocumentData[] = [];
@@ -164,18 +182,18 @@ export class FirestoreService {
     return (productos);
   }
 
- /*Devuelve una promesa para recuperar los productos de unn cajón*/
- async listarProductos(cId: string) {
-  let productos: DocumentData[] = [];
-  const q = query(collection(this.db, "productos"), where("idCajon", "==", cId));
+  /*Devuelve una promesa para recuperar los productos de unn cajón*/
+  async listarProductos(cId: string) {
+    let productos: DocumentData[] = [];
+    const q = query(collection(this.db, "productos"), where("idCajon", "==", cId));
 
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    productos.push(doc.data());
-  });
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      productos.push(doc.data());
+    });
 
-  return (productos);
-}
+    return (productos);
+  }
 
   /*Devuelve una promesa para recuperar una nevera en concreto de una familia*/
   async recuperarNevera(nId: string) {

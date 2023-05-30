@@ -25,7 +25,8 @@ export class ProductoCajonComponent {
     alert("editado");
   }
   borrar() {
-    alert("Borrado");
+    this.firestoreService.borraProducto(this.producto.idProducto);
+    this.cajonComponent.actualizarLista();
   }
 
   sumarPaquete(){

@@ -32,4 +32,5 @@
             oninput="this.value =!!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null">
     </div>
     <button type="submit" (click)="aniadir()">Añadir al cajón</button>
+    <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="borrar()" (click)="$event.stopPropagation()" *ngIf="this.producto.idFamilia">
 </div>

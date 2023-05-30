@@ -18,6 +18,8 @@ export class ProductoItemComponent {
   cantidad: any = 1;
   descCantidad: any = "kilogramos";
 
+  disabled=true;
+
   constructor(public firestoreService: FirestoreService, private router: Router) {
   }
 
@@ -50,8 +52,10 @@ export class ProductoItemComponent {
       }
 
     )
+  }
 
-
+  borrar(){
+    
   }
 
 }
