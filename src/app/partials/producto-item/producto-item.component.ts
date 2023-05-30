@@ -55,7 +55,10 @@ export class ProductoItemComponent {
   }
 
   borrar(){
-    
+    if(this.producto.idFamilia){
+      this.disabled=false
+      // this.firestoreService
+    }
   }
 
 }
