@@ -1,14 +1,14 @@
 <div class="prod">
     
-    <img src="/assets/images/productos/lechuga.jpg" class="fotoProd" alt="image" >
-    <p>x3</p>
+    <img src="{{producto.fotoProducto}}" class="fotoProd" alt="image" >
+    <p>{{producto.paquetes}}</p>
     <div>
         <input type="text" class="title" value="{{producto.nombreProducto}}">
-        <input type="text" class="title" value="01/01/2024">
+        <input type="text" class="title" value="{{producto.caducidad.day+'/'+producto.caducidad.month+'/'+producto.caducidad.year}}">
     </div>
-    <p>0,5 kg</p>    
-    <img src="/assets/icons/add.png" class="icon" alt="image" (click)="editar()" (click)="$event.stopPropagation()">
-    <img src="/assets/icons/remove.png" class="icon" alt="image" (click)="editar()" (click)="$event.stopPropagation()">
+    <p>{{producto.cantidad[0]+ " "+producto.cantidad[1]}}</p>    
+    <img src="/assets/icons/add.png" class="icon" alt="image" (click)="sumarPaquete()" (click)="$event.stopPropagation()">
+    <img src="/assets/icons/remove.png" class="icon" alt="image" (click)="restarPaquete()" (click)="$event.stopPropagation()">
     <img src="/assets/icons/edit.png" class="icon" alt="image" (click)="editar()" (click)="$event.stopPropagation()">
     <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="borrar()" (click)="$event.stopPropagation()">
 
