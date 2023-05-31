@@ -131,9 +131,12 @@ export class FirestoreService {
   async borraNevera(idNevera: string) {
     let exito = false;
 
-    await deleteDoc(doc(this.db, "neveras", idNevera)).then(() =>
-      exito = true
-    );
+    await deleteDoc(doc(this.db, "neveras", idNevera)).then(() =>{
+      //Elimino su imagen
+      if (this.borrarImagen('neveras/' + idNevera) == true) {
+        exito = true
+      }
+  });
     return exito;
   }
 
@@ -248,9 +251,12 @@ export class FirestoreService {
   async borraCajon(cId: string) {
     let exito = false;
 
-    await deleteDoc(doc(this.db, "cajones", cId)).then(() =>
-      exito = true
-    );
+    await deleteDoc(doc(this.db, "cajones", cId)).then(() =>{
+      //Elimino su imagen
+      if (this.borrarImagen('cajones/' + cId) == true) {
+        exito = true
+      }
+  })
     return exito;
   }
 
