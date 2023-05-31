@@ -15,14 +15,28 @@ export class ProductoItemComponent {
   @Input() producto: any;
   @Input() idCajon: any;
 
-  caducidad: any = ""
+  caducidad: any = {
+    day: "",
+    month: "",
+    year: "",
+  }
   paquetes: any = 1;
-  cantidad: any = 1;
+  cantidad: any = 0.5;
   descCantidad: any = "kilogramos";
 
-  disabled=true;
+  disabled = true;
 
-  constructor(public firestoreService: FirestoreService, private router: Router,public productosFam: ProductosFamComponent,private modalService: NgbModal) {
+  constructor(public firestoreService: FirestoreService, private router: Router, public productosFam: ProductosFamComponent, private modalService: NgbModal) {
+    const fechaHoy = new Date();
+    const anio = fechaHoy.getFullYear();
+    const dia = fechaHoy.getDate();
+    const mes = fechaHoy.getMonth() + 1;
+
+    this.caducidad = {
+      day: dia,
+      month: mes,
+      year: anio,
+    }
   }
 
   aniadir() {
@@ -32,9 +46,9 @@ export class ProductoItemComponent {
     let pfId = this.producto.idProducto;
     let cId = this.idCajon
 
-    let cant:[number,string]=[this.cantidad, this.descCantidad];
+    let cant: [number, string] = [this.cantidad, this.descCantidad];
 
-    this.firestoreService.productoExiste(pfId, cId, this.caducidad,cant).then(
+    this.firestoreService.productoExiste(pfId, cId, this.caducidad, cant).then(
       productos => {
         if (productos.length == 0) {
           //Se añade el producto a la bd
@@ -43,12 +57,12 @@ export class ProductoItemComponent {
           this.firestoreService.subirProducto(prod);
 
           this.router.navigate(['/cajon', this.idCajon]);
-        }else{
+        } else {
           //Como el producto existe solo se añade un paquete
-          let prod= productos[0];
-          prod["paquetes"]= prod["paquetes"]+this.paquetes;
+          let prod = productos[0];
+          prod["paquetes"] = prod["paquetes"] + this.paquetes;
           this.firestoreService.subirProducto(prod)
-          
+
           this.router.navigate(['/cajon', this.idCajon]);
         }
       }
@@ -56,20 +70,20 @@ export class ProductoItemComponent {
     )
   }
 
-  borrar(){
-    if(this.producto.idFamilia){
+  borrar() {
+    if (this.producto.idFamilia) {
       this.firestoreService.borraProductoFam(this.producto.idProducto);
       this.productosFam.actualizarLista();
     }
   }
 
   open(content: any) {
-		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-      if (result === 'borrar') {        
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      if (result === 'borrar') {
         this.borrar()
       }
     })
-	}
+  }
 
 
 }

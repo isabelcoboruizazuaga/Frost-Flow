@@ -30,6 +30,7 @@ import { CajonItemAddComponent } from './partials/cajon-item-add/cajon-item-add.
 import { AddProductosAdminComponent } from './add-productos-admin/add-productos-admin.component';
 import { ProductoItemComponent } from './partials/producto-item/producto-item.component';
 import { NgbDateCustomParserFormatter } from './shared/ngb-date-custom-parser-formatter';
+import { NumerosdecimalesDirective } from './shared/directivas/numerosdecimales.directive';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { NgbDateCustomParserFormatter } from './shared/ngb-date-custom-parser-fo
     InicioSesionComponent,
     CajonItemAddComponent,
     AddProductosAdminComponent,
-    ProductoItemComponent
+    ProductoItemComponent,
+    NumerosdecimalesDirective
   ],
   imports: [
     BrowserModule,
