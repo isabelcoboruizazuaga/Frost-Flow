@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { Usuario } from '../modelos/usuario';
 import { Familia } from '../modelos/familia';
 import { v4 as uuidv4 } from 'uuid';
-import { getStorage, ref, uploadBytes } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'

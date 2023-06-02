@@ -28,6 +28,18 @@ export class FirestoreService {
     }
   }
 
+  /*Devuelve la familia de un usuario */
+  async getFamiliaUsuario(uid: string) {
+    const docRef = doc(this.db, "usuarios", uid);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      return (docSnap.data()["familiaId"]);
+    } else {
+      return "";
+    }
+  }
+
   /*Sube una nevera a firestore*/
   subirNevera(neve: any) {
     const neveraRef = doc(this.db, 'neveras', neve.idNevera);
@@ -131,12 +143,12 @@ export class FirestoreService {
   async borraNevera(idNevera: string) {
     let exito = false;
 
-    await deleteDoc(doc(this.db, "neveras", idNevera)).then(() =>{
+    await deleteDoc(doc(this.db, "neveras", idNevera)).then(() => {
       //Elimino su imagen
       if (this.borrarImagen('neveras/' + idNevera) == true) {
         exito = true
       }
-  });
+    });
     return exito;
   }
 
@@ -174,8 +186,6 @@ export class FirestoreService {
 
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-      //console.log(doc.id, " => ", doc.data());
-
       neveras.push(doc.data());
     });
     return (neveras);
@@ -251,12 +261,12 @@ export class FirestoreService {
   async borraCajon(cId: string) {
     let exito = false;
 
-    await deleteDoc(doc(this.db, "cajones", cId)).then(() =>{
+    await deleteDoc(doc(this.db, "cajones", cId)).then(() => {
       //Elimino su imagen
       if (this.borrarImagen('cajones/' + cId) == true) {
         exito = true
       }
-  })
+    })
     return exito;
   }
 
@@ -273,7 +283,60 @@ export class FirestoreService {
     return exito;
   }
 
+  /*Cambia a un usuario de familia */
+  async cambiaFamiliaUsuario(uId: string, fId: string, nuevaFamilia: string,moverNeveras:boolean) {
+    let exito = false;
+    const referencia = doc(this.db, "usuarios", uId);
 
+    //Cambiamos la familia en el objeto usuario
+    await updateDoc(referencia, {
+      "familiaId": nuevaFamilia
+    }).then(() => {
+      if (moverNeveras==true) {
+        //Actualizamos las neveras de la familia para que pertenezcan a la nueva
+        this.cambiarFamiliaNeveras(fId, nuevaFamilia).then((exit) => (exit == 0) ? exito = true : exito = false)
+      }
+    });
+    return exito;
+  }
 
+  /*Devuelve una promesa para recuperar las neveras de una familia*/
+  async cambiarFamiliaNeveras(fId: string, nFid: string) {
+    let exito = 0;
+    const q = query(collection(this.db, "neveras"), where("idFamilia", "==", fId));
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      this.editarFamiliaNevera(doc.data(), nFid).then((exit) => exito = exito + exit)
+    });
+    /*Si exito es 0 ha ido bien, si es 1 o 2 algo ha fallado*/
+    return exito;
+  }
+
+  /* Cambia el id de familia de una nevera */
+  async editarFamiliaNevera(nevera: any, nFId: string) {
+    let exito = 1;
+    const referencia = doc(this.db, "neveras", nevera.idNevera);
+
+    //Cambiamos la familia en el objeto nevera
+    await updateDoc(referencia, {
+      "idFamilia": nFId
+    }).then(() => {
+      exito = 0
+    });
+    return exito;
+  }
+
+  /*Determina si una familia existe en la base de datos */
+  async familiaExiste(fId: string) {
+    const referencia = doc(this.db, "familias", fId);
+
+    const docSnap = await getDoc(referencia);
+    if (docSnap.exists()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 }

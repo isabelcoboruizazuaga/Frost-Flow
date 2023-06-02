@@ -23,7 +23,46 @@
     </div>
     <div class="cambio">
         <p>Cambiar de familia</p>
-        <input type="text" />
-        <button>Nueva familia</button>
+        <input type="text" [(ngModel)]="nuevaFamilia" required/>
+        <button (click)="cambiarFamilia()">Nueva familia</button>
     </div>
 </section>
+
+<!--Modal de confirmación de borrado-->
+<ng-template #modal_cambio let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal_cambio">Cambiar de familia</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<p>Cambiarás a la familia seleccionada, si no hay nadie más en la familia actual no podrá volver a ella.</p>
+                <p>¿Desea mover sus neveras y productos a la nueva nevera? Si lo hace se borrarán de esta.</p>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-danger" (click)="modal.close('mover')">Mover mis neveras</button>
+		<button type="button" class="btn btn-outline-danger" (click)="modal.close('no_mover')">No mover mis neveras</button>
+		<button type="button" class="btn btn-outline-success" (click)="modal.dismiss()">Cancelar</button>
+	</div>
+</ng-template>
+
+<!--Modal de aviso-->
+<ng-template #modal_no_existe let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal_no_existe">Error</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<p>La familia introducida no existe.</p>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-success" (click)="modal.dismiss()">Aceptar</button>
+	</div>
+</ng-template>

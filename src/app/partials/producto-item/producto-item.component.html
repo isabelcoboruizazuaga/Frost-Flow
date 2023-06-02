@@ -1,7 +1,7 @@
 <div class="produ">
     <img src="{{producto.fotoProducto}}" class="fotoProd" alt="image">
     <h2>{{producto.nombreProducto}}</h2>
-    <input type="number" name="cantidad1" id="cantidad1"[(ngModel)]="cantidad" required min="0.1" appNumerosdecimales>
+    <input type="number" name="cantidad1" id="cantidad1"[(ngModel)]="cantidad" required min="0.1" step="0.1" appNumerosdecimales>
     <select name="select" [(ngModel)]="descCantidad">
         <option value="kilogramos" selected>Kilogramos</option>
         <option value="gramos">Gramos</option>
