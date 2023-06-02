@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, TemplateRef, ViewChild } from '@a
 import { FirestoreService } from '../shared/services/firestore.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../shared/services/auth.service';
+import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from '@techiediaries/ngx-qrcode';
 
 @Component({
   selector: 'app-familia',
@@ -15,8 +16,12 @@ export class FamiliaComponent {
   nuevaFamilia = "";
   uid = "";
   fId = "";
-  usuarios:any;
+  usuarios: any;
   modalReference: any;
+
+  elementType = NgxQrcodeElementTypes.URL;
+  correctionLevel = NgxQrcodeErrorCorrectionLevels.HIGH;
+  value = '';
 
   constructor(public authService: AuthService, public firestoreService: FirestoreService, private modalService: NgbModal) {
 
@@ -28,6 +33,7 @@ export class FamiliaComponent {
     //Obtenemos la familia a la que pertenece ahora
     this.firestoreService.getFamiliaUsuario(this.uid).then((fId) => {
       this.fId = fId
+      this.value = this.fId;
       this.actualizarLista();
     });
   }
@@ -43,11 +49,13 @@ export class FamiliaComponent {
             if (result === 'mover') {
               //La cambiamos moviendo las neveras y productos
               this.firestoreService.cambiaFamiliaUsuario(this.uid, this.fId, this.nuevaFamilia, true);
+              this.actualizarFam();             
               this.actualizarLista();
             } else {
               if (result == 'no_mover') {
                 //La cambiamos sin mover las neveras y productos
                 this.firestoreService.cambiaFamiliaUsuario(this.uid, this.fId, this.nuevaFamilia, false);
+                this.actualizarFam();
                 this.actualizarLista();
               }
             }
@@ -68,8 +76,18 @@ export class FamiliaComponent {
     }
   }
 
-  
+
   actualizarLista() {
+    console.log("asdsdasdasd")
     this.firestoreService.listarFamiliares(this.fId).then(usuarios => this.usuarios = usuarios);
+  }
+
+  actualizarFam(){
+    this.fId = this.nuevaFamilia;
+    this.value = this.fId;
+    this.nuevaFamilia="";
+
+    
+    setTimeout(()=>{this.actualizarLista()}, 1000);
   }
 }

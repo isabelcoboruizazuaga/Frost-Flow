@@ -2,7 +2,13 @@
     <h1>Familia</h1>
     <div class="fam">
         <div class="codigo">
-            <img src="/assets/images/qr.png">
+            <ngx-qrcode
+              [elementType]="elementType"
+              [errorCorrectionLevel]="correctionLevel"
+              [value]="value"
+              alt="Demo QR Code"
+              cssClass="bshadow" [width]=500></ngx-qrcode>
+            
             <p>{{fId}}</p>
         </div>
         <div class="familiares">

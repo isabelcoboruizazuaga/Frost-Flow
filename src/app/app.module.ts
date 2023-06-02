@@ -26,6 +26,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { SesionRegistroComponent } from './sesion-registro/sesion-registro.component';
 import { InicioSesionComponent } from './partials/inicio-sesion/inicio-sesion.component';
 import { FormsModule } from '@angular/forms';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { CajonItemAddComponent } from './partials/cajon-item-add/cajon-item-add.component';
 import { AddProductosAdminComponent } from './add-productos-admin/add-productos-admin.component';
 import { ProductoItemComponent } from './partials/producto-item/producto-item.component';
@@ -58,6 +59,7 @@ import { NumerosdecimalesDirective } from './shared/directivas/numerosdecimales.
     NumerosdecimalesDirective
   ],
   imports: [
+    NgxQRCodeModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
