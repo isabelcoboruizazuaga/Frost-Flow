@@ -3,22 +3,13 @@
     <div class="fam">
         <div class="codigo">
             <img src="/assets/images/qr.png">
-            <p>código id familia</p>
+            <p>{{fId}}</p>
         </div>
         <div class="familiares">
-            <div class="persona">
+            <div class="persona" *ngFor="let usuario of usuarios">
                 <img src="/assets/icons/user.png">
-                <h2>Pepe</h2>
+                <h2>{{usuario.nombre}}</h2>
             </div>
-            <div class="persona">
-                <img src="/assets/icons/user.png">
-                <h2>Pepe</h2>
-            </div>
-            <div class="persona">
-                <img src="/assets/icons/user.png">
-                <h2>Pepe</h2>
-            </div>
-
         </div>
     </div>
     <div class="cambio">

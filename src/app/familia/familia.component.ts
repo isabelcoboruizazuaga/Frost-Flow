@@ -15,6 +15,7 @@ export class FamiliaComponent {
   nuevaFamilia = "";
   uid = "";
   fId = "";
+  usuarios:any;
   modalReference: any;
 
   constructor(public authService: AuthService, public firestoreService: FirestoreService, private modalService: NgbModal) {
@@ -25,7 +26,10 @@ export class FamiliaComponent {
     let usuario = this.authService.getUsuarioActual();
     this.uid = usuario.uid;
     //Obtenemos la familia a la que pertenece ahora
-    this.firestoreService.getFamiliaUsuario(this.uid).then((fId) => this.fId = fId);
+    this.firestoreService.getFamiliaUsuario(this.uid).then((fId) => {
+      this.fId = fId
+      this.actualizarLista();
+    });
   }
 
 
@@ -39,10 +43,12 @@ export class FamiliaComponent {
             if (result === 'mover') {
               //La cambiamos moviendo las neveras y productos
               this.firestoreService.cambiaFamiliaUsuario(this.uid, this.fId, this.nuevaFamilia, true);
+              this.actualizarLista();
             } else {
               if (result == 'no_mover') {
                 //La cambiamos sin mover las neveras y productos
                 this.firestoreService.cambiaFamiliaUsuario(this.uid, this.fId, this.nuevaFamilia, false);
+                this.actualizarLista();
               }
             }
           }, (reason: any) => { });
@@ -60,5 +66,10 @@ export class FamiliaComponent {
         }
       })
     }
+  }
+
+  
+  actualizarLista() {
+    this.firestoreService.listarFamiliares(this.fId).then(usuarios => this.usuarios = usuarios);
   }
 }

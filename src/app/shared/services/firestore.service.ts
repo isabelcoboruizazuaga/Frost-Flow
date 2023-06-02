@@ -233,6 +233,19 @@ export class FirestoreService {
     return (productos);
   }
 
+  /*Devuelve una promesa para recuperar los miembros de una familia*/
+  async listarFamiliares(fId: string) {
+    let usuarios: DocumentData[] = [];
+    const q = query(collection(this.db, "usuarios"), where("familiaId", "==", fId));
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      usuarios.push(doc.data());
+    });
+
+    return (usuarios);
+  }
+
   /*Devuelve una promesa para recuperar una nevera en concreto de una familia*/
   async recuperarNevera(nId: string) {
     const docRef = doc(this.db, "neveras", nId);
