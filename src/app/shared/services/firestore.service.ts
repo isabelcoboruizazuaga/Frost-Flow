@@ -284,7 +284,7 @@ export class FirestoreService {
   }
 
   /*Cambia a un usuario de familia */
-  async cambiaFamiliaUsuario(uId: string, fId: string, nuevaFamilia: string,moverNeveras:boolean) {
+  async cambiaFamiliaUsuario(uId: string, fId: string, nuevaFamilia: string, moverNeveras: boolean) {
     let exito = false;
     const referencia = doc(this.db, "usuarios", uId);
 
@@ -292,15 +292,19 @@ export class FirestoreService {
     await updateDoc(referencia, {
       "familiaId": nuevaFamilia
     }).then(() => {
-      if (moverNeveras==true) {
-        //Actualizamos las neveras de la familia para que pertenezcan a la nueva
-        this.cambiarFamiliaNeveras(fId, nuevaFamilia).then((exit) => (exit == 0) ? exito = true : exito = false)
+      if (moverNeveras == true) {
+        //Actualizamos los productos de la familia para que pertenezcan a la nueva
+        this.cambiarFamiliaProductos(fId, nuevaFamilia).then((exit) => {
+          (exit == 0) ? exito = true : exito = false;
+          //Actualizamos las neveras de la familia para que pertenezcan a la nueva
+          this.cambiarFamiliaNeveras(fId, nuevaFamilia).then((exit) => (exit == 0) ? exito = true : exito = false)
+        })
       }
     });
     return exito;
   }
 
-  /*Devuelve una promesa para recuperar las neveras de una familia*/
+  /*Devuelve una promesa para recuperar las neveras de una familia y cambia sus id de familia*/
   async cambiarFamiliaNeveras(fId: string, nFid: string) {
     let exito = 0;
     const q = query(collection(this.db, "neveras"), where("idFamilia", "==", fId));
@@ -326,6 +330,34 @@ export class FirestoreService {
     });
     return exito;
   }
+
+  /*Devuelve una promesa para recuperar los prductos de una familia y cambia sus id de familia*/
+  async cambiarFamiliaProductos(fId: string, nFid: string) {
+    let exito = 0;
+    const q = query(collection(this.db, "productosFam"), where("idFamilia", "==", fId));
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      this.editarFamiliaProducto(doc.data(), nFid).then((exit) => exito = exito + exit)
+    });
+    /*Si exito es 0 ha ido bien, si es 1 o 2 algo ha fallado*/
+    return exito;
+  }
+
+  /* Cambia el id de familia de un producto */
+  async editarFamiliaProducto(producto: any, nFId: string) {
+    let exito = 1;
+    const referencia = doc(this.db, "productosFam", producto.idProducto);
+
+    //Cambiamos la familia en el objeto nevera
+    await updateDoc(referencia, {
+      "idFamilia": nFId
+    }).then(() => {
+      exito = 0
+    });
+    return exito;
+  }
+
 
   /*Determina si una familia existe en la base de datos */
   async familiaExiste(fId: string) {
