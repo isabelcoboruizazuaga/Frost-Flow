@@ -11,10 +11,12 @@
     <div class="div2 overflow-auto">
         <div class="ordenar">
             <p>ordenar por...</p>
-            <select name="orden">
-                <option value="fecha" selected>Fecha de caducidad</option>
-                <option value="nombre">Nombre</option>
-                <option value="cantidad">Cantidad</option>
+            <select name="orden" [(ngModel)]="orden"(ngModelChange)="onChange($event)">
+                <option value="caducidad" selected>Fecha de caducidad</option>
+                <option value="nombreProducto_asc">Nombre Ascendente</option>
+                <option value="nombreProducto_desc">Nombre Descendente</option>
+                <option value="paquetes_asc">Cantidad ascendente</option>
+                <option value="paquetes_desc">Cantidad descendente</option>
             </select>
         </div>
         <div class="productos">

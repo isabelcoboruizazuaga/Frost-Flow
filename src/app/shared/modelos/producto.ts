@@ -1,3 +1,5 @@
+import { Timestamp } from "@angular/fire/firestore";
+
 export class Producto {
     idProducto: string;
     idProductoFam: string;
@@ -7,10 +9,10 @@ export class Producto {
     fotoProducto: string;
 
     cantidad:[number,string];
-    caducidad:Date;
+    caducidad:Timestamp;
     paquetes:number;
 
-    constructor (idProducto:string,idCajon: string, idProductoFam: string, nombreProducto: string,fotoProducto:string="", cantidad:[number,string],caducidad:Date, paquetes:number){
+    constructor (idProducto:string,idCajon: string, idProductoFam: string, nombreProducto: string,fotoProducto:string="", cantidad:[number,string],caducidad:Timestamp, paquetes:number){
         this.idProducto=idProducto;
         this.idCajon=idCajon;
         this.idProductoFam=idProductoFam;

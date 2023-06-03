@@ -11,13 +11,16 @@ import { FirestoreService } from 'src/app/shared/services/firestore.service';
 export class ProductoCajonComponent {
   @Input() producto: any;
   @Input() idCajon: any;
+  caducidad: string = "";
 
-  
-  constructor(public firestoreService: FirestoreService,private cajonComponent: CajonComponent,private modalService: NgbModal) {
+
+  constructor(public firestoreService: FirestoreService, private cajonComponent: CajonComponent, private modalService: NgbModal) {
   }
-  
+
   ngOnInit() {
-    let str = JSON.stringify( this.producto);
+    let cadu = this.producto.caducidad.toDate();
+    let month:number= cadu.getMonth() + 1;
+    this.caducidad = cadu.getDate() + "/" + month + "/" + cadu.getFullYear();
   }
 
   editar() {
@@ -28,35 +31,35 @@ export class ProductoCajonComponent {
     this.cajonComponent.actualizarLista();
   }
 
-  sumarPaquete(){
+  sumarPaquete() {
     //Se le suman paquetes al producto
-    let prod= this.producto;
-    prod.paquetes=prod.paquetes+1;
+    let prod = this.producto;
+    prod.paquetes = prod.paquetes + 1;
 
-     this.firestoreService.subirProducto(prod);
-     this.cajonComponent.actualizarLista();
+    this.firestoreService.subirProducto(prod);
+    this.cajonComponent.actualizarLista();
   }
 
-  restarPaquete(){
+  restarPaquete() {
     //Se le restan paquetes al producto
-    let prod= this.producto;
-    if(prod.paquetes>1){
+    let prod = this.producto;
+    if (prod.paquetes > 1) {
 
-      prod.paquetes=prod.paquetes-1;
+      prod.paquetes = prod.paquetes - 1;
 
       this.firestoreService.subirProducto(prod);
       this.cajonComponent.actualizarLista();
-    }else{
+    } else {
       alert("No puedes eliminar más paquetes!")
     }
   }
-  
+
 
   open(content: any) {
-		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-      if (result === 'borrar') {        
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      if (result === 'borrar') {
         this.borrar()
       }
     })
-	}
+  }
 }

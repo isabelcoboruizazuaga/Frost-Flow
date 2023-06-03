@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Timestamp } from '@angular/fire/firestore';
+import { getStorage } from '@angular/fire/storage';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProductosFamComponent } from 'src/app/productos-fam/productos-fam.component';
@@ -47,12 +49,13 @@ export class ProductoItemComponent {
     let cId = this.idCajon
 
     let cant: [number, string] = [this.cantidad, this.descCantidad];
+    let caducidad= Timestamp.fromDate(new Date(this.caducidad.year, this.caducidad.month, this.caducidad.day));
 
-    this.firestoreService.productoExiste(pfId, cId, this.caducidad, cant).then(
+    this.firestoreService.productoExiste(pfId, cId, caducidad, cant).then(
       productos => {
         if (productos.length == 0) {
           //Se añade el producto a la bd
-          let producto = new Producto(pId, cId, pfId, this.producto.nombreProducto, this.producto.fotoProducto, cant, this.caducidad, this.paquetes);
+          let producto = new Producto(pId, cId, pfId, this.producto.nombreProducto, this.producto.fotoProducto, cant, caducidad, this.paquetes);
           let prod = Object.assign({}, producto);
           this.firestoreService.subirProducto(prod);
 

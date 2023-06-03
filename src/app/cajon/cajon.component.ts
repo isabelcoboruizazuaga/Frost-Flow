@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FirestoreService } from '../shared/services/firestore.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { OrderByDirection } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-cajon',
@@ -14,6 +15,9 @@ export class CajonComponent {
   nombreCajon: string = "";
   tipoCajon: string = "";
   productos: any;
+  orden: string = "caducidad"
+  campoOrden: string = "caducidad";
+  campoSentido: OrderByDirection = "desc"
 
   constructor(private router: ActivatedRoute, public miRouter: Router, public firestoreService: FirestoreService, private modalService: NgbModal) {
 
@@ -34,7 +38,7 @@ export class CajonComponent {
 
   nuevoProducto() {
     this.miRouter.navigate(['productos', this.id]);
-};
+  };
 
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-borrar' }).result.then((result) => {
@@ -57,7 +61,7 @@ export class CajonComponent {
         this.firestoreService.editaCajon(this.id, "nombreCajon", this.nombreCajon).then((exito) => {
           if (exito == true) {
             alert("editado");
-            this.nombre=this.nombreCajon;
+            this.nombre = this.nombreCajon;
           }
         })
       }
@@ -65,8 +69,36 @@ export class CajonComponent {
   }
 
   actualizarLista() {
-    this.firestoreService.listarProductos(this.id).then(productos => this.productos = productos)
+    console.log(this.orden)
+    switch (this.orden) {
+      case "caducidad":
+        this.campoOrden = "caducidad";
+        this.campoSentido = "asc";
+        break;
+      case "nombreProducto_asc":
+        this.campoOrden = "nombreProducto";
+        this.campoSentido = "asc";
+        break;
+      case "nombreProducto_desc":
+        this.campoOrden = "nombreProducto";
+        this.campoSentido = "desc";
+        break;
+      case "paquetes_asc":
+        this.campoOrden = "paquetes";
+        this.campoSentido = "asc";
+        break;
+      case "paquetes_desc":
+        this.campoOrden = "paquetes";
+        this.campoSentido = "desc";
+        break;
+      default:
+        break;
+    }
+    this.firestoreService.listarProductos(this.id, this.campoOrden, this.campoSentido).then(productos => this.productos = productos)
   }
 
+  onChange($event: any) {
+    this.actualizarLista();
+    }
 
 }

@@ -4,7 +4,7 @@
     <p>{{producto.paquetes}}</p>
     <div>
         <input type="text" class="title" value="{{producto.nombreProducto}}">
-        <input type="text" class="title" value="{{producto.caducidad.day+'/'+producto.caducidad.month+'/'+producto.caducidad.year}}">
+        <input type="text" class="title" value="{{caducidad}}">
     </div>
     <p>{{producto.cantidad[0]+ " "+producto.cantidad[1]}}</p>    
     <img src="/assets/icons/add.png" class="icon" alt="image" (click)="sumarPaquete()" (click)="$event.stopPropagation()">

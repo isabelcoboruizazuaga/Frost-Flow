@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, Auth, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
-import { DocumentData, Firestore, collection, deleteDoc, doc, getDoc, getDocs, getFirestore, query, setDoc, updateDoc, where } from '@angular/fire/firestore';
+import { Auth, getAuth } from '@angular/fire/auth';
+import { DocumentData, Firestore, OrderByDirection, collection, deleteDoc, doc, getDoc, getDocs, getFirestore, orderBy, query, setDoc, updateDoc, where } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { deleteObject, getStorage, ref, } from '@angular/fire/storage';
 
@@ -221,9 +221,10 @@ export class FirestoreService {
   }
 
   /*Devuelve una promesa para recuperar los productos de unn cajón*/
-  async listarProductos(cId: string) {
+  async listarProductos(cId: string,orden:string,sentido:OrderByDirection | undefined) {
     let productos: DocumentData[] = [];
-    const q = query(collection(this.db, "productos"), where("idCajon", "==", cId));
+    console.log(orden)
+    const q = query(collection(this.db, "productos"), where("idCajon", "==", cId),orderBy(orden,sentido));
 
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
