@@ -1,3 +1,5 @@
+@import '../../../scss/mixin';
+
 .cajon {
     width: 100%;
     display: grid;
@@ -19,5 +21,9 @@
         height: 100%;
         transform: rotate(15deg);
         margin-left: -4vw;
+
+        font-family: $titulo2;
+        font-weight: bold;
+        font-size: get-font(l);
     }
 }

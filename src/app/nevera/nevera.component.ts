@@ -14,6 +14,7 @@ export class NeveraComponent {
   idNevera: any;
   nevera:any;
   nombreNevera: string = '';
+  urlNevera: string = '';
   nombreCajon:string="";
   tipoCajon:string="";
   cajones = new Array();
@@ -27,6 +28,7 @@ export class NeveraComponent {
       this.firestoreService.recuperarNevera(this.idNevera).then((nevera)=>{
         if(nevera!=0){
           this.nombreNevera=nevera["nombreNevera"];
+          this.urlNevera=nevera["fotoNevera"];
         }
       })
     })

@@ -7,11 +7,11 @@
 				[attr.disabled]="disabled ? '' : null" (keyup.enter)="guardarCambios()" (focusout)="focusOutFunction()">
 		</div>
 		<div class="actions">
-			<div class="iconos " alt="image" (click)="editar()" (click)="$event.stopPropagation()">
+			<div class="contenedor " alt="image" (click)="editar()" (click)="$event.stopPropagation()">
 				<img class="icon img-bot" src="/assets/icons/edit.png">
 				<img class="img-top icon" src="/assets/icons/editing.png">
 			</div>
-			<div class="iconos " alt="image" (click)="open(content)" (click)="$event.stopPropagation()">
+			<div class="contenedor " alt="image" (click)="open(content)" (click)="$event.stopPropagation()">
 				<img class=" icon img-bot" src="/assets/icons/garbage.png">
 				<img class="icon img-top" src="/assets/icons/garbageFull.png">
 			</div>

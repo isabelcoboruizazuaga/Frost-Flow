@@ -70,23 +70,10 @@
       }
 
       /*Css para el cambio de imagen en hover*/
-      .iconos {
+      @extend %cambio-imagen-hover;
+      .contenedor{
         width: 5vw;
-        position: relative;
-        display: inline-block;
-
-        .img-top {
-          display: none;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 99;
-        } 
       }
-      .iconos:hover .img-top {
-        display: inline;
-      }
-
     }
   }
 }

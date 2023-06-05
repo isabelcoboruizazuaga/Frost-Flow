@@ -91,6 +91,29 @@
     color: black;
 }
 
+///Mixin de cambio de una imagen por otra al hacer hover
+///@example
+///     .div{
+///         @extend %cambio-imagen-hover;
+///     }
+%cambio-imagen-hover{
+    .contenedor {
+        position: relative;
+        display: inline-block;
+
+        .img-top {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 99;
+        } 
+      }
+      .contenedor:hover .img-top {
+        display: inline;
+      }
+
+}
 
 ///Mixin que cambia el color de una imagen al predeterminado
 ///@example

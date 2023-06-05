@@ -15,9 +15,13 @@
             position: fixed;
         }
 
-        img {
-            width: 40vw;
+        .foto_nevera {
+            max-width: 40vw;
+            min-width: 30vw;
+            min-height: 50vh;
+            max-height: 75vh;
             position: fixed;
+            margin-top: 5rem;
         }
     }
 

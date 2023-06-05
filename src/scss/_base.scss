@@ -23,13 +23,17 @@ body {
 }
 
 
-
-
 h1 {
     font-family: $titulo2;
     font-size: get-font(xl);
     color: black;
     text-shadow: -0.1rem -0.1rem 0rem white, .1rem .1rem 0rem white,textShadow(0.25, 6, get-color(secondary));
+}
+
+/*Diseño de los modales*/
+.modal-title{
+    font-size: get-font(l);
+    font-family: $titulo2;
 }
 
 /*
