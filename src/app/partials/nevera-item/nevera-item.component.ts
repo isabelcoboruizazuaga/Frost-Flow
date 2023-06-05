@@ -47,17 +47,12 @@ export class NeveraItemComponent {
       let nombre=this.inputNombre.value;
    this.firestoreService.editaNevera(this.nevera.idNevera,"nombreNevera",this.inputNombre.value).then((exito)=>{
     if (exito==true){
-      alert("editado");
       this.inputNombre.value=nombre;
     }
    })
     
     this.inputNombre.blur()
     this.disabled=true;
-  }
-
-  borrar() {
-    alert("Borrado");
   }
 
   focusOutFunction(){
@@ -70,7 +65,6 @@ export class NeveraItemComponent {
       if (result === 'borrar') {
         this.firestoreService.borraNevera(this.nevera.idNevera).then((exito)=>{
           if (exito==true){
-            alert("borrado");
             this.neverasComponent.actualizarLista();
           }
          })

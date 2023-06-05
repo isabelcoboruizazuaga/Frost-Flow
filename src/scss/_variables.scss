@@ -1,23 +1,31 @@
 ////Proyecto: TFG DAW Gestión de congeladores
 ////@author Isa
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Dancing+Script:wght@700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Dancing+Script:wght@700&display=swap');
+// ///Fuente Cormorant Garamond
+// $garamond: 'Cormorant Garamond', serif;
+
+
+// ///Fuente Dancing Script
+// $dancing: 'Dancing Script', cursive;
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Cormorant+Garamond&family=Righteous&display=swap');
 
 
 ///mapa de colores 
 ///@group colores
 $colores: (
-    "primary":#b2f7ff,
-    "secondary":#35869A,
-    "encabezadosPeques":#BF6576,
-    "botones":#648C6E,
-    "a":#C1545B,
+    "primary":#6ab7fa,
+    "secondary":#00BD9D,
+    "terciary":#7B4B94,
+    "contrast_primary":#000B64,
+    "transparency_primary":#3e8cecaa,
+    "transparente":rgba(255, 255, 255, 0),
     "b":#055C75,
     "c":#E299A2,
     "fondo":#ffffff,
     "black":#000000,
     "elementos":#ffffff
-    //79E8F5
+    //52aeff
 );
 
 ///Función que devuelve un color del vector colores
@@ -31,7 +39,7 @@ $colores: (
 ///mapa de tamaños de fuentes
 ///@group tamanios
 $fonts: (
-    "xxl":6rem,
+    "xxl":4rem,
     "xl":3rem,
     "l":2.5rem,
     "m":16px,
@@ -63,9 +71,29 @@ $font-weights: (
     @return map-get($font-weights, $font-weight);
 }  
 
+///Función que devuelve la sombra para un texto
+///@param {Number} $precision
+///@param {Number} $size
+///@param {String} $color
+///@return --sombra
+@function textShadow($precision, $size, $color) {
+    $value: null;
+    $offset: 0;
+    $length: $size * calc(1 / $precision) - 1;
+  
+    @for $i from 0 through $length {
+      $offset: $offset + $precision;
+      $shadow: $offset + px $offset + px $color;
+      $value: append($value, $shadow, comma);
+    }
+  
+    @return $value;
+  }
+
+
 ///Fuente Cormorant Garamond
 $garamond: 'Cormorant Garamond', serif;
 
+$titulo: 'Lobster', cursive;
 
-///Fuente Dancing Script
-$dancing: 'Dancing Script', cursive;
+$titulo2: 'Righteous', cursive;

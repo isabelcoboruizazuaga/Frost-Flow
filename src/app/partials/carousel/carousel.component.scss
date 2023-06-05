@@ -1,41 +1,40 @@
 @import '../../../scss/mixin';
 
-img {
-    height: 16vh;
-    width: 16vh;
 
-    border: 1px solid black;
-    border-radius: 20vh;
-}
-
-$animationSpeed: 40s;
-
-// Animation
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-250px * 7))
-    }
-}
+$animationSpeed: 30s;
 
 
-// Styling
-.slider {
-    background: white;
-
+.carousel{
+    @include flex();
     height: 20vh;
     width: 90vw;
 
+    .nevera{
+        height: 20vh;
+        width: 10vw;
+
+        z-index: 3;
+    }
+}
+
+.slider {
+    width: 70vw;
+    height: 20vh;
+
     margin: auto;
     overflow: hidden;
-    position: relative;
+    //position: relative;
+
+    img {
+        height: 16vh;
+        width: 16vh;
+    
+        border: 1px solid black;
+        border-radius: 20vh;
+    }
 
     &::before,
     &::after {
-        @include white-gradient;
         content: "";
 
         height: 20vh;
@@ -65,5 +64,17 @@ $animationSpeed: 40s;
     .slide {
         height: 16vh;
         width: 90vh;
+    }
+}
+
+
+// Animación
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-10vw * 7))
     }
 }

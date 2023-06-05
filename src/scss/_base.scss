@@ -15,16 +15,24 @@
 
 body {
     font-size: get-font("m");
-    background-color: get-color("fondo");;
+    background-color: get-color("fondo");
+
+    background-image:url("./../assets/images/fondo.png") ;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+
+h1 {
+    font-family: $titulo2;
+    font-size: get-font(xl);
+    color: black;
+    text-shadow: -0.1rem -0.1rem 0rem white, .1rem .1rem 0rem white,textShadow(0.25, 6, get-color(secondary));
 }
 
 /*
-h1 {
-    width: fit-content;
-    padding: 0.5rem;
-    border-radius: 5px;
-    font-size: 200%;    
-}
 li p, h2,h1{
     
     font-family: 'Cinzel', serif;

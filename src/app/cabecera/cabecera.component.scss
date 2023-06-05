@@ -3,7 +3,6 @@
 
 
 .header {
-
     @include flex(row, center, space-between);
 
     width: 100%;
@@ -11,11 +10,17 @@
 
     background-color: get-color(primary);
     color: black;
+    
+    h1{
+        font-family: $titulo;
+        font-size: get-font(xxl);
+        text-shadow: none;
+        color: black;
+    }
 
 
     .identificacion {
-        @include flex();
-        
+        @include flex();        
         cursor: pointer;
 
         .logo {
@@ -26,12 +31,11 @@
 
             margin-right: 1rem;
         }
-
-
     }
 
+    //Botones de acción
     .navbar {
-
+        margin-right: 3vw;
         ul {
             @include flex(row,flex-end);
 

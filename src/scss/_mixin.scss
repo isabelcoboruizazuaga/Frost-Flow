@@ -84,11 +84,15 @@
 }
 
 %input-hide{
-    text-align: center; 
-    
+    text-align: center;    
     border: none;
+    
+    font-family: $titulo2;
     font-weight: bold;
     font-size: get-font(l);
+
+    background-color: get-color(transparente);
+    color: black;
 }
 
 
@@ -104,7 +108,11 @@
     //https://isotropic.co/tool/hex-color-to-css-filter/
 }
 
-
+///Mixin que coloca un gradiente de coñor blanco
+///@example
+///     .img{
+///         @include colorIcono();
+///     }
 @mixin white-gradient {
     background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }

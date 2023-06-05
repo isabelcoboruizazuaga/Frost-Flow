@@ -1,129 +1,241 @@
 @import '../../scss/mixin';
 
 section {
-    display: grid;
+  display: grid;
 
-    justify-items: center;
-    align-items: center;
+  justify-items: center;
+  align-items: center;
 
-    margin: 1rem;
+  margin: 1rem;
 
-    img {
-        height: 60vh;
-        width: 30vw;
-    }
+  img {
+    height: 60vh;
+    width: 30vw;
+  }
+
+  h1{
+    font-family: $titulo2;
+    font-size: get-font(l);
+    text-transform: uppercase;
+    color: get-color(contrast_primary);
+    text-shadow: textShadow(0.25, 6, get-color(transparency_primary));
+  }
 }
 
+/*-------PRIMERA SECCIÓN----------*/
 .gestiona {
-    grid-template-columns: fit-content(10%) 1fr;
+  grid-template-columns: fit-content(10%) 1fr;
 
-    //Animación de nevera abriéndose y cerrándose
-    img {
-        grid-area: 1/1/2/2;
-        -webkit-animation-name: fade;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-duration: 6s;
-        animation-name: fade;
-        animation-iteration-count: infinite;
-        animation-duration: 6s;
-    }
-
-    h1 {
-        grid-area: 1/2/2/3;
-    }
-
-}
-
-.personaliza,
-.familia {
-    grid-template-columns: 1fr fit-content(40%);
-
-    img {
-        grid-area: 1/2/2/3;
-    }
-
-    //Animación productos
-    %img {
-        /* top: 0;
-            -webkit-animation-name: fade;
-            //-webkit-animation-iteration-count: infinite;
-            -webkit-animation-duration: 6s;
-            animation-name: fade;
-            //animation-iteration-count: infinite;
-            animation-duration: 6s;*/
-    }
-
-    h1 {
-        grid-area: 1/1/2/2;
-    }
-}
-
-.productos {
-    h1 {
-        margin: 3rem;
-    }
-}
-
-.registrarse {
+  .texto {
+    grid-area: 1/2/2/3;
     @include flex();
 
-    button {
-        @extend %borde-round;
-        margin-left: 3rem;
-        padding: 1rem;
+    /*Animación de texto de gestionar*/
+    .texto_gestiona {
+      @include flex(column);
+      margin-left: 1vw;
+
+      span {
+        position: relative;
+        display: inline-block;
+
+        font-size: get-font(l);
+
+        animation: flip 3s infinite;
+        animation-delay: calc(.5s * var(--i))
+      }
+
+      img {
+        width: 5vw;
+        height: 20vh;
+
+        position: relative;
+        display: inline-block;
+
+        animation: flip 3s infinite;
+        animation-delay: calc(.5s * var(--i))
+      }
+
+      .conge{        
         width: 10vw;
-
-        font-size: get-font("xl");
-
-
+      }
     }
+  }
+
+
+  //Animación de nevera abriéndose y cerrándose
+  img {
+    grid-area: 1/1/2/2;
+
+    -webkit-animation-name: fade;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 6s;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+  }
+
 }
+
+/*-------SEGUNDA SECCIÓN----------*/
+.personaliza {
+  grid-template-columns: 1fr fit-content(50%);
+
+  img {
+    grid-area: 1/2/2/3;
+
+    height: 60vh;
+    width: 50vw;
+  }
+
+  h1 {
+    grid-area: 1/1/2/2;
+  }
+
+  .texto_personaliza {
+    span {
+      position: relative;
+      animation: scatter 1.75s infinite;
+    }
+    .vacio{
+      margin-left: 1vw;
+    }
+
+    span:nth-child(2n) {
+      animation-delay: 0.3s;
+    }
+
+    span:nth-child(3n) {
+      animation-delay: 0.15s;
+    }
+
+    span:nth-child(5n) {
+      animation-delay: 0.4s;
+    }
+
+    span:nth-child(7n),
+    span:nth-child(11n) {
+      animation-delay: 0.25s;
+    }
+  }
+
+}
+
+/*-------TERCERA SECCIÓN----------*/
+.productos {
+  h1 {
+    margin: 3rem;
+  }
+}
+
+/*-------CUARTA SECCIÓN----------*/
+.familia {
+  grid-template-columns: 1fr fit-content(40%);
+
+  img {
+    grid-area: 1/2/2/3;
+  }
+
+  h1 {
+    grid-area: 1/1/2/2;
+  }
+}
+
+
+/*-------QUINTA SECCIÓN----------*/
+.registrarse {
+  @include flex();
+
+  button {
+    margin-left:3vw;
+
+    background-color:black;
+    border-radius: round($number: 2rem);
+    box-shadow:0.7rem 0.7rem 0.7rem get-color(terciary);
+    
+    font-size: get-font(l);
+    color: white;   
+  }
+  
+  button:hover{
+    background-color: get-color(contrast_primary);
+    box-shadow:0.7rem 0.7rem 0.7rem get-color(secondary);
+  }
+  
+}
+
+/*-------ANIMACIONES----------*/
 
 //Detalles de la primera animación
 @-webkit-keyframes fade {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    20% {
-        opacity: 1;
-    }
+  20% {
+    opacity: 1;
+  }
 
-    33% {
-        opacity: 1;
-    }
+  33% {
+    opacity: 1;
+  }
 
-    53% {
-        opacity: 1;
-    }
+  53% {
+    opacity: 1;
+  }
 
-    100% {
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes fade {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    20% {
-        opacity: 1;
-    }
+  20% {
+    opacity: 1;
+  }
 
-    33% {
-        opacity: 1;
-    }
+  33% {
+    opacity: 1;
+  }
 
-    53% {
-        opacity: 1;
-    }
+  53% {
+    opacity: 1;
+  }
 
-    100% {
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+  }
 }
 
 #f2 {
-    -webkit-animation-delay: -3s;
+  -webkit-animation-delay: -3s;
+}
+
+//Detalles de la segunda animación
+@keyframes flip {
+
+  0%,
+  80% {
+    transform: rotateY(360deg)
+  }
+}
+
+
+//Detalles de la tercera animación
+@keyframes scatter {
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: -10px;
+  }
+
+  100% {
+    top: 0;
+  }
 }
