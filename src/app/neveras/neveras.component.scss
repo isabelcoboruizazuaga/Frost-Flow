@@ -1,11 +1,33 @@
 @import '../../scss/mixin';
-.title{
-    @include flex(row, center, space-between);
 
-    margin-left: 5vw;
-    margin-right: 5vw;
+.title {
+  @include flex(row, center, space-between);
+
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
-.neveras{
-    @include flex(row,center,space-around)
+.nuevaNevera {
+    margin: 1rem;
+
+  @extend %borde-round;
+  box-shadow: 0.7rem 0.7rem 0.7rem get-color(terciary);
+
+  font-size: get-font(m);
+  color: black;
+}
+
+.nuevaNevera:hover {
+  box-shadow: 0.7rem 0.7rem 0.7rem get-color(secondary);
+}
+
+.neveras {
+  @include flex(row, center, space-around)
+}
+
+
+/*Diseño del modal*/
+.modal-title{
+    font-size: get-font(l);
+    font-family: $titulo2;
 }

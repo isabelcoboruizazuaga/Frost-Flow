@@ -69,12 +69,12 @@
 }
 
 %borde {
-    border: 1px solid get-color("black");
+    border: 5px solid get-color("black");
 }
 
 %borde-round {
-    border: 1px solid get-color("black");
-    border-radius: 25px;
+    border: 5px solid get-color("black");
+    border-radius: 2rem;
 }
 
 %borde-shadow {
@@ -86,10 +86,6 @@
 %input-hide{
     text-align: center;    
     border: none;
-    
-    font-family: $titulo2;
-    font-weight: bold;
-    font-size: get-font(l);
 
     background-color: get-color(transparente);
     color: black;

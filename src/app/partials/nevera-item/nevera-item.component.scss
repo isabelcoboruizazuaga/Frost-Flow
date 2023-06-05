@@ -2,29 +2,63 @@
 
 
 .nevera-item {
-  width: 35vw;
+  width: 38vw;
+  height: 35vh;
   margin-bottom: 3vh;
 
-  @extend %borde;
+  background-image: url("./../../../assets/images/congeladorPeque.png");
+  background-size: cover;
+  background-size: 100% 100%;
 
   @include flex(row, center, space-around);
 
-  img {
-    width: 15vw;
+  .imagenNevera {
+    max-width: 15vw;
+    min-width: 10vw;
+    max-height: 30vh;
+    min-height: 25vh;
   }
 
+  /*Datos*/
   .info {
     width: 15vw;
 
     @include flex(column);
 
 
-    .title {
-      @extend %input-hide;
+    /*Nombre*/
+    .nombre {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
 
+      font-family: $titulo2;
+      font-weight: bold;
+      font-size: get-font(l);
+
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+
+      height: 4rem;
       width: 15vw;
+
+      /*Input*/
+      .title-input {
+        grid-area: 1 / 1 / 2 / 2;
+        @extend %input-hide;
+
+        width: fit-content;
+        overflow: hidden;
+        height: inherit;
+
+        display: inline-block;
+        position: relative;
+        animation: 5s linear 0s infinite alternate move;
+      }
     }
 
+    /*Editar y borrar*/
     .actions {
       width: 100%;
 
@@ -35,7 +69,40 @@
         width: 5vw;
       }
 
-    }
+      /*Css para el cambio de imagen en hover*/
+      .iconos {
+        width: 5vw;
+        position: relative;
+        display: inline-block;
 
+        .img-top {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 99;
+        } 
+      }
+      .iconos:hover .img-top {
+        display: inline;
+      }
+
+    }
+  }
+}
+
+/*Animación texto*/
+@keyframes move {
+
+  0%,
+  25% {
+    transform: translateX(0%);
+    left: 0%;
+  }
+
+  75%,
+  100% {
+    transform: translateX(-150%);
+    left: 100%;
   }
 }
