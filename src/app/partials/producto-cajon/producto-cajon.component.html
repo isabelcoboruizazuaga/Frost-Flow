@@ -1,17 +1,17 @@
-<div class="prod">
-    
-    <img src="{{producto.fotoProducto}}" class="fotoProd" alt="image" >
-    <p>{{producto.paquetes}}</p>
-    <div>
-        <input type="text" class="title" value="{{producto.nombreProducto}}">
-        <input type="text" class="title" value="{{caducidad}}">
+<div class="prod row">    
+    <img src="{{producto.fotoProducto}}" class="fotoProd col-2" alt="image" >
+    <h3 class=" col-1 paquetes">{{producto.paquetes}}</h3>
+    <div  class="col-3">
+        <h3 class="title">{{producto.nombreProducto}}</h3>
+        <h3 class="title">{{caducidad}}</h3>
     </div>
-    <p>{{producto.cantidad[0]+ " "+producto.cantidad[1]}}</p>    
-    <img src="/assets/icons/add.png" class="icon" alt="image" (click)="sumarPaquete()" (click)="$event.stopPropagation()">
-    <img src="/assets/icons/remove.png" class="icon" alt="image" (click)="restarPaquete()" (click)="$event.stopPropagation()">
-    <!-- <img src="/assets/icons/edit.png" class="icon" alt="image" (click)="editar()" (click)="$event.stopPropagation()"> -->
-    <img src="/assets/icons/garbage.png" class="icon" alt="image" (click)="open(content)" (click)="$event.stopPropagation()">
-
+    <p  class="col-3">{{producto.cantidad[0]+ " "+producto.cantidad[1]}}</p>    
+    <img  class="col-1" src="/assets/icons/add.png" class="icon edit" alt="image" (click)="sumarPaquete()" (click)="$event.stopPropagation()">
+    <img  class="col-1" src="/assets/icons/remove.png" class="icon edit" alt="image" (click)="restarPaquete()" (click)="$event.stopPropagation()">
+	<div class="contenedor col-1" alt="image"  (click)="open(content)" (click)="$event.stopPropagation()">
+		<img  alt="contenedor vacío" class="icon img-bot" src="/assets/icons/garbage.png">
+		<img alt="contenedor lleno" class="icon img-top" src="/assets/icons/garbageFull.png">
+	</div>
 </div>
 
 

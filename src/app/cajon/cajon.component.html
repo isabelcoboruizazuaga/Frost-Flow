@@ -1,17 +1,24 @@
 <div class="cajon">
-    <div class="acciones ">
-        <div class="caj" (click)="nuevoProducto()">
-            <img src="/assets/images/cajonNeveraLl.png">
-            <h1>{{nombre}}</h1>
+    <div class="identif ">
+        <h1>{{nombre}}</h1>
+        <div>
+            <div class="caj" (click)="nuevoProducto()">
+                <div class="contenedor " alt="imagen de un cajón vacío que se llena">
+                    <img class="img-bot" src="/assets/images/cajonNeveraVacio.png">
+                    <img class="img-top" src="/assets/images/cajonNeveraLleno.png">
+                </div>
+                <h2>Nuevo producto</h2>
+            </div>
         </div>
-        <button (click)="abre(micontent)">Editar cajón</button>
-        <button (click)="open(content)">Borrar cajón</button>
-
+        <div class="acciones">
+            <button  class="editar" (click)="abre(micontent)">Editar cajón</button>
+            <button class="borrar" (click)="open(content)">Borrar cajón</button>
+        </div>
     </div>
     <div class="div2 overflow-auto">
         <div class="ordenar">
-            <p>ordenar por...</p>
-            <select name="orden" [(ngModel)]="orden"(ngModelChange)="onChange($event)">
+            <p>Ordenar por...</p>
+            <select class="form-select" name="orden" [(ngModel)]="orden" (ngModelChange)="onChange($event)">
                 <option value="caducidad" selected>Fecha de caducidad</option>
                 <option value="nombreProducto_asc">Nombre Ascendente</option>
                 <option value="nombreProducto_desc">Nombre Descendente</option>
@@ -20,29 +27,30 @@
             </select>
         </div>
         <div class="productos">
-            <app-producto-cajon *ngFor="let producto of productos" [producto]="producto" [idCajon]="id"></app-producto-cajon>
+            <app-producto-cajon *ngFor="let producto of productos" [producto]="producto"
+                [idCajon]="id"></app-producto-cajon>
         </div>
     </div>
 </div>
 
 <!--Modal de confirmación de borrado-->
 <ng-template #content let-modal>
-	<div class="modal-header">
-		<h4 class="modal-title" id="modal-borrar">Borrar {{nombre}}</h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
-	</div>
-	<div class="modal-body">
-		<form>
-			<div class="mb-3">
-				<p>Esta acción no se puede deshacer, perderá toda la información guardada en este cajón</p>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-borrar">Borrar {{nombre}}</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <p>Esta acción no se puede deshacer, perderá toda la información guardada en este cajón</p>
                 <p>¿Desea continuar?</p>
-			</div>
-		</form>
-	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-success" (click)="modal.dismiss()">Cancelar</button>
-		<button type="button" class="btn btn-outline-danger" (click)="modal.close('borrar')">Borrar</button>
-	</div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success" (click)="modal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-outline-danger" (click)="modal.close('borrar')">Borrar</button>
+    </div>
 </ng-template>
 
 
@@ -53,19 +61,20 @@
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
-        <div class="mb-3">     
-            
+        <div class="mb-3">
+
             <label for="nombre">Nombre Cajón</label>
             <div class="input-group">
-                <input [(ngModel)]="nombreCajon" value={{nombre}} id="nombre" class="form-control" name="nombre" type="text" />
-            </div>       
+                <input [(ngModel)]="nombreCajon" value={{nombre}} id="nombre" class="form-control" name="nombre"
+                    type="text" />
+            </div>
 
             <label for="nombre">Tipo Cajón</label>
-            <select name="select"  [(ngModel)]="tipoCajon" id="tipoCajon" class="form-select">
+            <select name="select" [(ngModel)]="tipoCajon" id="tipoCajon" class="form-select">
                 <option value="neve" selected>Nevera</option>
                 <option value="conge">Congelador</option>
                 <option value="otro">Otro</option>
-              </select>
+            </select>
         </div>
     </div>
     <div class="modal-footer">

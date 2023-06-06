@@ -106,7 +106,7 @@
           position: absolute;
           top: 0;
           left: 0;
-          z-index: 99;
+          z-index: 9;
         } 
       }
       .contenedor:hover .img-top {
@@ -121,9 +121,7 @@
 ///         @include colorIcono();
 ///     }
 @mixin colorIcono(){
-    //filter: invert(100%) sepia(87%) saturate(6649%) hue-rotate(154deg) brightness(104%) contrast(92%);
-    //filter: invert(46%) sepia(9%) saturate(2475%) hue-rotate(145deg) brightness(99%) contrast(93%);
-    filter: invert(100%);
+    filter: invert(29%) sepia(68%) saturate(527%) hue-rotate(235deg) brightness(98%) contrast(83%);
     //https://isotropic.co/tool/hex-color-to-css-filter/
 }
 

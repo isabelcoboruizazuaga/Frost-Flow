@@ -45,7 +45,7 @@ export class ProductosFamComponent {
       this.file = inputElement.files[0];
     }
   }
-  
+
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       // Handle form submission
@@ -93,8 +93,12 @@ export class ProductosFamComponent {
   }
 
   addProducto(pId: string, fId: string) {
+    //Se le pone el formato adecuado al nombre
+    let nombre = this.nombre.toLowerCase();
+    nombre = nombre.charAt(0).toUpperCase() + nombre.slice(1);
+
     //Se añade el producto a la bd
-    let producto = new ProductoFamilia(pId, fId, this.nombre, this.url);
+    let producto = new ProductoFamilia(pId, fId,nombre, this.url);
     let produ = Object.assign({}, producto);
     this.firestoreService.subirProductoFam(produ);
 
