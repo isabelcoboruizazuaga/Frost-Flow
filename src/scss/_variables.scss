@@ -1,13 +1,6 @@
 ////Proyecto: TFG DAW Gestión de congeladores
-////@author Isa
+////@author Isabel Cobo Ruiz-Azuaga
 
-// @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Dancing+Script:wght@700&display=swap');
-// ///Fuente Cormorant Garamond
-// $garamond: 'Cormorant Garamond', serif;
-
-
-// ///Fuente Dancing Script
-// $dancing: 'Dancing Script', cursive;
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Cormorant+Garamond&family=Righteous&display=swap');
 
 
@@ -75,7 +68,7 @@ $font-weights: (
 ///@param {Number} $precision
 ///@param {Number} $size
 ///@param {String} $color
-///@return --sombra
+///@return {shadow} --sombra
 @function textShadow($precision, $size, $color) {
     $value: null;
     $offset: 0;
@@ -92,8 +85,13 @@ $font-weights: (
 
 
 ///Fuente Cormorant Garamond
+///@group tipografias
 $garamond: 'Cormorant Garamond', serif;
 
+///Fuente Lobster
+///@group tipografias
 $titulo: 'Lobster', cursive;
 
+///Fuente Righteous
+///@group tipografias
 $titulo2: 'Righteous', cursive;

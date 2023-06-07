@@ -43,46 +43,42 @@
     flex-wrap: wrap;
 }
 
-///Mixin de estilo del navigation
+
+///Mixin de borde negro normal
 ///@example
-///     .nav{
-///         @include navigation();
+///     div{
+///         @extend %borde
 ///     }
-@mixin navigation() {
-    &-list {
-        list-style-type: none;
-        @include flex();
-    }
-
-    &-item {
-        margin: 1rem;
-    }
-}
-
-///Mixin de generación de colores aleatorios de fondo
-///@example
-///     .div{
-///         @include random-rgb();
-///     }
-@mixin random-rgb() {
-    background: rgb(random(255), random(255), random(255));
-}
-
 %borde {
     border: 5px solid get-color("black");
 }
 
+///Mixin de borde negro redondeado
+///@example
+///     div{
+///         @extend %borde-round
+///     }
 %borde-round {
     border: 5px solid get-color("black");
     border-radius: 2rem;
 }
 
+///Mixin de borde redondeado con sombra
+///@example
+///     div{
+///         @extend %borde-shadow
+///     }
 %borde-shadow {
     border: 1px solid get-color("primary");
     border-radius: 10px;
     box-shadow: 10px 5px 5px black;
 }
 
+///Mixin para hacer ver los input como texto plano
+///@example
+///     input{
+///         @extend %input-hide
+///     }
 %input-hide{
     text-align: center;    
     border: none;
@@ -93,7 +89,7 @@
 
 ///Mixin de cambio de una imagen por otra al hacer hover
 ///@example
-///     .div{
+///     div{
 ///         @extend %cambio-imagen-hover;
 ///     }
 %cambio-imagen-hover{
@@ -112,7 +108,6 @@
       .contenedor:hover .img-top {
         display: inline;
       }
-
 }
 
 ///Mixin que cambia el color de una imagen al predeterminado
@@ -125,7 +120,7 @@
     //https://isotropic.co/tool/hex-color-to-css-filter/
 }
 
-///Mixin que coloca un gradiente de coñor blanco
+///Mixin que coloca un gradiente de color blanco
 ///@example
 ///     .img{
 ///         @include colorIcono();
