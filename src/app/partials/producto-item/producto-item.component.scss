@@ -1,31 +1,48 @@
 @import '../../../scss/mixin';
-.produ{
-    @include flex(row, center,space-evenly);
 
-    height: 100%;
-    width: 100%;
+.produ {
+  // @include flex(row, center,space-evenly);
 
-    // div{
-    //     @include flex(column);
-    // }
-    .cadu, .paquetes{
-        @include flex(column);
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
 
-        .cadu-picker{
-            @include flex();
-        }
-    }
+  border-top: 4px solid black;
+  border-right: 4px solid black;
+  border-left: 4px solid black;
 
+  background-color: get-color(secondary_transparente);
 
-    .icon{
-        width: 3vw;
-    }
-    .fotoProd{
-        width: 8vw;
-    }
+  select,
+  .add,
+  .cant {
+    width: fit-content;
+    height: fit-content
+  }
 
-    input{        
-        @extend %input-hide;
-        width: 15vw;
-    }
+  .cant {
+    width: 5rem;
+  }
+
+  button {
+    box-shadow: none;
+  }
+
+  button:hover {
+    box-shadow: none;
+  }
+
+  .fotoProd {
+    width: 15vw;
+    max-height: 30vh;
+  }
+
+  .add {
+    margin-left: 2rem;
+    box-shadow: 0.7rem 0.7rem 0.7rem get-color(terciary);
+  }
+
+  .add:hover {
+    box-shadow: 0.7rem 0.7rem 0.7rem get-color(secondary);
+  }
 }
