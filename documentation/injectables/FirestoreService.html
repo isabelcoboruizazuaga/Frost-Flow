@@ -1,0 +1,4067 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>tfg-congelador documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">tfg-congelador documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >FirestoreService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/shared/services/firestore.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#auth" >auth</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#db" >db</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                <a href="#storage" >storage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#borraCajon" >borraCajon</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#borraNevera" >borraNevera</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#borraProducto" >borraProducto</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#borraProductoFam" >borraProductoFam</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#borraProductosConIDFam" >borraProductosConIDFam</a>
+                            </li>
+                            <li>
+                                <a href="#borrarImagen" >borrarImagen</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#cambiaFamiliaUsuario" >cambiaFamiliaUsuario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#cambiarFamiliaNeveras" >cambiarFamiliaNeveras</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#cambiarFamiliaProductos" >cambiarFamiliaProductos</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#editaCajon" >editaCajon</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#editaNevera" >editaNevera</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#editarFamiliaNevera" >editarFamiliaNevera</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#editarFamiliaProducto" >editarFamiliaProducto</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#familiaExiste" >familiaExiste</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getFamiliaUsuario" >getFamiliaUsuario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getNombreUsuario" >getNombreUsuario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#listarCajones" >listarCajones</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#listarFamiliares" >listarFamiliares</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#listarNeveras" >listarNeveras</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#listarProductos" >listarProductos</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#listarProductosFam" >listarProductosFam</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#productoExiste" >productoExiste</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#recuperarCajon" >recuperarCajon</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#recuperarFamiliaID" >recuperarFamiliaID</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#recuperarNevera" >recuperarNevera</a>
+                            </li>
+                            <li>
+                                <a href="#subirCajon" >subirCajon</a>
+                            </li>
+                            <li>
+                                <a href="#subirNevera" >subirNevera</a>
+                            </li>
+                            <li>
+                                <a href="#subirProducto" >subirProducto</a>
+                            </li>
+                            <li>
+                                <a href="#subirProductoAdmin" >subirProductoAdmin</a>
+                            </li>
+                            <li>
+                                <a href="#subirProductoFam" >subirProductoFam</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(auth: Auth, router: Router, db: Firestore)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/services/firestore.service.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>This is a constructor function that initializes the auth, router, and db properties with default
+values or values passed as arguments.
+authentication and user management in Firebase. It is used to authenticate users, manage user
+accounts, and handle user sessions.
+is used for navigating between different views or components in an Angular application. It provides
+methods for navigating to a specific route, navigating back to the previous route, and more.
+Firestore is a NoSQL document database that is used to store and manage data for web and mobile
+applications. In this code snippet, the db parameter is initialized with the getFirestore()
+function, which returns an instance of the Firestore database.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                    <code>Auth</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>The <code>auth</code> parameter is an instance of the <code>Auth</code> class, which is used for
+authentication and user management in Firebase. It is used to authenticate users, manage user
+accounts, and handle user sessions.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>The router parameter is an instance of the Angular Router service, which
+is used for navigating between different views or components in an Angular application. It provides
+methods for navigating to a specific route, navigating back to the previous route, and more.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>db</td>
+                                                  
+                                                        <td>
+                                                                    <code>Firestore</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>db is a parameter that represents an instance of the Firestore database.
+Firestore is a NoSQL document database that is used to store and manage data for web and mobile
+applications. In this code snippet, the db parameter is initialized with the getFirestore()
+function, which returns an instance of the Firestore database.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="borraCajon"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>borraCajon</b></span>
+                        <a href="#borraCajon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>borraCajon(cId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="440"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:440</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is an asynchronous function that deletes a document from a Firestore database and its
+corresponding image.
+document in a Firestore database. The function uses this ID to delete the document and its
+associated image.
+was successful or not.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>cId is a string parameter that represents the ID of a &quot;cajón&quot; (drawer)
+document in a Firestore database. The function uses this ID to delete the document and its
+associated image.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>a boolean value indicating whether the deletion of the document and its associated image
+was successful or not.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="borraNevera"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>borraNevera</b></span>
+                        <a href="#borraNevera"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>borraNevera(idNevera: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="228"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:228</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is an asynchronous function that deletes a document from a Firestore database and its
+corresponding image.
+Firestore database.
+was successful or not.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idNevera</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>A string representing the ID of a &quot;nevera&quot; (refrigerator) document in a
+Firestore database.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>a boolean value indicating whether the deletion of a document and its corresponding image
+was successful or not.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="borraProducto"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>borraProducto</b></span>
+                        <a href="#borraProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>borraProducto(idProducto: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is an asynchronous function that deletes a product document from a database using its ID and
+returns a boolean indicating whether the deletion was successful or not.
+&quot;productos&quot; collection in the database.
+the document with the specified <code>idProducto</code> was successful or not.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idProducto</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>A string representing the ID of the product to be deleted from the
+&quot;productos&quot; collection in the database.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>The <code>borraProducto</code> function returns a boolean value indicating whether the deletion of
+the document with the specified <code>idProducto</code> was successful or not.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="borraProductoFam"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>borraProductoFam</b></span>
+                        <a href="#borraProductoFam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>borraProductoFam(pId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function deletes a product family and all associated products and images.
+products and image was successful or not.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>string parameter representing the ID of the product family to be deleted.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>A boolean value indicating whether the deletion of the product family and its associated
+products and image was successful or not.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="borraProductosConIDFam"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>borraProductosConIDFam</b></span>
+                        <a href="#borraProductosConIDFam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>borraProductosConIDFam(pfId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="156"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:156</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function deletes all products with a specific family ID from the Firestore database.
+function uses this ID to query the &quot;productos&quot; collection in the database and retrieve all products
+that belong to this family. It then calls the &quot;borraProducto&quot; function to delete each of these
+products.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pfId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>pfId is a string parameter representing the ID of a product family. The
+function uses this ID to query the &quot;productos&quot; collection in the database and retrieve all products
+that belong to this family. It then calls the &quot;borraProducto&quot; function to delete each of these
+products.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="borrarImagen"></a>
+                    <span class="name">
+                        <span ><b>borrarImagen</b></span>
+                        <a href="#borrarImagen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>borrarImagen(referencia: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="173"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:173</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This TypeScript function deletes an image from storage and returns a boolean indicating whether
+the deletion was successful or not.
+storage.
+However, the value returned may not be accurate as the deletion operation is asynchronous and the
+<code>exito</code> variable may not have been updated by the time the function returns.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>referencia</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>string - a reference to the image that needs to be deleted from the
+storage.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>a boolean value indicating whether the deletion of the image was successful or not.
+However, the value returned may not be accurate as the deletion operation is asynchronous and the
+<code>exito</code> variable may not have been updated by the time the function returns.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cambiaFamiliaUsuario"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>cambiaFamiliaUsuario</b></span>
+                        <a href="#cambiaFamiliaUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cambiaFamiliaUsuario(uId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, fId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, nuevaFamilia: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, moverNeveras: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="487"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:487</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function changes the family of a user and optionally moves their products and refrigerators to
+the new family.
+after the function is executed.
+refrigerators associated with the user to the new family. If it is true, the function will call the
+methods to update the products and refrigerators associated with the user&#39;s old family to the new
+family. If it is false, only the user will be moved</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>string variable representing the user ID</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>fId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The ID of the current family that the user belongs to.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>nuevaFamilia</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>A string representing the new family that the user will belong to
+after the function is executed.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>moverNeveras</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>A boolean value that determines whether or not to move the
+refrigerators associated with the user to the new family. If it is true, the function will call the
+methods to update the products and refrigerators associated with the user&#39;s old family to the new
+family. If it is false, only the user will be moved</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>a boolean value indicating whether the operation was successful or not.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cambiarFamiliaNeveras"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>cambiarFamiliaNeveras</b></span>
+                        <a href="#cambiarFamiliaNeveras"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cambiarFamiliaNeveras(fId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, nFid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="517"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:517</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function changes the family ID of all refrigerators with a given family ID and returns a
+success or failure status.
+to be updated.
+<code>exito</code> is 0, it means that the operation was successful. If the value is 1 or 2, it means that
+something went wrong.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>a string representing the ID of the current family of refrigerators that need
+to be updated.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>nFid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The new family ID to which the refrigerators will be assigned.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>-a number that indicates whether the operation was successful or not. If the value of
+<code>exito</code> is 0, it means that the operation was successful. If the value is 1 or 2, it means that
+something went wrong.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cambiarFamiliaProductos"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>cambiarFamiliaProductos</b></span>
+                        <a href="#cambiarFamiliaProductos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cambiarFamiliaProductos(fId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, nFid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="558"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:558</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is an async function that changes the family ID of products in a collection and returns a
+success or failure status.
+<code>exito</code> is 0, it means that the operation was successful. If the value is 1 or 2, it means that
+something went wrong.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>A string representing the ID of the current family of products.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>nFid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The new family ID to which the products will be changed.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>a number that indicates whether the operation was successful or not. If the value of
+<code>exito</code> is 0, it means that the operation was successful. If the value is 1 or 2, it means that
+something went wrong.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editaCajon"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>editaCajon</b></span>
+                        <a href="#editaCajon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>editaCajon(cId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, campoActualizar: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, valor: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="462"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:462</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is an async function that updates a specific field in a document in a Firestore database
+collection.
+the field that needs to be updated in the Firestore document.
+the given cId.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>a string representing the ID of the &quot;cajón&quot; (drawer) to be edited.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>campoActualizar</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>campoActualizar is a string parameter that represents the name of
+the field that needs to be updated in the Firestore document.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>valor</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The value that will be updated in the specified field of the document with
+the given cId.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>a boolean value indicating whether the update operation was successful or not.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editaNevera"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>editaNevera</b></span>
+                        <a href="#editaNevera"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>editaNevera(idNevera: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, campoActualizar: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, valor: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="252"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:252</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is an async function that updates a specific field of a document in a Firestore database
+collection for a given fridge ID.
+Firestore database.
+the field to be updated in a Firestore document.
+the specified field (campoActualizar) in the document with the given id (idNevera) in the &quot;neveras&quot;
+collection.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idNevera</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>a string representing the ID of a &quot;nevera&quot; (refrigerator) document in a
+Firestore database.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>campoActualizar</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>campoActualizar is a string parameter that represents the name of
+the field to be updated in a Firestore document.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>valor</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>valor is a string parameter that represents the new value to be updated for
+the specified field (campoActualizar) in the document with the given id (idNevera) in the &quot;neveras&quot;
+collection.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>a boolean value indicating whether the update operation was successful or not.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarFamiliaNevera"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>editarFamiliaNevera</b></span>
+                        <a href="#editarFamiliaNevera"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>editarFamiliaNevera(nevera: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, nFId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="536"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:536</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is an async function that updates the family ID of a fridge object in a Firestore database.
+user wants to assign to a refrigerator.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nevera</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>an object representing a fridge, containing an &quot;idNevera&quot; property</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>nFId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>nFId is a string parameter that represents the ID of the family that the
+user wants to assign to a refrigerator.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>a number, either 1 or 0 depending on whether the update operation was successful or not.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarFamiliaProducto"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>editarFamiliaProducto</b></span>
+                        <a href="#editarFamiliaProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>editarFamiliaProducto(producto: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, nFId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="579"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:579</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is an async function that edits the family of a product in a database and returns a success
+status.
+its ID, name, description, price, and the ID of the family it belongs to.
+will be updated to.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>producto</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>It is an object that represents a product and contains information such as
+its ID, name, description, price, and the ID of the family it belongs to.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>nFId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>nFId is a string parameter representing the new family ID that the product
+will be updated to.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>a number, either 1 or 0 depending on whether the update operation was successful or not.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="familiaExiste"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>familiaExiste</b></span>
+                        <a href="#familiaExiste"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>familiaExiste(fId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="600"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:600</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function checks if a family with a specific ID exists in a collection called &quot;familias&quot;.
+Firestore database.
+whether a document with the specified <code>fId</code> exists in the &quot;familias&quot; collection of the database.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>fId is a string parameter that represents the ID of a family document in a
+Firestore database.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>The function <code>familiaExiste</code> returns a boolean value (<code>true</code> or <code>false</code>) depending on
+whether a document with the specified <code>fId</code> exists in the &quot;familias&quot; collection of the database.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFamiliaUsuario"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getFamiliaUsuario</b></span>
+                        <a href="#getFamiliaUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFamiliaUsuario(uid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function retrieves the family ID of a user from a Firestore database using their UID.
+in a database.
+&quot;usuarios&quot; collection. If the document does not exist, an empty string is returned.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The uid parameter is a string that represents the unique identifier of a user
+in a database.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>the value of the &quot;familiaId&quot; field from the document with the specified &quot;uid&quot; in the
+&quot;usuarios&quot; collection. If the document does not exist, an empty string is returned.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNombreUsuario"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getNombreUsuario</b></span>
+                        <a href="#getNombreUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNombreUsuario(uid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is an asynchronous function that retrieves the name of a user from a Firestore database based
+on their unique ID, and returns either the name or a default &quot;Iniciar Sesión&quot; message if the user
+does not exist.
+in a database. In this case, it is used to retrieve the name of a user from a &quot;usuarios&quot; collection
+in the database.
+will return the value of the &quot;nombre&quot; field in that document. Otherwise, it will return the string
+&quot;Iniciar Sesión&quot;.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The uid parameter is a string that represents the unique identifier of a user
+in a database. In this case, it is used to retrieve the name of a user from a &quot;usuarios&quot; collection
+in the database.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>If the document with the specified <code>uid</code> exists in the &quot;usuarios&quot; collection, the function
+will return the value of the &quot;nombre&quot; field in that document. Otherwise, it will return the string
+&quot;Iniciar Sesión&quot;.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listarCajones"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>listarCajones</b></span>
+                        <a href="#listarCajones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listarCajones(nId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="312"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:312</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function retrieves a list of documents from a Firestore collection based on a specific query
+and returns them as an array.
+function uses this parameter to query the database and retrieve all the &quot;cajones&quot; (drawers) that
+belong to the specified refrigerator.
+cajones (drawers) that belong to a specific nevera (fridge) identified by the <code>nId</code> parameter.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>nId is a string parameter that represents the ID of a refrigerator. The
+function uses this parameter to query the database and retrieve all the &quot;cajones&quot; (drawers) that
+belong to the specified refrigerator.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>The function <code>listarCajones</code> returns an array of <code>DocumentData</code> objects representing the
+cajones (drawers) that belong to a specific nevera (fridge) identified by the <code>nId</code> parameter.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listarFamiliares"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>listarFamiliares</b></span>
+                        <a href="#listarFamiliares"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listarFamiliares(fId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="382"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:382</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function retrieves a list of users from a specific family ID in a Firestore database.
+uses this parameter to query the &quot;usuarios&quot; collection in the database and retrieve all the
+documents that have a &quot;familiaId&quot; field matching the provided fId value.
+the users that belong to a specific family, identified by the <code>fId</code> parameter.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>fId is a string parameter that represents the ID of a family. The function
+uses this parameter to query the &quot;usuarios&quot; collection in the database and retrieve all the
+documents that have a &quot;familiaId&quot; field matching the provided fId value.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The function <code>listarFamiliares</code> returns an array of <code>DocumentData</code> objects representing
+the users that belong to a specific family, identified by the <code>fId</code> parameter.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listarNeveras"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>listarNeveras</b></span>
+                        <a href="#listarNeveras"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listarNeveras(fId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="292"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:292</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function retrieves a list of refrigerators associated with a specific family ID from a
+Firestore database.
+uses the ID to query a collection of &quot;neveras&quot; (refrigerators) and returns an array of
+DocumentData objects that match the specified family ID.
+the neveras (refrigerators) that belong to a specific family, identified by the <code>fId</code> parameter.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>fId is a string parameter that represents the ID of a family. This function
+uses the ID to query a collection of &quot;neveras&quot; (refrigerators) and returns an array of
+DocumentData objects that match the specified family ID.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The function <code>listarNeveras</code> is returning an array of <code>DocumentData</code> objects representing
+the neveras (refrigerators) that belong to a specific family, identified by the <code>fId</code> parameter.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listarProductos"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>listarProductos</b></span>
+                        <a href="#listarProductos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listarProductos(cId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orden: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, sentido: OrderByDirection | undefined)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="361"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:361</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is an async function that lists products based on a given cajon ID, order and direction.
+products.
+&quot;precio&quot;, &quot;fecha&quot;).
+that specifies the direction of the ordering. It can be either &quot;asc&quot; for ascending order or &quot;desc&quot;
+for descending order. If it is not provided, the default value is ascending order.
+are sorted by the given orden and sentido parameters.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>a string representing the ID of a &quot;cajon&quot; (drawer) in a collection of
+products.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>orden</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>a string representing the field to order the products by (e.g. &quot;nombre&quot;,
+&quot;precio&quot;, &quot;fecha&quot;).</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>sentido</td>
+                                    <td>
+                                            <code>OrderByDirection | undefined</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The &quot;sentido&quot; parameter is an optional parameter
+that specifies the direction of the ordering. It can be either &quot;asc&quot; for ascending order or &quot;desc&quot;
+for descending order. If it is not provided, the default value is ascending order.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>an array of DocumentData objects representing the products that match the given cId and
+are sorted by the given orden and sentido parameters.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listarProductosFam"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>listarProductosFam</b></span>
+                        <a href="#listarProductosFam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listarProductosFam(fId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="331"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:331</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function retrieves a list of products based on a given family ID by querying two collections
+in a Firestore database.
+family (identified by the fId parameter) and all the products in the &quot;productosAdmin&quot; collection.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>string parameter representing the ID of a family of products.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>an array of DocumentData objects that represent the products belonging to a certain
+family (identified by the fId parameter) and all the products in the &quot;productosAdmin&quot; collection.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productoExiste"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>productoExiste</b></span>
+                        <a href="#productoExiste"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>productoExiste(pfId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, cId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, caducicad: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, cantidad: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="196"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:196</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function checks if a product exists in a database based on its product family ID, drawer ID,
+expiration date, and quantity.
+specific drawer or compartment where a product is stored.
+in the query to check if there is a product with the specified quantity in the database.
+specified query parameters.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pfId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The ID of the product family.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>cId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>cId likely stands for &quot;cajon ID&quot;, which is a unique identifier for a
+specific drawer or compartment where a product is stored.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>caducicad</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>It is a variable that represents the expiration date of a product.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>cantidad</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The parameter &quot;cantidad&quot; represents the quantity of a product. It is used
+in the query to check if there is a product with the specified quantity in the database.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The function <code>productoExiste</code> returns an array of <code>DocumentData</code> objects that match the
+specified query parameters.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="recuperarCajon"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>recuperarCajon</b></span>
+                        <a href="#recuperarCajon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>recuperarCajon(cId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="420"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:420</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function retrieves data from a Firestore document with a given ID and returns it, or returns
+0 if the document does not exist.
+document in a Firestore database.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>cId is a string parameter that represents the ID of a &quot;cajón&quot; (drawer)
+document in a Firestore database.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>It returns the cajon if it exists or the value 0 if it does not exist</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="recuperarFamiliaID"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>recuperarFamiliaID</b></span>
+                        <a href="#recuperarFamiliaID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>recuperarFamiliaID(uID: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="270"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:270</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function retrieves the family ID associated with a given user ID from a Firestore database.
+(family ID) of a user with the given <code>uID</code> (user ID).</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uID</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>a string representing the user ID to be used in the database query.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>The function <code>recuperarFamiliaID</code> is returning a string value which represents the <code>fId</code>
+(family ID) of a user with the given <code>uID</code> (user ID).</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="recuperarNevera"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>recuperarNevera</b></span>
+                        <a href="#recuperarNevera"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>recuperarNevera(nId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="402"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:402</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is an asynchronous function that retrieves data from a Firestore document with a given ID and
+returns the data if it exists, or 0 if it does not.
+Firestore database.
+will return the nevera searched. Otherwise, it will return 0.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>nId is a string parameter that represents the ID of a &quot;nevera&quot; document in a
+Firestore database.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <ul>
+<li>If the document with the specified ID exists in the &quot;neveras&quot; collection, the function
+will return the nevera searched. Otherwise, it will return 0.</li>
+</ul>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subirCajon"></a>
+                    <span class="name">
+                        <span ><b>subirCajon</b></span>
+                        <a href="#subirCajon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>subirCajon(caj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:215</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function updates a document in a Firestore database with the data of a given &quot;cajón&quot; object.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>caj</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The parameter &quot;caj&quot; is an object &#39;cajon&#39;</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subirNevera"></a>
+                    <span class="name">
+                        <span ><b>subirNevera</b></span>
+                        <a href="#subirNevera"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>subirNevera(neve: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The function uploads a document in a Firestore database with the data of a fridge object.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>neve</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Nevera which we are uploading.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subirProducto"></a>
+                    <span class="name">
+                        <span ><b>subirProducto</b></span>
+                        <a href="#subirProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>subirProducto(prod: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function updates a product in a Firestore database.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>prod</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Object &#39;Producto&#39; to being stored</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subirProductoAdmin"></a>
+                    <span class="name">
+                        <span ><b>subirProductoAdmin</b></span>
+                        <a href="#subirProductoAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>subirProductoAdmin(produ: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:87</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function uploads a product in the &quot;productosAdmin&quot; collection in a Firestore database.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>produ</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Object &#39;ProductoAdmin&#39; to upload to upload.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subirProductoFam"></a>
+                    <span class="name">
+                        <span ><b>subirProductoFam</b></span>
+                        <a href="#subirProductoFam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>subirProductoFam(produ: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/shared/services/firestore.service.ts:96</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function updates a product in a Firestore collection called &quot;productosFam&quot;.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>produ</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Object &#39;ProductoFamilia&#39; to upload</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="auth"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>auth</b></span>
+                        <a href="#auth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Auth</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>getAuth()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/shared/services/firestore.service.ts:28</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- The `auth` parameter is an instance of the `Auth` class, which is used for
+authentication and user management in Firebase. It is used to authenticate users, manage user
+accounts, and handle user sessions.</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="db"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>db</b></span>
+                        <a href="#db"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Firestore</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>getFirestore()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/shared/services/firestore.service.ts:30</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- db is a parameter that represents an instance of the Firestore database.
+Firestore is a NoSQL document database that is used to store and manage data for web and mobile
+applications. In this code snippet, the db parameter is initialized with the getFirestore()
+function, which returns an instance of the Firestore database.</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Router</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/shared/services/firestore.service.ts:29</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- The router parameter is an instance of the Angular Router service, which
+is used for navigating between different views or components in an Angular application. It provides
+methods for navigating to a specific route, navigating back to the previous route, and more.</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="storage"></a>
+                    <span class="name">
+                        <span ><b>storage</b></span>
+                        <a href="#storage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>getStorage()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/services/firestore.service.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Auth, getAuth } from &#x27;@angular/fire/auth&#x27;;
+import { DocumentData, Firestore, OrderByDirection, collection, deleteDoc, doc, getDoc, getDocs, getFirestore, orderBy, query, setDoc, updateDoc, where } from &#x27;@angular/fire/firestore&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { deleteObject, getStorage, ref, } from &#x27;@angular/fire/storage&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class FirestoreService {
+  storage &#x3D; getStorage();
+
+  /**
+   * This is a constructor function that initializes the auth, router, and db properties with default
+   * values or values passed as arguments.
+   * @param {Auth} auth - The &#x60;auth&#x60; parameter is an instance of the &#x60;Auth&#x60; class, which is used for
+   * authentication and user management in Firebase. It is used to authenticate users, manage user
+   * accounts, and handle user sessions.
+   * @param {Router} router - The router parameter is an instance of the Angular Router service, which
+   * is used for navigating between different views or components in an Angular application. It provides
+   * methods for navigating to a specific route, navigating back to the previous route, and more.
+   * @param {Firestore} db - db is a parameter that represents an instance of the Firestore database.
+   * Firestore is a NoSQL document database that is used to store and manage data for web and mobile
+   * applications. In this code snippet, the db parameter is initialized with the getFirestore()
+   * function, which returns an instance of the Firestore database.
+   */
+  constructor(
+    public auth: Auth &#x3D; getAuth(),
+    public router: Router,
+    public db: Firestore &#x3D; getFirestore(),
+  ) {
+  }
+
+  /**
+   * This is an asynchronous function that retrieves the name of a user from a Firestore database based
+   * on their unique ID, and returns either the name or a default &quot;Iniciar Sesión&quot; message if the user
+   * does not exist.
+   * @param {string} uid - The uid parameter is a string that represents the unique identifier of a user
+   * in a database. In this case, it is used to retrieve the name of a user from a &quot;usuarios&quot; collection
+   * in the database.
+   * @returns {string} If the document with the specified &#x60;uid&#x60; exists in the &quot;usuarios&quot; collection, the function
+   * will return the value of the &quot;nombre&quot; field in that document. Otherwise, it will return the string
+   * &quot;Iniciar Sesión&quot;.
+   */
+  async getNombreUsuario(uid: string) {
+    const docRef &#x3D; doc(this.db, &quot;usuarios&quot;, uid);
+    const docSnap &#x3D; await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      return (docSnap.data()[&quot;nombre&quot;]);
+    } else {
+      return &quot;Iniciar Sesión&quot;;
+    }
+  }
+
+  /**
+   * This function retrieves the family ID of a user from a Firestore database using their UID.
+   * @param {string} uid - The uid parameter is a string that represents the unique identifier of a user
+   * in a database.
+   * @returns {string} the value of the &quot;familiaId&quot; field from the document with the specified &quot;uid&quot; in the
+   * &quot;usuarios&quot; collection. If the document does not exist, an empty string is returned.
+   */
+  async getFamiliaUsuario(uid: string) {
+    const docRef &#x3D; doc(this.db, &quot;usuarios&quot;, uid);
+    const docSnap &#x3D; await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      return (docSnap.data()[&quot;familiaId&quot;]);
+    } else {
+      return &quot;&quot;;
+    }
+  }
+
+  /**
+   * The function uploads a document in a Firestore database with the data of a fridge object.
+   * @param {any} neve - Nevera which we are uploading.
+   */
+  subirNevera(neve: any) {
+    const neveraRef &#x3D; doc(this.db, &#x27;neveras&#x27;, neve.idNevera);
+    setDoc(neveraRef, neve, { merge: true });
+  }
+
+  /**
+   * This function uploads a product in the &quot;productosAdmin&quot; collection in a Firestore database.
+   * @param {any} produ - Object &#x27;ProductoAdmin&#x27; to upload to upload.
+   */
+  subirProductoAdmin(produ: any) {
+    const productoRef &#x3D; doc(this.db, &#x27;productosAdmin&#x27;, produ.idProducto);
+    setDoc(productoRef, produ, { merge: true });
+  }
+
+  /**
+   * This function updates a product in a Firestore collection called &quot;productosFam&quot;.
+   * @param {any} produ - Object &#x27;ProductoFamilia&#x27; to upload
+   */
+  subirProductoFam(produ: any) {
+    const productoRef &#x3D; doc(this.db, &#x27;productosFam&#x27;, produ.idProducto);
+    setDoc(productoRef, produ, { merge: true });
+  }
+
+  /**
+   * This function updates a product in a Firestore database.
+   * @param {any} prod - Object &#x27;Producto&#x27; to being stored
+   */
+  subirProducto(prod: any) {
+    const productoRef &#x3D; doc(this.db, &#x27;productos&#x27;, prod.idProducto);
+    setDoc(productoRef, prod, { merge: true });
+  }
+
+  /**
+   * This is an asynchronous function that deletes a product document from a database using its ID and
+   * returns a boolean indicating whether the deletion was successful or not.
+   * @param {string} idProducto - A string representing the ID of the product to be deleted from the
+   * &quot;productos&quot; collection in the database.
+   * @returns {boolean} - The &#x60;borraProducto&#x60; function returns a boolean value indicating whether the deletion of
+   * the document with the specified &#x60;idProducto&#x60; was successful or not.
+   */
+  async borraProducto(idProducto: string) {
+    let exito &#x3D; false;
+
+    await deleteDoc(doc(this.db, &quot;productos&quot;, idProducto)).then(() &#x3D;&gt; {
+      exito &#x3D; true
+    });
+    return exito;
+  }
+
+  /**
+   * This function deletes a product family and all associated products and images.
+   * @param {string} pId - string parameter representing the ID of the product family to be deleted.
+   * @returns {boolean} - A boolean value indicating whether the deletion of the product family and its associated
+   * products and image was successful or not.
+   */
+  async borraProductoFam(pId: string) {
+    let exito &#x3D; false;
+
+    //Elimino el prod familia
+    await deleteDoc(doc(this.db, &quot;productosFam&quot;, pId)).then(() &#x3D;&gt; {
+      //Elimino todos los produzcos que salgan de él
+      this.borraProductosConIDFam(pId).then(() &#x3D;&gt; {
+        //Elimino su imagen
+        if (this.borrarImagen(&#x27;productos/&#x27; + pId) &#x3D;&#x3D; true) {
+          exito &#x3D; true
+        }
+      })
+    });
+    return exito;
+  }
+
+  /**
+   * This function deletes all products with a specific family ID from the Firestore database.
+   * @param {string} pfId - pfId is a string parameter representing the ID of a product family. The
+   * function uses this ID to query the &quot;productos&quot; collection in the database and retrieve all products
+   * that belong to this family. It then calls the &quot;borraProducto&quot; function to delete each of these
+   * products.
+   */
+  async borraProductosConIDFam(pfId: string) {
+    const q &#x3D; query(collection(this.db, &quot;productos&quot;), where(&quot;idProductoFam&quot;, &quot;&#x3D;&#x3D;&quot;, pfId));
+    const querySnapshot &#x3D; await getDocs(q);
+    querySnapshot.forEach((producto) &#x3D;&gt; {
+      this.borraProducto(producto.data()[&#x27;idProducto&#x27;]);
+    });
+  }
+
+  /**
+   * This TypeScript function deletes an image from storage and returns a boolean indicating whether
+   * the deletion was successful or not.
+   * @param {string} referencia - string - a reference to the image that needs to be deleted from the
+   * storage.
+   * @returns {boolean} - a boolean value indicating whether the deletion of the image was successful or not.
+   * However, the value returned may not be accurate as the deletion operation is asynchronous and the
+   * &#x60;exito&#x60; variable may not have been updated by the time the function returns.
+   */
+  borrarImagen(referencia: string) {
+    let exito &#x3D; false;
+    let refe &#x3D; ref(this.storage, referencia);
+    deleteObject(refe).then(() &#x3D;&gt; {
+      exito &#x3D; true;
+    }).catch((error) &#x3D;&gt; {
+      exito &#x3D; false;
+    });
+    return exito;
+  }
+
+  /**
+   * This function checks if a product exists in a database based on its product family ID, drawer ID,
+   * expiration date, and quantity.
+   * @param {string} pfId - The ID of the product family.
+   * @param {string} cId - cId likely stands for &quot;cajon ID&quot;, which is a unique identifier for a
+   * specific drawer or compartment where a product is stored.
+   * @param {any} caducicad - It is a variable that represents the expiration date of a product.
+   * @param {any} cantidad - The parameter &quot;cantidad&quot; represents the quantity of a product. It is used
+   * in the query to check if there is a product with the specified quantity in the database.
+   * @returns The function &#x60;productoExiste&#x60; returns an array of &#x60;DocumentData&#x60; objects that match the
+   * specified query parameters.
+   */
+  async productoExiste(pfId: string, cId: string, caducicad: any, cantidad: any) {
+    let productos: DocumentData[] &#x3D; [];
+    const q &#x3D; query(collection(this.db, &quot;productos&quot;),
+      where(&quot;idProductoFam&quot;, &quot;&#x3D;&#x3D;&quot;, pfId),
+      where(&quot;idCajon&quot;, &quot;&#x3D;&#x3D;&quot;, cId),
+      where(&quot;caducicad&quot;, &quot;&#x3D;&#x3D;&quot;, caducicad),
+      where(&quot;cantidad&quot;, &quot;&#x3D;&#x3D;&quot;, cantidad));
+
+    const querySnapshot &#x3D; await getDocs(q);
+    querySnapshot.forEach((doc) &#x3D;&gt; {
+      productos.push(doc.data());
+    });
+    return (productos);
+  }
+
+  /**
+   * This function updates a document in a Firestore database with the data of a given &quot;cajón&quot; object.
+   * @param {any} caj - The parameter &quot;caj&quot; is an object &#x27;cajon&#x27;
+   */
+  subirCajon(caj: any) {
+    const cajonRef &#x3D; doc(this.db, &#x27;cajones&#x27;, caj.idCajon);
+    setDoc(cajonRef, caj, { merge: true });
+  }
+
+  /**
+   * This is an asynchronous function that deletes a document from a Firestore database and its
+   * corresponding image.
+   * @param {string} idNevera - A string representing the ID of a &quot;nevera&quot; (refrigerator) document in a
+   * Firestore database.
+   * @returns {boolean} - a boolean value indicating whether the deletion of a document and its corresponding image
+   * was successful or not.
+   */
+  async borraNevera(idNevera: string) {
+    let exito &#x3D; false;
+
+    await deleteDoc(doc(this.db, &quot;neveras&quot;, idNevera)).then(() &#x3D;&gt; {
+      //Elimino su imagen
+      if (this.borrarImagen(&#x27;neveras/&#x27; + idNevera) &#x3D;&#x3D; true) {
+        exito &#x3D; true
+      }
+    });
+    return exito;
+  }
+
+  /**
+   * This is an async function that updates a specific field of a document in a Firestore database
+   * collection for a given fridge ID.
+   * @param {string} idNevera - a string representing the ID of a &quot;nevera&quot; (refrigerator) document in a
+   * Firestore database.
+   * @param {string} campoActualizar - campoActualizar is a string parameter that represents the name of
+   * the field to be updated in a Firestore document.
+   * @param {string} valor - valor is a string parameter that represents the new value to be updated for
+   * the specified field (campoActualizar) in the document with the given id (idNevera) in the &quot;neveras&quot;
+   * collection.
+   * @returns {boolean} - a boolean value indicating whether the update operation was successful or not.
+   */
+  async editaNevera(idNevera: string, campoActualizar: string, valor: string) {
+    let exito &#x3D; false;
+    const referencia &#x3D; doc(this.db, &quot;neveras&quot;, idNevera);
+
+    await updateDoc(referencia, {
+      [campoActualizar]: valor
+    }).then(() &#x3D;&gt;
+      exito &#x3D; true
+    );
+    return exito;
+  }
+
+  /**
+   * This function retrieves the family ID associated with a given user ID from a Firestore database.
+   * @param {string} uID - a string representing the user ID to be used in the database query.
+   * @returns {string} - The function &#x60;recuperarFamiliaID&#x60; is returning a string value which represents the &#x60;fId&#x60;
+   * (family ID) of a user with the given &#x60;uID&#x60; (user ID).
+   */
+  async recuperarFamiliaID(uID: string) {
+    let fId &#x3D; &quot;&quot;;
+    const q &#x3D; query(collection(this.db, &quot;usuarios&quot;), where(&quot;uid&quot;, &quot;&#x3D;&#x3D;&quot;, uID));
+
+    const querySnapshot &#x3D; await getDocs(q);
+    querySnapshot.forEach((doc) &#x3D;&gt; {
+      //console.log(doc.id, &quot; &#x3D;&gt; &quot;, doc.data());
+
+      fId &#x3D; doc.data()[&#x27;familiaId&#x27;];
+    });
+    return (fId);
+  }
+
+  /**
+   * This function retrieves a list of refrigerators associated with a specific family ID from a
+   * Firestore database.
+   * @param {string} fId - fId is a string parameter that represents the ID of a family. This function
+   * uses the ID to query a collection of &quot;neveras&quot; (refrigerators) and returns an array of
+   * DocumentData objects that match the specified family ID.
+   * @returns {string} The function &#x60;listarNeveras&#x60; is returning an array of &#x60;DocumentData&#x60; objects representing
+   * the neveras (refrigerators) that belong to a specific family, identified by the &#x60;fId&#x60; parameter.
+   */
+  async listarNeveras(fId: string) {
+    let neveras: DocumentData[] &#x3D; [];
+    const q &#x3D; query(collection(this.db, &quot;neveras&quot;), where(&quot;idFamilia&quot;, &quot;&#x3D;&#x3D;&quot;, fId));
+
+    const querySnapshot &#x3D; await getDocs(q);
+    querySnapshot.forEach((doc) &#x3D;&gt; {
+      neveras.push(doc.data());
+    });
+    return (neveras);
+  }
+
+  /**
+    * This function retrieves a list of documents from a Firestore collection based on a specific query
+    * and returns them as an array.
+    * @param {string} nId - nId is a string parameter that represents the ID of a refrigerator. The
+    * function uses this parameter to query the database and retrieve all the &quot;cajones&quot; (drawers) that
+    * belong to the specified refrigerator.
+    * @returns {Array} - The function &#x60;listarCajones&#x60; returns an array of &#x60;DocumentData&#x60; objects representing the
+    * cajones (drawers) that belong to a specific nevera (fridge) identified by the &#x60;nId&#x60; parameter.
+    */
+  async listarCajones(nId: string) {
+
+    let cajones: DocumentData[] &#x3D; [];
+    const q &#x3D; query(collection(this.db, &quot;cajones&quot;), where(&quot;idNevera&quot;, &quot;&#x3D;&#x3D;&quot;, nId));
+
+    const querySnapshot &#x3D; await getDocs(q);
+    querySnapshot.forEach((doc) &#x3D;&gt; {
+      cajones.push(doc.data());
+    });
+    return (cajones);
+  }
+
+  /**
+   * This function retrieves a list of products based on a given family ID by querying two collections
+   * in a Firestore database.
+   * @param {string} fId - string parameter representing the ID of a family of products.
+   * @returns {Array} - an array of DocumentData objects that represent the products belonging to a certain
+   * family (identified by the fId parameter) and all the products in the &quot;productosAdmin&quot; collection.
+   */
+  async listarProductosFam(fId: string) {
+  
+    let productos: DocumentData[] &#x3D; [];
+    const q &#x3D; query(collection(this.db, &quot;productosFam&quot;), where(&quot;idFamilia&quot;, &quot;&#x3D;&#x3D;&quot;, fId));
+
+    const querySnapshot &#x3D; await getDocs(q);
+    querySnapshot.forEach((doc) &#x3D;&gt; {
+      productos.push(doc.data());
+    });
+
+    const querySnapshot2 &#x3D; await getDocs(collection(this.db, &quot;productosAdmin&quot;));
+    querySnapshot2.forEach((doc) &#x3D;&gt; {
+      productos.push(doc.data());
+    });
+
+    return (productos);
+  }
+
+  /**
+   * This is an async function that lists products based on a given cajon ID, order and direction.
+   * @param {string} cId - a string representing the ID of a &quot;cajon&quot; (drawer) in a collection of
+   * products.
+   * @param {string} orden - a string representing the field to order the products by (e.g. &quot;nombre&quot;,
+   * &quot;precio&quot;, &quot;fecha&quot;).
+   * @param {OrderByDirection | undefined} sentido - The &quot;sentido&quot; parameter is an optional parameter
+   * that specifies the direction of the ordering. It can be either &quot;asc&quot; for ascending order or &quot;desc&quot;
+   * for descending order. If it is not provided, the default value is ascending order.
+   * @returns {Array}- an array of DocumentData objects representing the products that match the given cId and
+   * are sorted by the given orden and sentido parameters.
+   */
+  async listarProductos(cId: string, orden: string, sentido: OrderByDirection | undefined) {
+    let productos: DocumentData[] &#x3D; [];
+    console.log(orden)
+    const q &#x3D; query(collection(this.db, &quot;productos&quot;), where(&quot;idCajon&quot;, &quot;&#x3D;&#x3D;&quot;, cId), orderBy(orden, sentido));
+
+    const querySnapshot &#x3D; await getDocs(q);
+    querySnapshot.forEach((doc) &#x3D;&gt; {
+      productos.push(doc.data());
+    });
+
+    return (productos);
+  }
+
+ /**
+  * This function retrieves a list of users from a specific family ID in a Firestore database.
+  * @param {string} fId - fId is a string parameter that represents the ID of a family. The function
+  * uses this parameter to query the &quot;usuarios&quot; collection in the database and retrieve all the
+  * documents that have a &quot;familiaId&quot; field matching the provided fId value.
+  * @returns {Array} The function &#x60;listarFamiliares&#x60; returns an array of &#x60;DocumentData&#x60; objects representing
+  * the users that belong to a specific family, identified by the &#x60;fId&#x60; parameter.
+  */
+  async listarFamiliares(fId: string) {
+    let usuarios: DocumentData[] &#x3D; [];
+    const q &#x3D; query(collection(this.db, &quot;usuarios&quot;), where(&quot;familiaId&quot;, &quot;&#x3D;&#x3D;&quot;, fId));
+
+    const querySnapshot &#x3D; await getDocs(q);
+    querySnapshot.forEach((doc) &#x3D;&gt; {
+      usuarios.push(doc.data());
+    });
+
+    return (usuarios);
+  }
+
+  /**
+   * This is an asynchronous function that retrieves data from a Firestore document with a given ID and
+   * returns the data if it exists, or 0 if it does not.
+   * @param {string} nId - nId is a string parameter that represents the ID of a &quot;nevera&quot; document in a
+   * Firestore database.
+   * @returns {Object} - If the document with the specified ID exists in the &quot;neveras&quot; collection, the function
+   * will return the nevera searched. Otherwise, it will return 0.
+   */
+  async recuperarNevera(nId: string) {
+    const docRef &#x3D; doc(this.db, &quot;neveras&quot;, nId);
+    const docSnap &#x3D; await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      return (docSnap.data());
+    } else {
+      return 0;
+    }
+  }
+
+  /**
+   * This function retrieves data from a Firestore document with a given ID and returns it, or returns
+   * 0 if the document does not exist.
+   * @param {string} cId - cId is a string parameter that represents the ID of a &quot;cajón&quot; (drawer)
+   * document in a Firestore database.
+   * @returns {Object} - It returns the cajon if it exists or the value 0 if it does not exist
+   */
+  async recuperarCajon(cId: string) {
+    const docRef &#x3D; doc(this.db, &quot;cajones&quot;, cId);
+    const docSnap &#x3D; await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      return (docSnap.data());
+    } else {
+      return 0;
+    }
+  }
+  
+  /**
+   * This is an asynchronous function that deletes a document from a Firestore database and its
+   * corresponding image.
+   * @param {string} cId - cId is a string parameter that represents the ID of a &quot;cajón&quot; (drawer)
+   * document in a Firestore database. The function uses this ID to delete the document and its
+   * associated image.
+   * @returns {boolean} - a boolean value indicating whether the deletion of the document and its associated image
+   * was successful or not.
+   */
+  async borraCajon(cId: string) {
+    let exito &#x3D; false;
+
+    await deleteDoc(doc(this.db, &quot;cajones&quot;, cId)).then(() &#x3D;&gt; {
+      //Elimino su imagen
+      if (this.borrarImagen(&#x27;cajones/&#x27; + cId) &#x3D;&#x3D; true) {
+        exito &#x3D; true
+      }
+    })
+    return exito;
+  }
+
+ /**
+  * This is an async function that updates a specific field in a document in a Firestore database
+  * collection.
+  * @param {string} cId - a string representing the ID of the &quot;cajón&quot; (drawer) to be edited.
+  * @param {string} campoActualizar - campoActualizar is a string parameter that represents the name of
+  * the field that needs to be updated in the Firestore document.
+  * @param {string} valor - The value that will be updated in the specified field of the document with
+  * the given cId.
+  * @returns {boolean} - a boolean value indicating whether the update operation was successful or not.
+  */
+  async editaCajon(cId: string, campoActualizar: string, valor: string) {
+    let exito &#x3D; false;
+    const referencia &#x3D; doc(this.db, &quot;cajones&quot;, cId);
+
+    await updateDoc(referencia, {
+      [campoActualizar]: valor
+    }).then(() &#x3D;&gt;
+      exito &#x3D; true
+    );
+    return exito;
+  }
+
+ /**
+  * This function changes the family of a user and optionally moves their products and refrigerators to
+  * the new family.
+  * @param {string} uId - string variable representing the user ID
+  * @param {string} fId - The ID of the current family that the user belongs to.
+  * @param {string} nuevaFamilia - A string representing the new family that the user will belong to
+  * after the function is executed.
+  * @param {boolean} moverNeveras - A boolean value that determines whether or not to move the
+  * refrigerators associated with the user to the new family. If it is true, the function will call the
+  * methods to update the products and refrigerators associated with the user&#x27;s old family to the new
+  * family. If it is false, only the user will be moved
+  * @returns {boolean} - a boolean value indicating whether the operation was successful or not.
+  */
+  async cambiaFamiliaUsuario(uId: string, fId: string, nuevaFamilia: string, moverNeveras: boolean) {
+    let exito &#x3D; false;
+    const referencia &#x3D; doc(this.db, &quot;usuarios&quot;, uId);
+
+    //Cambiamos la familia en el objeto usuario
+    await updateDoc(referencia, {
+      &quot;familiaId&quot;: nuevaFamilia
+    }).then(() &#x3D;&gt; {
+      if (moverNeveras &#x3D;&#x3D; true) {
+        //Actualizamos los productos de la familia para que pertenezcan a la nueva
+        this.cambiarFamiliaProductos(fId, nuevaFamilia).then((exit) &#x3D;&gt; {
+          (exit &#x3D;&#x3D; 0) ? exito &#x3D; true : exito &#x3D; false;
+          //Actualizamos las neveras de la familia para que pertenezcan a la nueva
+          this.cambiarFamiliaNeveras(fId, nuevaFamilia).then((exit) &#x3D;&gt; (exit &#x3D;&#x3D; 0) ? exito &#x3D; true : exito &#x3D; false)
+        })
+      }
+    });
+    return exito;
+  }
+
+ /**
+  * This function changes the family ID of all refrigerators with a given family ID and returns a
+  * success or failure status.
+  * @param {string} fId - a string representing the ID of the current family of refrigerators that need
+  * to be updated.
+  * @param {string} nFid - The new family ID to which the refrigerators will be assigned.
+  * @returns {number} -a number that indicates whether the operation was successful or not. If the value of
+  * &#x60;exito&#x60; is 0, it means that the operation was successful. If the value is 1 or 2, it means that
+  * something went wrong.
+  */
+  async cambiarFamiliaNeveras(fId: string, nFid: string) {
+    let exito &#x3D; 0;
+    const q &#x3D; query(collection(this.db, &quot;neveras&quot;), where(&quot;idFamilia&quot;, &quot;&#x3D;&#x3D;&quot;, fId));
+
+    const querySnapshot &#x3D; await getDocs(q);
+    querySnapshot.forEach((doc) &#x3D;&gt; {
+      this.editarFamiliaNevera(doc.data(), nFid).then((exit) &#x3D;&gt; exito &#x3D; exito + exit)
+    });
+    /*Si exito es 0 ha ido bien, si es 1 o 2 algo ha fallado*/
+    return exito;
+  }
+
+  /**
+   * This is an async function that updates the family ID of a fridge object in a Firestore database.
+   * @param {any} nevera - an object representing a fridge, containing an &quot;idNevera&quot; property
+   * @param {string} nFId - nFId is a string parameter that represents the ID of the family that the
+   * user wants to assign to a refrigerator.
+   * @returns {number} - a number, either 1 or 0 depending on whether the update operation was successful or not.
+   */
+  async editarFamiliaNevera(nevera: any, nFId: string) {
+    let exito &#x3D; 1;
+    const referencia &#x3D; doc(this.db, &quot;neveras&quot;, nevera.idNevera);
+
+    //Cambiamos la familia en el objeto nevera
+    await updateDoc(referencia, {
+      &quot;idFamilia&quot;: nFId
+    }).then(() &#x3D;&gt; {
+      exito &#x3D; 0
+    });
+    return exito;
+  }
+
+  /**
+   * This is an async function that changes the family ID of products in a collection and returns a
+   * success or failure status.
+   * @param {string} fId - A string representing the ID of the current family of products.
+   * @param {string} nFid - The new family ID to which the products will be changed.
+   * @returns {number} - a number that indicates whether the operation was successful or not. If the value of
+   * &#x60;exito&#x60; is 0, it means that the operation was successful. If the value is 1 or 2, it means that
+   * something went wrong.
+   */
+  async cambiarFamiliaProductos(fId: string, nFid: string) {
+    let exito &#x3D; 0;
+    const q &#x3D; query(collection(this.db, &quot;productosFam&quot;), where(&quot;idFamilia&quot;, &quot;&#x3D;&#x3D;&quot;, fId));
+
+    const querySnapshot &#x3D; await getDocs(q);
+    querySnapshot.forEach((doc) &#x3D;&gt; {
+      this.editarFamiliaProducto(doc.data(), nFid).then((exit) &#x3D;&gt; exito &#x3D; exito + exit)
+    });
+    /*Si exito es 0 ha ido bien, si es 1 o 2 algo ha fallado*/
+    return exito;
+  }
+
+  /**
+   * This is an async function that edits the family of a product in a database and returns a success
+   * status.
+   * @param {any} producto - It is an object that represents a product and contains information such as
+   * its ID, name, description, price, and the ID of the family it belongs to.
+   * @param {string} nFId - nFId is a string parameter representing the new family ID that the product
+   * will be updated to.
+   * @returns {number} - a number, either 1 or 0 depending on whether the update operation was successful or not.
+   */
+  async editarFamiliaProducto(producto: any, nFId: string) {
+    let exito &#x3D; 1;
+    const referencia &#x3D; doc(this.db, &quot;productosFam&quot;, producto.idProducto);
+
+    //Cambiamos la familia en el objeto nevera
+    await updateDoc(referencia, {
+      &quot;idFamilia&quot;: nFId
+    }).then(() &#x3D;&gt; {
+      exito &#x3D; 0
+    });
+    return exito;
+  }
+
+
+  /**
+   * This function checks if a family with a specific ID exists in a collection called &quot;familias&quot;.
+   * @param {string} fId - fId is a string parameter that represents the ID of a family document in a
+   * Firestore database.
+   * @returns {boolean} - The function &#x60;familiaExiste&#x60; returns a boolean value (&#x60;true&#x60; or &#x60;false&#x60;) depending on
+   * whether a document with the specified &#x60;fId&#x60; exists in the &quot;familias&quot; collection of the database.
+   */
+  async familiaExiste(fId: string) {
+    const referencia &#x3D; doc(this.db, &quot;familias&quot;, fId);
+
+    const docSnap &#x3D; await getDoc(referencia);
+    if (docSnap.exists()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'FirestoreService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

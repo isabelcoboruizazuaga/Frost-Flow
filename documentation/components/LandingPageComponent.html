@@ -1,0 +1,579 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>tfg-congelador documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">tfg-congelador documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  LandingPageComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/landing-page/landing-page.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-landing-page</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./landing-page.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./landing-page.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-landing-page&#x27;,
+  templateUrl: &#x27;./landing-page.component.html&#x27;,
+  styleUrls: [&#x27;./landing-page.component.scss&#x27;]
+})
+
+export class LandingPageComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;gestiona&quot;&gt;
+    &lt;img id&#x3D;&quot;f1&quot; src&#x3D;&quot;/assets/images/nevera_cerrada2.png&quot;&gt;
+    &lt;img id&#x3D;&quot;f2&quot; src&#x3D;&quot;/assets/images/nevera_abierta2.png&quot;&gt;
+    &lt;h1 class&#x3D;&quot;texto&quot;&gt;
+        &lt;div class&#x3D;&quot;texto_gestiona&quot;&gt;
+            &lt;span style&#x3D;&quot;--i:1&quot;&gt;Gestiona &lt;/span&gt;
+            &lt;img style&#x3D;&quot;--i:1&quot; src&#x3D;&quot;/assets/images/neveraRoja.png&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;texto_gestiona&quot;&gt;
+            &lt;span style&#x3D;&quot;--i:2&quot;&gt;tus &lt;/span&gt;
+            &lt;img style&#x3D;&quot;--i:2&quot; src&#x3D;&quot;/assets/images/neveraOrange.png&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;texto_gestiona&quot;&gt;
+            &lt;span style&#x3D;&quot;--i:3&quot;&gt;neveras &lt;/span&gt;
+            &lt;img style&#x3D;&quot;--i:3&quot; src&#x3D;&quot;/assets/images/neveraGreen.png&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;texto_gestiona&quot;&gt;
+            &lt;span style&#x3D;&quot;--i:4&quot;&gt;y &lt;/span&gt;
+            &lt;img style&#x3D;&quot;--i:4&quot; src&#x3D;&quot;/assets/images/neveraPurple.png&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;texto_gestiona&quot;&gt;
+            &lt;span style&#x3D;&quot;--i:5&quot;&gt;congeladores &lt;/span&gt;
+            &lt;img style&#x3D;&quot;--i:5&quot; class&#x3D;&quot;conge&quot; src&#x3D;&quot;/assets/images/congelador.png&quot;&gt;
+        &lt;/div&gt;
+    &lt;/h1&gt;
+&lt;/section&gt;
+
+&lt;section class&#x3D;&quot;personaliza&quot;&gt;
+    &lt;img id&#x3D;&quot;f2 img&quot; src&#x3D;&quot;/assets/images/nevera_llena.png&quot;&gt;
+    &lt;h1 class&#x3D;&quot;texto_personaliza&quot; aria-label&#x3D;&quot;Personaliza los cajones&quot;&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;P&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;e&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;r&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;s&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;o&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;n&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;a&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;l&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;i&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;z&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;a&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;vacio&quot;&gt; &lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;l&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;o&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;s&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;vacio&quot;&gt; &lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;c&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;a&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;j&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;o&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;n&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;e&lt;/span&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;s&lt;/span&gt;
+    &lt;/h1&gt;
+
+
+&lt;/section&gt;
+
+
+&lt;section class&#x3D;&quot;productos&quot;&gt;
+    &lt;h1&gt;Crea y añade productos&lt;/h1&gt;
+    &lt;app-carousel&gt;&lt;/app-carousel&gt;
+&lt;/section&gt;
+&lt;section class&#x3D;&quot;familia&quot;&gt;
+    &lt;img id&#x3D;&quot;f1&quot; src&#x3D;&quot;/assets/images/neveraC.png&quot;&gt;
+    &lt;h1&gt;Hazlo junto a tu familia&lt;/h1&gt;
+&lt;/section&gt;
+&lt;section class&#x3D;&quot;registrarse&quot;&gt;
+    &lt;h1&gt;Empieza ya&lt;/h1&gt;
+    &lt;button class&#x3D;&quot;btn&quot;&gt;Registrarse&lt;/button&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./landing-page.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;../../scss/mixin&#x27;;
+
+section {
+  display: grid;
+
+  justify-items: center;
+  align-items: center;
+
+  margin: 1rem;
+
+  img {
+    height: 60vh;
+    width: 30vw;
+  }
+
+  h1{
+    font-size: get-font(l);
+    text-transform: uppercase;
+    color: get-color(contrast_primary);
+    text-shadow: textShadow(0.25, 6, get-color(transparency_primary));
+  }
+}
+
+/*-------PRIMERA SECCIÓN----------*/
+.gestiona {
+  grid-template-columns: fit-content(10%) 1fr;
+
+  .texto {
+    grid-area: 1/2/2/3;
+    @include flex();
+
+    /*Animación de texto de gestionar*/
+    .texto_gestiona {
+      @include flex(column);
+      margin-left: 1vw;
+
+      span {
+        position: relative;
+        display: inline-block;
+
+        font-size: get-font(l);
+
+        animation: flip 3s infinite;
+        animation-delay: calc(.5s * var(--i))
+      }
+
+      img {
+        width: 5vw;
+        height: 20vh;
+
+        position: relative;
+        display: inline-block;
+
+        animation: flip 3s infinite;
+        animation-delay: calc(.5s * var(--i))
+      }
+
+      .conge{        
+        width: 10vw;
+      }
+    }
+  }
+
+
+  //Animación de nevera abriéndose y cerrándose
+  img {
+    grid-area: 1/1/2/2;
+
+    -webkit-animation-name: fade;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 6s;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+  }
+
+}
+
+/*-------SEGUNDA SECCIÓN----------*/
+.personaliza {
+  grid-template-columns: 1fr fit-content(50%);
+
+  img {
+    grid-area: 1/2/2/3;
+
+    height: 60vh;
+    width: 50vw;
+  }
+
+  h1 {
+    grid-area: 1/1/2/2;
+  }
+
+  .texto_personaliza {
+    span {
+      position: relative;
+      animation: scatter 1.75s infinite;
+    }
+    .vacio{
+      margin-left: 1vw;
+    }
+
+    span:nth-child(2n) {
+      animation-delay: 0.3s;
+    }
+
+    span:nth-child(3n) {
+      animation-delay: 0.15s;
+    }
+
+    span:nth-child(5n) {
+      animation-delay: 0.4s;
+    }
+
+    span:nth-child(7n),
+    span:nth-child(11n) {
+      animation-delay: 0.25s;
+    }
+  }
+
+}
+
+/*-------TERCERA SECCIÓN----------*/
+.productos {
+  h1 {
+    margin: 3rem;
+  }
+}
+
+/*-------CUARTA SECCIÓN----------*/
+.familia {
+  grid-template-columns: 1fr fit-content(40%);
+
+  img {
+    grid-area: 1/2/2/3;
+  }
+
+  h1 {
+    grid-area: 1/1/2/2;
+  }
+}
+
+
+/*-------QUINTA SECCIÓN----------*/
+.registrarse {
+  @include flex();
+
+  button {
+    margin-left:3vw;
+
+    background-color:black;
+    border-radius: round($number: 2rem);
+    box-shadow:0.7rem 0.7rem 0.7rem get-color(terciary);
+    
+    font-size: get-font(l);
+    color: white;   
+  }
+  
+  button:hover{
+    background-color: get-color(contrast_primary);
+    box-shadow:0.7rem 0.7rem 0.7rem get-color(secondary);
+  }
+  
+}
+
+/*-------ANIMACIONES----------*/
+
+//Detalles de la primera animación
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  53% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  53% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#f2 {
+  -webkit-animation-delay: -3s;
+}
+
+//Detalles de la segunda animación
+@keyframes flip {
+
+  0%,
+  80% {
+    transform: rotateY(360deg)
+  }
+}
+
+
+//Detalles de la tercera animación
+@keyframes scatter {
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: -10px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="gestiona">    <img id="f1" src="/assets/images/nevera_cerrada2.png">    <img id="f2" src="/assets/images/nevera_abierta2.png">    <h1 class="texto">        <div class="texto_gestiona">            <span style="--i:1">Gestiona </span>            <img style="--i:1" src="/assets/images/neveraRoja.png">        </div>        <div class="texto_gestiona">            <span style="--i:2">tus </span>            <img style="--i:2" src="/assets/images/neveraOrange.png">        </div>        <div class="texto_gestiona">            <span style="--i:3">neveras </span>            <img style="--i:3" src="/assets/images/neveraGreen.png">        </div>        <div class="texto_gestiona">            <span style="--i:4">y </span>            <img style="--i:4" src="/assets/images/neveraPurple.png">        </div>        <div class="texto_gestiona">            <span style="--i:5">congeladores </span>            <img style="--i:5" class="conge" src="/assets/images/congelador.png">        </div>    </h1></section><section class="personaliza">    <img id="f2 img" src="/assets/images/nevera_llena.png">    <h1 class="texto_personaliza" aria-label="Personaliza los cajones">        <span aria-hidden="true">P</span>        <span aria-hidden="true">e</span>        <span aria-hidden="true">r</span>        <span aria-hidden="true">s</span>        <span aria-hidden="true">o</span>        <span aria-hidden="true">n</span>        <span aria-hidden="true">a</span>        <span aria-hidden="true">l</span>        <span aria-hidden="true">i</span>        <span aria-hidden="true">z</span>        <span aria-hidden="true">a</span>        <span aria-hidden="true" class="vacio"> </span>        <span aria-hidden="true">l</span>        <span aria-hidden="true">o</span>        <span aria-hidden="true">s</span>        <span aria-hidden="true" class="vacio"> </span>        <span aria-hidden="true">c</span>        <span aria-hidden="true">a</span>        <span aria-hidden="true">j</span>        <span aria-hidden="true">o</span>        <span aria-hidden="true">n</span>        <span aria-hidden="true">e</span>        <span aria-hidden="true">s</span>    </h1></section><section class="productos">    <h1>Crea y añade productos</h1>    <app-carousel></app-carousel></section><section class="familia">    <img id="f1" src="/assets/images/neveraC.png">    <h1>Hazlo junto a tu familia</h1></section><section class="registrarse">    <h1>Empieza ya</h1>    <button class="btn">Registrarse</button></section></div>'
+    var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
+    var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
+    var ACTUAL_COMPONENT = {'name': 'LandingPageComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LandingPageComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

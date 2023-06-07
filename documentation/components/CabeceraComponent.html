@@ -1,0 +1,983 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>tfg-congelador documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">tfg-congelador documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CabeceraComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/cabecera/cabecera.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-cabecera</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./cabecera.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./cabecera.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#auth" >auth</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#authService" >authService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#firestoreService" >firestoreService</a>
+                            </li>
+                            <li>
+                                <a href="#nombre" >nombre</a>
+                            </li>
+                            <li>
+                                <a href="#usuario" >usuario</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizarNombre" >actualizarNombre</a>
+                            </li>
+                            <li>
+                                <a href="#adminSesion" >adminSesion</a>
+                            </li>
+                            <li>
+                                <a href="#cerrarSesion" >cerrarSesion</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, firestoreService: <a href="../injectables/FirestoreService.html" target="_self">FirestoreService</a>, auth: Auth)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/cabecera/cabecera.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>The constructor initializes the router, authService, firestoreService, and auth, and listens for
+changes in the user&#39;s authentication state to update the user&#39;s name displayed in the header
+section of the web application.
+between different routes in the application.
+handle authentication-related functionality such as logging in, logging out, and registering
+users.
+for interacting with the Firestore database in Firebase. It is used to perform CRUD (Create, Read,
+Update, Delete) operations on the database, such as adding new data, retrieving existing data,
+updating data, and deleting data.
+<code>Auth</code> class. It is used to authenticate users and manage their authentication state. In this
+code, it is being passed as a parameter to the <code>onAuthStateChanged</code> method to listen for changes
+in the user&#39;s authentication state</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>an instance of the Angular Router service, which is used for navigating
+between different routes in the application.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>An instance of the AuthService class, which is likely used to
+handle authentication-related functionality such as logging in, logging out, and registering
+users.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>firestoreService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FirestoreService.html" target="_self" >FirestoreService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>FirestoreService is a service that provides methods
+for interacting with the Firestore database in Firebase. It is used to perform CRUD (Create, Read,
+Update, Delete) operations on the database, such as adding new data, retrieving existing data,
+updating data, and deleting data.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                    <code>Auth</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>The <code>auth</code> parameter is an instance of the Firebase Authentication library&#39;s
+<code>Auth</code> class. It is used to authenticate users and manage their authentication state. In this
+code, it is being passed as a parameter to the <code>onAuthStateChanged</code> method to listen for changes
+in the user&#39;s authentication state</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarNombre"></a>
+                    <span class="name">
+                        <span ><b>actualizarNombre</b></span>
+                        <a href="#actualizarNombre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarNombre()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/cabecera/cabecera.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function updates the name of a user by retrieving their ID and using it to fetch their name
+from a Firestore database.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adminSesion"></a>
+                    <span class="name">
+                        <span ><b>adminSesion</b></span>
+                        <a href="#adminSesion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>adminSesion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/cabecera/cabecera.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function navigates the user to the registration page.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cerrarSesion"></a>
+                    <span class="name">
+                        <span ><b>cerrarSesion</b></span>
+                        <a href="#cerrarSesion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cerrarSesion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/cabecera/cabecera.component.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The function &quot;cerrarSesion&quot; logs out the user and changes the displayed name to &quot;Iniciar Sesión&quot;.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/cabecera/cabecera.component.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The ngOnInit function calls the actualizarNombre function.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="auth"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>auth</b></span>
+                        <a href="#auth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Auth</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>getAuth()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/cabecera/cabecera.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- The `auth` parameter is an instance of the Firebase Authentication library's
+`Auth` class. It is used to authenticate users and manage their authentication state. In this
+code, it is being passed as a parameter to the `onAuthStateChanged` method to listen for changes
+in the user's authentication state</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="authService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>authService</b></span>
+                        <a href="#authService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/cabecera/cabecera.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- An instance of the AuthService class, which is likely used to
+handle authentication-related functionality such as logging in, logging out, and registering
+users.</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="firestoreService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>firestoreService</b></span>
+                        <a href="#firestoreService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/FirestoreService.html" target="_self" >FirestoreService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/cabecera/cabecera.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- FirestoreService is a service that provides methods
+for interacting with the Firestore database in Firebase. It is used to perform CRUD (Create, Read,
+Update, Delete) operations on the database, such as adding new data, retrieving existing data,
+updating data, and deleting data.</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nombre"></a>
+                    <span class="name">
+                        <span ><b>nombre</b></span>
+                        <a href="#nombre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;Iniciar Sesión&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/cabecera/cabecera.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuario"></a>
+                    <span class="name">
+                        <span ><b>usuario</b></span>
+                        <a href="#usuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/cabecera/cabecera.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, NgZone, Output } from &#x27;@angular/core&#x27;;
+import { AuthService } from &#x27;../shared/services/auth.service&#x27;;
+import { FirestoreService } from &#x27;../shared/services/firestore.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Auth, getAuth, onAuthStateChanged } from &#x27;@angular/fire/auth&#x27;;
+
+@Component({
+  selector: &#x27;app-cabecera&#x27;,
+  templateUrl: &#x27;./cabecera.component.html&#x27;,
+  styleUrls: [&#x27;./cabecera.component.scss&#x27;],
+})
+
+/* The CabeceraComponent class is an Angular component that handles the header section of a web
+application and includes functionality for user authentication and displaying the user&#x27;s name. */
+export class CabeceraComponent {
+  usuario: any;
+  nombre &#x3D; &quot;Iniciar Sesión&quot;;
+
+  /**
+   * The constructor initializes the router, authService, firestoreService, and auth, and listens for
+   * changes in the user&#x27;s authentication state to update the user&#x27;s name displayed in the header
+   * section of the web application.
+   * @param {Router} router - an instance of the Angular Router service, which is used for navigating
+   * between different routes in the application.
+   * @param {AuthService} authService - An instance of the AuthService class, which is likely used to
+   * handle authentication-related functionality such as logging in, logging out, and registering
+   * users.
+   * @param {FirestoreService} firestoreService - FirestoreService is a service that provides methods
+   * for interacting with the Firestore database in Firebase. It is used to perform CRUD (Create, Read,
+   * Update, Delete) operations on the database, such as adding new data, retrieving existing data,
+   * updating data, and deleting data.
+   * @param {Auth} auth - The &#x60;auth&#x60; parameter is an instance of the Firebase Authentication library&#x27;s
+   * &#x60;Auth&#x60; class. It is used to authenticate users and manage their authentication state. In this
+   * code, it is being passed as a parameter to the &#x60;onAuthStateChanged&#x60; method to listen for changes
+   * in the user&#x27;s authentication state
+   */
+  constructor(private router: Router, public authService: AuthService, public firestoreService: FirestoreService, public auth: Auth &#x3D; getAuth()) {
+   
+    /* &#x60;onAuthStateChanged&#x60; is a method provided by the Firebase Authentication library that listens for
+   changes in the user&#x27;s authentication state. In this case, it is being used to update the user&#x27;s
+   name displayed in the header section of the web application whenever the user logs in or logs
+   out. */
+    onAuthStateChanged(auth, () &#x3D;&gt; {
+      this.actualizarNombre();
+    })
+  }
+
+  /**
+   * The ngOnInit function calls the actualizarNombre function.
+   */
+  ngOnInit() {
+    this.actualizarNombre()
+  }
+
+ /**
+  * This function navigates the user to the registration page.
+  */
+  adminSesion() {
+    this.router.navigate([&#x27;/registro&#x27;]);
+  }
+
+  /**
+   * The function &quot;cerrarSesion&quot; logs out the user and changes the displayed name to &quot;Iniciar Sesión&quot;.
+   */
+  cerrarSesion() {
+    this.authService.cerrarSesion();
+
+    this.nombre &#x3D; &quot;Iniciar Sesión&quot;;
+  }
+
+  /**
+   * This function updates the name of a user by retrieving their ID and using it to fetch their name
+   * from a Firestore database.
+   */
+  actualizarNombre() {
+    //Se obtiene el id de usuario actual
+    this.usuario &#x3D; JSON.parse(localStorage.getItem(&#x27;usuario&#x27;)!);
+    let uid &#x3D; this.usuario.uid;
+
+    this.firestoreService.getNombreUsuario(uid).then(result &#x3D;&gt; {
+        this.nombre &#x3D; result;
+      console.log(this.nombre)
+    })
+  }
+
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;header&quot;&gt;
+  &lt;div class&#x3D;&quot;identificacion&quot; routerLink&#x3D;&quot;/inicio&quot;&gt;
+    &lt;img src&#x3D;&quot;/assets/icons/logo1.png&quot; class&#x3D;&quot;logo&quot; alt&#x3D;&quot;image&quot;&gt;
+    &lt;h1&gt;Frost Flow&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;nav class&#x3D;&quot;navbar&quot;&gt;
+    &lt;ul&gt;
+      &lt;!--Enlaces--&gt;
+      &lt;li routerLink&#x3D;&quot;/neveras&quot; *ngIf&#x3D;&quot;(nombre !&#x3D; &#x27;Iniciar Sesión&#x27;);&quot;&gt;
+        &lt;img src&#x3D;&quot;/assets/icons/fridge.png&quot; class&#x3D;&quot;icon&quot; alt&#x3D;&quot;image&quot;&gt;
+      &lt;/li&gt;
+      &lt;li routerLink&#x3D;&quot;/familia&quot;  *ngIf&#x3D;&quot;(nombre !&#x3D; &#x27;Iniciar Sesión&#x27;);&quot;&gt;
+        &lt;img src&#x3D;&quot;/assets/icons/family.png&quot; class&#x3D;&quot;icon&quot; alt&#x3D;&quot;image&quot;&gt;
+      &lt;/li&gt;
+      &lt;!--Botón de inicio de sesión--&gt;
+      &lt;li *ngIf&#x3D;&quot;(nombre &#x3D;&#x3D; &#x27;Iniciar Sesión&#x27;);else other_content &quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn&quot; (click)&#x3D;&quot;adminSesion()&quot;&gt;
+          &lt;img src&#x3D;&quot;/assets/icons/user.png&quot; class&#x3D;&quot;icon&quot; alt&#x3D;&quot;image&quot;&gt;
+          {{nombre}}
+        &lt;/button&gt;
+      &lt;/li&gt;
+
+      &lt;ng-template #other_content&gt;
+        &lt;li ngbDropdown class&#x3D;&quot;d-inline-block&quot;&gt;
+          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn midropdown&quot; id&#x3D;&quot;dropdownBasic1&quot; ngbDropdownToggle&gt;
+            &lt;img src&#x3D;&quot;/assets/icons/user.png&quot; class&#x3D;&quot;icon&quot; alt&#x3D;&quot;image&quot;&gt;
+            {{nombre}}
+          &lt;/button&gt;
+          &lt;div ngbDropdownMenu aria-labelledby&#x3D;&quot;dropdownBasic1&quot; class&#x3D;&quot;midropdown&quot;&gt;
+            &lt;button ngbDropdownItem (click)&#x3D;&quot;cerrarSesion()&quot;&gt;Cerrar sesión&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      &lt;/ng-template&gt;
+
+
+
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./cabecera.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;../../scss/mixin&#x27;;
+@import &#x27;../../scss/variables&#x27;;
+
+
+.header {
+    @include flex(row, center, space-between);
+
+    width: 100%;
+    height: 100%;    
+
+    background-color: get-color(primary);
+    color: black;
+    
+    h1{
+        font-family: $titulo;
+        font-size: get-font(xxl);
+        text-shadow: none;
+        color: black;
+    }
+
+
+    .identificacion {
+        @include flex();        
+        cursor: pointer;
+
+        .logo {
+            height: 5rem;
+            width: 10rem;
+
+            filter: invert(00%) sepia(0%) saturate(0%) hue-rotate(292deg) brightness(0%) contrast(200%);
+
+            margin-right: 1rem;
+        }
+    }
+
+    //Botones de acción
+    .navbar {
+        margin-right: 3vw;
+        ul {
+            @include flex(row,flex-end);
+
+            li {
+                margin-left: 2rem;
+
+                .btn {
+                    all: unset;
+                    @include flex();
+                }
+            }
+
+            .d-inline-block{
+                cursor: pointer;
+                width: auto;
+
+                button, .midropdown{
+                    width:100%;
+                    background-color: get-color(primary);
+                }
+            }
+
+            .d-inline-block :hover{
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+    .icon {
+        height: 3rem;
+        width: 3rem;
+    }
+
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="header">  <div class="identificacion" routerLink="/inicio">    <img src="/assets/icons/logo1.png" class="logo" alt="image">    <h1>Frost Flow</h1>  </div>  <nav class="navbar">    <ul>      <!--Enlaces-->      <li routerLink="/neveras" *ngIf="(nombre != \'Iniciar Sesión\');">        <img src="/assets/icons/fridge.png" class="icon" alt="image">      </li>      <li routerLink="/familia"  *ngIf="(nombre != \'Iniciar Sesión\');">        <img src="/assets/icons/family.png" class="icon" alt="image">      </li>      <!--Botón de inicio de sesión-->      <li *ngIf="(nombre == \'Iniciar Sesión\');else other_content ">        <button type="button" class="btn" (click)="adminSesion()">          <img src="/assets/icons/user.png" class="icon" alt="image">          {{nombre}}        </button>      </li>      <ng-template #other_content>        <li ngbDropdown class="d-inline-block">          <button type="button" class="btn midropdown" id="dropdownBasic1" ngbDropdownToggle>            <img src="/assets/icons/user.png" class="icon" alt="image">            {{nombre}}          </button>          <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="midropdown">            <button ngbDropdownItem (click)="cerrarSesion()">Cerrar sesión</button>          </div>        </li>      </ng-template>    </ul>  </nav></div></div>'
+    var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
+    var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
+    var ACTUAL_COMPONENT = {'name': 'CabeceraComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CabeceraComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

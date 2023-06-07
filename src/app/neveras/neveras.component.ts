@@ -21,10 +21,25 @@ export class NeverasComponent {
   fid: any = "";
 
 
+ /**
+  * This is a constructor function that initializes variables for modal service, authentication
+  * service, and Firestore service, and creates a new empty file object.
+  * @param {NgbModal} modalService - The modalService is a service provided by the NgbModal module in
+  * Angular. It allows you to open and manage modal windows in your application.
+  * @param {AuthService} authService - It is an instance of the AuthService class, which is likely used
+  * for handling user authentication and authorization within the application.
+  * @param {FirestoreService} firestoreService - FirestoreService is a service that provides methods to
+  * interact with the Firestore database in a Angular application. It allows the application to perform
+  * CRUD (Create, Read, Update, Delete) operations on the Firestore database.
+  */
   constructor(private modalService: NgbModal, public authService: AuthService, public firestoreService: FirestoreService) {
     this.file = new File([""], '');
   }
 
+ /**
+  * The function retrieves the current user's ID, their family's ID, and updates the list of
+  * refrigerators.
+  */
   ngOnInit() {
     //Se obtiene el id de usuario actual
     this.usuario = this.authService.getUsuarioActual();
@@ -40,6 +55,12 @@ export class NeverasComponent {
 
   }
 
+  /**
+   * The function assigns the first selected file from an HTML input element to a variable.
+   * @param {Event} event - The event parameter is an object that represents an event that has
+   * occurred, in this case, the selection of a file by the user. It contains information about the
+   * event, such as the target element that triggered the event.
+   */
   onFileSelected(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
     if (inputElement.files && inputElement.files.length > 0) {
@@ -47,6 +68,12 @@ export class NeverasComponent {
     }
   }
 
+  /**
+   * This function opens a modal and handles form submission, including uploading an image to Firestore
+   * if one is selected.
+   * @param {any} content - The content parameter is a reference to the modal content that will be
+   * displayed when the modal is opened. It can be any valid HTML element or a component.
+   */
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       // Handle form submission
@@ -91,6 +118,11 @@ export class NeverasComponent {
     });
   }
 
+ /**
+  * This function adds a new fridge to the database and updates the list of refrigerators updating the view.
+  * @param {string} nId - string type parameter representing the ID of the fridge being added to the
+  * database.
+  */
   addNevera(nId: string) {
 
     //Se añade la nevera a la bd
@@ -103,6 +135,9 @@ export class NeverasComponent {
     this.actualizarLista()
   }
 
+  /**
+   * The function updates the list of refrigerators using data from a Firestore service.
+   */
   actualizarLista(){
     this.firestoreService.listarNeveras(this.fid).then(neveras => this.neveras = neveras)
   }

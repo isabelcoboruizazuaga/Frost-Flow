@@ -18,10 +18,27 @@ export class NeveraComponent {
   nombreCajon:string="";
   tipoCajon:string="";
   cajones = new Array();
+  
+  /**
+   * This is a constructor function that takes in the router, modalService, and firestoreService as
+   * parameters.
+   * @param {ActivatedRoute} router - The router parameter is an instance of the ActivatedRoute class,
+   * which is used to retrieve information about the current activated route. It is typically used in
+   * Angular applications to navigate between different views or components.
+   * @param {NgbModal} modalService - The modalService is a service provided by the NgbModal module in
+   * Angular. It allows you to open and close modal windows in your application.
+   * @param {FirestoreService} firestoreService - `firestoreService` is an instance of a service that
+   * provides methods for interacting with a Firestore database. It is likely injected into this
+   * component or service using Angular's dependency injection system.
+   */
   constructor(private router: ActivatedRoute, private modalService: NgbModal, public firestoreService: FirestoreService) {
   
   }
 
+ /**
+  * The function retrieves the ID of a fridge, retrieves its name and photo from a Firestore database,
+  * and updates the view.
+  */
   ngOnInit() {
     this.router.params.subscribe(params => {
       this.idNevera = params['id'];
@@ -37,6 +54,9 @@ export class NeveraComponent {
     this.actualizarLista()
   }
 
+  /**
+   * This function adds a new "Cajon" object to a database and updates the view.
+   */
   addCajon() {
     //Creación de id único
     let cId = uuidv4();
@@ -51,10 +71,18 @@ export class NeveraComponent {
     this.actualizarLista()
   }
 
+  /**
+   * The function updates a list of drawers using data from a Firestore service.
+   */
   actualizarLista() {
     this.firestoreService.listarCajones(this.idNevera).then(cajones => this.cajones = cajones)
   }
 
+ /**
+  * This function opens a modal and handles form submission to add a "cajon" (drawer) in TypeScript.
+  * @param {any} content - The content parameter is the component or template that will be displayed
+  * inside the modal dialog. It can be any valid Angular component or template.
+  */
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       // Handle form submission
