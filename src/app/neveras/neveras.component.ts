@@ -125,6 +125,7 @@ export class NeverasComponent {
   */
   addNevera(nId: string) {
 
+    if(this.nombre!=""){
     //Se añade la nevera a la bd
     let nevera = new Nevera(nId, this.fid, this.nombre, this.url);
     let neve = Object.assign({}, nevera);
@@ -133,6 +134,9 @@ export class NeverasComponent {
 
     //Se ractualiza la vista
     this.actualizarLista()
+  }else{
+    alert("¡La nevera debe tener un nombre!")
+  }
   }
 
   /**

@@ -96,7 +96,10 @@ export class NeveraItemComponent {
       if (result === 'borrar') {
         this.firestoreService.borraNevera(this.nevera.idNevera).then((exito)=>{
           if (exito==true){
-            this.neverasComponent.actualizarLista();
+            setTimeout(()=>{
+              this.neverasComponent.actualizarLista();
+              console.log("a")
+            }, 2000);
           }
          })
       }
