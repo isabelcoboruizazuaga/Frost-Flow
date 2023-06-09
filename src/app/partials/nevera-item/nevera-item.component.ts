@@ -94,13 +94,8 @@ export class NeveraItemComponent {
   open(content: any) {
 		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       if (result === 'borrar') {
-        this.firestoreService.borraNevera(this.nevera.idNevera).then((exito)=>{
-          if (exito==true){
-            setTimeout(()=>{
+        this.firestoreService.borraNevera(this.nevera.idNevera).then(()=>{
               this.neverasComponent.actualizarLista();
-              console.log("a")
-            }, 2000);
-          }
          })
       }
     })
