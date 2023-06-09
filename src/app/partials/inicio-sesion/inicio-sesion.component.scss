@@ -1,11 +1,56 @@
 @import '../../../scss/mixin';
-div{
-    @include flex(column);
 
-    input{
-        margin-top: 5vh;
+.inicio-ses {
+  @include flex(column);
+
+  input {
+    margin-top: 5vh;
+    font-size: get-font(s);
+  }
+
+  button {
+    margin-top: 5vh;
+  }
+
+  //Estilos botón de google
+  .google-btn {
+    width: 20rem;
+    height: 3rem;
+
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+
+    google-icon-wrapper {
+      position: absolute;
+      margin-top: 1px;
+      margin-left: 1px;
+
+      width: 3rem;
+      height: 3rem;
+
+      border-radius: 2px;
+      background-color: white;
     }
-    button{
-        margin-top: 5vh;
+
+    .google-icon {
+      position: absolute;
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+
+      width: 2rem;
+      height: 2rem;
     }
+
+    .btn-text {
+      float: right;
+      margin: .35rem .3rem 0 0;
+      letter-spacing: 0.2px;
+      font-size: get-font(s);
+    }
+
+    &:hover {
+      box-shadow: 0 0 6px get-color(primary);
+    }
+  }
 }

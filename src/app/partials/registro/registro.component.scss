@@ -1,18 +1,15 @@
 @import '../../../scss/mixin';
 
-section{
-    @include flex(row, center, space-evenly);
+.registro {
+  @include flex(column);
 
-    height: 80vh;
+  input {
+    margin-top: 5vh;
+    font-size: get-font(s);
+  }
 
-    div{
-        @include flex(column);
+  button {
+    margin-top: 5vh;
+  }
 
-        input{
-            margin-top: 5vh;
-        }
-        button{
-            margin-top: 5vh;
-        }
-    }
 }

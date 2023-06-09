@@ -1,6 +1,7 @@
-<h1>Registrarse</h1>
-<input type="text" placeholder="Nombre" #nombre required>
-<input type="email" placeholder="Correo electrónico" #email required>
-<input type="password" placeholder="Contraseña"  #contrasenia required>
-<button (click)="authService.registrarse(email.value, contrasenia.value, nombre.value)">Registrarse</button>
-<button class="btn googleBtn" (click)="authService.googleAuth()">Registrarse con google</button>
+<div class="registro">
+    <h1>Registrarse</h1>
+    <input class="form-control" type="text" placeholder="Nombre" #nombre required>
+    <input class="form-control" type="email" placeholder="Correo electrónico" #email required>
+    <input class="form-control" type="password" placeholder="Contraseña" #contrasenia required>
+    <button (click)="authService.registrarse(email.value, contrasenia.value, nombre.value)">Registrarse</button>
+</div>

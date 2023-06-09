@@ -1,6 +1,12 @@
-<p>inicio-sesion works!</p>
-<h1>Iniciar sesión</h1>
-<input type="email" placeholder="Correo electrónico" #email required>
-<input type="password" placeholder="Contraseña" #password required>
-<button (click)="authService.inicioSesion(email.value, password.value)">Iniciar sesión</button>
-<button class="btn googleBtn btn-danger" (click)="authService.googleAuth()">Iniciar sesión con google</button>
+<div class="inicio-ses">
+    <h1>Iniciar sesión</h1>
+    <input class="form-control" type="email" placeholder="Correo electrónico" #email required>
+    <input class="form-control" type="password" placeholder="Contraseña" #password required>
+    <button (click)="authService.inicioSesion(email.value, password.value)">Iniciar sesión</button>
+    <div class="google-btn googleBtn" (click)="authService.googleAuth()">
+        <div class="google-icon-wrapper">
+          <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+        </div>
+        <p class="btn-text"><b>Iniciar sesión con google</b></p>
+      </div>
+</div>
