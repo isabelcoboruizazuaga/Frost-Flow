@@ -13,6 +13,10 @@
         .codigo {
             @include flex(column);
 
+            padding: 1rem;
+            background-color: white;
+            @extend %borde-round;
+
             img{
                 width: 30vw;
             }
@@ -21,6 +25,7 @@
 
         .familiares {
             margin-left: 10vw;
+            @include flex(column,flex-start);
 
             .persona {
                 @include flex();
@@ -28,6 +33,7 @@
 
                 img {
                     width: 5vw;
+                    margin-right: 1rem;
                 }
             }
 
@@ -36,7 +42,6 @@
 
     .cambio{
         @include flex();
-        align-self: center;
     }
 
 
