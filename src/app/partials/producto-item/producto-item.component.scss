@@ -13,6 +13,15 @@
 
   background-color: get-color(secondary_transparente);
 
+  .calendario{ 
+    background-color: get-color(secondary);
+    color: black;
+  }
+  .calendario:hover{   
+    background-color: get-color(transparency_terciary);
+    color: white;
+  }
+
   select,
   .add,
   .cant {
@@ -45,4 +54,25 @@
   .add:hover {
     box-shadow: 0.7rem 0.7rem 0.7rem get-color(secondary);
   }
+
+  label{
+    font-size: get-font(xs);
+  }
+  input{
+    font-size: get-font(m);
+  }
+
+   /*Css para el cambio de imagen en hover*/
+   @extend %cambio-imagen-hover;
+   .contenedor{
+     width: 4vw;
+
+     .icon{
+      width: 7vw;;
+    }
+     .img-top{
+       //arreglo respecto a la colocación de bootstrap
+        left: 12px;
+     }
+   }
 }

@@ -1,5 +1,12 @@
 @import '../../scss/mixin';
 .prod{
     margin: 3rem;
+    margin-top: 1rem;
   
+}
+
+.titulo-prod{
+    @include flex(row,center,space-between);
+    margin: 1rem;
+    margin-bottom: 0rem;
 }

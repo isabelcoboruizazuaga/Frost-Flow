@@ -36,7 +36,11 @@
             <label class="paquete-label" for="paquetes">Paquetes</label>
     </div>
     <button class="col-2 add mx-5 " type="submit" (click)="aniadir()">Añadir al cajón</button>
-    <img src="/assets/icons/garbage.png" class="icon col-1 " alt="image" (click)="open(content)" (click)="$event.stopPropagation()" *ngIf="this.producto.idFamilia">
+    <div class="contenedor col" alt="image"  (click)="open(content)" (click)="$event.stopPropagation()" *ngIf="this.producto.idFamilia">
+		<img  alt="papelera vacía" class="icon img-bot" src="/assets/icons/garbage.png">
+		<img alt="papelera llena" class="icon img-top" src="/assets/icons/garbageFull.png">
+	</div>
+    <!-- <img src="/assets/icons/garbage.png" class="icon col-1 " alt="image" (click)="open(content)" (click)="$event.stopPropagation()" > -->
 </div>
 
 

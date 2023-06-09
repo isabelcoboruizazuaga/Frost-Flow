@@ -12,8 +12,9 @@ $colores: (
     "terciary":#7B4B94,
     "contrast_primary":#000B64,
     "transparency_primary":#3e8ceca4,
-    "transparente":rgba(255, 255, 255, 0),
+    "transparency_terciary":#7a4b94c7,
     "secondary_transparente":#00bd9d78,
+    "transparente":rgba(255, 255, 255, 0),
     "c":#E299A2,
     "fondo":#ffffff,
     "black":#000000,
@@ -53,6 +54,7 @@ $fonts: (
 $font-weights: (
     "light": 300,
     "regular":400,
+    "semiBold":550,
     "bold":700);
 
   

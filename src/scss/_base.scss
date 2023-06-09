@@ -18,6 +18,7 @@
 body {
   font-size: get-font("s");
   background-color: get-color("fondo");
+  font-family: $garamond !important;
 
   background-image: url("./../assets/images/fondo.png");
   background-size: cover;
@@ -60,7 +61,12 @@ ul {
   list-style-type: none;
 }
 
-button {
+button{
+  font-family: $garamond;
+  font-weight: get-weight(semiBold);
+}
+
+button:not(.btn):not(.btn-close){
   margin: 1rem;
   padding: 0.5rem;
   padding-right: 1rem;
@@ -76,11 +82,11 @@ button {
   font-weight: 600;
 }
 
-button:hover {
+button:hover:not(.btn):not(.btn-close) {
   box-shadow: 0.7rem 0.7rem 0.7rem get-color(secondary);
 }
 
-.modal-content {
+.modal-content, .header {
   button {
     box-shadow: none;
   }
