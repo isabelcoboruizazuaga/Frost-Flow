@@ -1,41 +1,75 @@
 @import '../../scss/mixin';
 
 .nevera {
-    @include flex(row, flex-start, space-around);
+  @include flex(row, flex-start, space-around);
 
-    margin-top: 3vh;
+  margin-top: 3vh;
+
+  .neveraInfo {
+    @include flex(column, flex-start, flex-start);
+
+    width: 40vw;
+    height: 90vh;
+
+    h1 {
+      position: fixed;
+    }
+
+    .foto_nevera {
+      max-width: 40vw;
+      min-width: 30vw;
+      min-height: 50vh;
+      max-height: 75vh;
+
+      position: fixed;
+      margin-top: 5rem;
+    }
+  }
+
+  .cajones {
+    @include flex();
+
+    width: 50vw;
+
+    app-cajon-item,
+    app-cajon-item-add {
+      width: 20vw;
+      height: 30vh;
+
+      margin-left: 5vw;
+      margin-top: 5vh;
+    }
+
+  }
+}
+
+/*-------MEDIA QUERYS----------*/
+@media screen and (max-width: get-punto-ruptura(xl)) {
+
+  app-cajon-item,
+  app-cajon-item-add {
+    width: 40vw !important;
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(s)) {
+  .nevera {
+    @include flex(column);
 
     .neveraInfo {
-        @include flex(column, flex-start, flex-start);
+      height: fit-content;
 
-        width: 40vw;
-        height: 90vh;
 
-        h1 {
-            position: fixed;
-        }
+      h1 {
+        position: relative !important;
+      }
 
-        .foto_nevera {
-            max-width: 40vw;
-            min-width: 30vw;
-            min-height: 50vh;
-            max-height: 75vh;
-            position: fixed;
-            margin-top: 5rem;
-        }
+      .foto_nevera {
+        position: relative !important;
+      }
     }
 
-    .cajones {
-        @include flex();
+  }
 
-        width: 50vw;
 
-        app-cajon-item, app-cajon-item-add{
-            width: 20vw;
-
-            margin-left: 5vw;
-            margin-top: 5vh;
-        }
-
-    }
 }
