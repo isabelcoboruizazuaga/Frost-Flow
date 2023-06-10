@@ -2,29 +2,29 @@
 
 ///Mixin de media query
 @mixin response($breakpoint) {
-    @if($breakpoint ==xl) {
-        @media(max-widdth:1200px) {
-            @content;
-        }
+  @if($breakpoint==xl) {
+    @media(max-widdth:1200px) {
+      @content;
     }
+  }
 
-    @if($breakpoint ==lg) {
-        @media(max-widdth:992px) {
-            @content;
-        }
+  @if($breakpoint==lg) {
+    @media(max-widdth:992px) {
+      @content;
     }
+  }
 
-    @if($breakpoint ==md) {
-        @media(max-widdth:768px) {
-            @content;
-        }
+  @if($breakpoint==md) {
+    @media(max-widdth:768px) {
+      @content;
     }
+  }
 
-    @if($breakpoint ==sm) {
-        @media(max-widdth:576px) {
-            @content;
-        }
+  @if($breakpoint==sm) {
+    @media(max-widdth:576px) {
+      @content;
     }
+  }
 }
 
 ///Mixin de posicionamiento con flexbox
@@ -36,11 +36,11 @@
 ///         @include flex(row, center, space-around);
 ///     }
 @mixin flex($direction: row, $align: center, $justify: center) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: wrap;
 }
 
 
@@ -50,7 +50,7 @@
 ///         @extend %borde
 ///     }
 %borde {
-    border: 5px solid get-color("black");
+  border: 5px solid get-color("black");
 }
 
 ///Mixin de borde negro redondeado
@@ -59,8 +59,8 @@
 ///         @extend %borde-round
 ///     }
 %borde-round {
-    border: 5px solid get-color("black");
-    border-radius: 2rem;
+  border: 5px solid get-color("black");
+  border-radius: 2rem;
 }
 
 ///Mixin de borde redondeado con sombra
@@ -69,9 +69,9 @@
 ///         @extend %borde-shadow
 ///     }
 %borde-shadow {
-    border: 1px solid get-color("primary");
-    border-radius: 10px;
-    box-shadow: 10px 5px 5px black;
+  border: 1px solid get-color("primary");
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px black;
 }
 
 ///Mixin para hacer ver los input como texto plano
@@ -79,12 +79,12 @@
 ///     input{
 ///         @extend %input-hide
 ///     }
-%input-hide{
-    text-align: center;    
-    border: none;
+%input-hide {
+  text-align: center;
+  border: none;
 
-    background-color: get-color(transparente);
-    color: black;
+  background-color: get-color(transparente);
+  color: black;
 }
 
 ///Mixin de cambio de una imagen por otra al hacer hover
@@ -92,32 +92,64 @@
 ///     div{
 ///         @extend %cambio-imagen-hover;
 ///     }
-%cambio-imagen-hover{
-    .contenedor {
-        position: relative;
-        display: inline-block;
+%cambio-imagen-hover {
+  .contenedor {
+    position: relative;
+    display: inline-block;
 
-        .img-top {
-          display: none;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 9;
-        } 
-      }
-      .contenedor:hover .img-top {
-        display: inline;
-      }
+    .img-top {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9;
+    }
+  }
+
+  .contenedor:hover .img-top {
+    display: inline;
+  }
 }
+
+///Mixin que da a un botón el estilo deseado
+///@example
+///     button{
+///         @include boton();
+///     }
+@mixin boton {
+  margin: 1rem;
+  padding: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  border: 5px solid get-color("black");
+  border-radius: 2rem;
+  box-shadow: 0.7rem 0.7rem 0.7rem get-color(terciary);
+  background-color: white;
+
+  font-size: get-font(m);
+  color: black;
+
+  font-weight: get-weight(bold);
+}
+
+///Mixin que da a un botón el estilo deseado al hacer hover
+///@example
+///     button:hover{
+///         @include boton-hover();
+///     }
+@mixin boton-hover {
+  box-shadow: 0.7rem 0.7rem 0.7rem get-color(secondary);
+  }
 
 ///Mixin que cambia el color de una imagen al predeterminado
 ///@example
 ///     .img{
 ///         @include colorIcono();
 ///     }
-@mixin colorIcono(){
-    filter: invert(29%) sepia(68%) saturate(527%) hue-rotate(235deg) brightness(98%) contrast(83%);
-    //https://isotropic.co/tool/hex-color-to-css-filter/
+@mixin colorIcono() {
+  filter: invert(29%) sepia(68%) saturate(527%) hue-rotate(235deg) brightness(98%) contrast(83%);
+  //https://isotropic.co/tool/hex-color-to-css-filter/
 }
 
 ///Mixin que coloca un gradiente de color blanco
@@ -126,5 +158,5 @@
 ///         @include colorIcono();
 ///     }
 @mixin white-gradient {
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }

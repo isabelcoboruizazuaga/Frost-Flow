@@ -50,7 +50,7 @@ $font-weights: (
     "light": 300,
     "regular":400,
     "semiBold":550,
-    "bold":700);
+    "bold":600);
 
   
 ///Función que devuelve un peso del vector peso
@@ -64,7 +64,7 @@ $font-weights: (
 ///mapa de puntos de ruptura 
 ///@group media-query
 $puntos-ruptura: (
-    "xl":1100px,
+    "xl":1200px,
     "l":860px,
     "m":700px,
     "s":550px,

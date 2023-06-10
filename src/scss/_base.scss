@@ -44,7 +44,7 @@ h3 {
   font-family: $titulo2;
   font-size: get-font(m);
   color: black;
-  font-weight: bold;
+  font-weight: get-weight(semiBold);
 }
 
 /*Diseño de los modales*/
@@ -63,27 +63,15 @@ ul {
 
 button{
   font-family: $garamond;
-  font-weight: get-weight(semiBold);
+  font-weight: get-weight(bold);
 }
 
 button:not(.btn):not(.btn-close){
-  margin: 1rem;
-  padding: 0.5rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
-
-  @extend %borde-round;
-  box-shadow: 0.7rem 0.7rem 0.7rem get-color(terciary);
-  background-color: white;
-
-  font-size: get-font(m);
-  color: black;
-
-  font-weight: 600;
+  @include boton();
 }
 
 button:hover:not(.btn):not(.btn-close) {
-  box-shadow: 0.7rem 0.7rem 0.7rem get-color(secondary);
+  @include boton-hover();
 }
 
 .modal-content, .header {

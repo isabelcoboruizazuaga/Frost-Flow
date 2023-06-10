@@ -1,19 +1,24 @@
-<div class="prod row">    
-    <img src="{{producto.fotoProducto}}" class="fotoProd col-2" alt="image" >
-    <h3 class=" col-1 paquetes">{{producto.paquetes}}</h3>
-    <div  class="col-3">
-        <h3 class="title">{{producto.nombreProducto}}</h3>
-        <h3 class="title">{{caducidad}}</h3>
-    </div>
-    <p  class="col-3">{{producto.cantidad[0]+ " "+producto.cantidad[1]}}</p>    
-    <img  class="col-1" src="/assets/icons/add.png" class="icon edit" alt="image" (click)="sumarPaquete()" (click)="$event.stopPropagation()">
-    <img  class="col-1" src="/assets/icons/remove.png" class="icon edit" alt="image" (click)="restarPaquete()" (click)="$event.stopPropagation()">
-	<div class="contenedor col-1" alt="image"  (click)="open(content)" (click)="$event.stopPropagation()">
-		<img  alt="contenedor vacío" class="icon img-bot" src="/assets/icons/garbage.png">
-		<img alt="contenedor lleno" class="icon img-top" src="/assets/icons/garbageFull.png">
+<div class="prod row">
+	<div class="row col-9" >
+		<img src="{{producto.fotoProducto}}" class="fotoProd col-3" alt="image">
+		<h3 class=" col-1 paquetes">{{producto.paquetes}}</h3>
+		<div class="col-4">
+			<h3 class="title">{{producto.nombreProducto}}</h3>
+			<h3 class="title">{{caducidad}}</h3>
+		</div>
+		<p class="col-3">{{producto.cantidad[0]+ " "+producto.cantidad[1]}}</p>
+	</div>
+	<div class="col-3 row actions">
+		<img class="col-1" src="/assets/icons/add.png" class="icon edit" alt="image" (click)="sumarPaquete()"
+			(click)="$event.stopPropagation()">
+		<img class="col-1" src="/assets/icons/remove.png" class="icon edit" alt="image" (click)="restarPaquete()"
+			(click)="$event.stopPropagation()">
+		<div class="contenedor col-1" alt="image" (click)="open(content)" (click)="$event.stopPropagation()">
+			<img alt="contenedor vacío" class="icon img-bot" src="/assets/icons/garbage.png">
+			<img alt="contenedor lleno" class="icon img-top" src="/assets/icons/garbageFull.png">
+		</div>
 	</div>
 </div>
-
 
 <!--Modal de confirmación de borrado-->
 <ng-template #content let-modal>
@@ -25,7 +30,7 @@
 		<form>
 			<div class="mb-3">
 				<p>Esta acción no se puede deshacer, se borrará el producto por completo del cajón</p>
-                <p>¿Desea continuar?</p>
+				<p>¿Desea continuar?</p>
 			</div>
 		</form>
 	</div>
