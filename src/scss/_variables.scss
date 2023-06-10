@@ -14,12 +14,7 @@ $colores: (
     "transparency_primary":#3e8ceca4,
     "transparency_terciary":#7a4b94c7,
     "secondary_transparente":#00bd9d78,
-    "transparente":rgba(255, 255, 255, 0),
-    "c":#E299A2,
-    "fondo":#ffffff,
-    "black":#000000,
-    "elementos":#ffffff
-    //52aeff
+    "transparente":rgba(255, 255, 255, 0)
 );
 
 ///Función que devuelve un color del vector colores
@@ -65,6 +60,27 @@ $font-weights: (
 @function get-weight ($font-weight) {
     @return map-get($font-weights, $font-weight);
 }  
+
+///mapa de puntos de ruptura 
+///@group media-query
+$puntos-ruptura: (
+    "xl":1100px,
+    "l":860px,
+    "m":700px,
+    "s":#000B64,
+    "xs":#3e8ceca4,
+);
+
+///Función que devuelve un tamaño del vector puntos-ruptura
+///@group media-query
+///@param {String} $tamanio  --tamaño del media query
+///@return {tamanio} --tamaño e pixeles
+@function get-punto-ruptura ($tamanio) {
+    @return map-get($puntos-ruptura, $tamanio);
+}
+
+
+
 
 ///Función que devuelve la sombra para un texto
 ///@param {Number} $precision

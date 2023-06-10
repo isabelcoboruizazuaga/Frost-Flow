@@ -36,7 +36,7 @@ export class CabeceraComponent {
    * in the user's authentication state
    */
   constructor(private router: Router, public authService: AuthService, public firestoreService: FirestoreService, public auth: Auth = getAuth()) {
-   
+
     /* `onAuthStateChanged` is a method provided by the Firebase Authentication library that listens for
    changes in the user's authentication state. In this case, it is being used to update the user's
    name displayed in the header section of the web application whenever the user logs in or logs
@@ -53,9 +53,9 @@ export class CabeceraComponent {
     this.actualizarNombre()
   }
 
- /**
-  * This function navigates the user to the registration page.
-  */
+  /**
+   * This function navigates the user to the registration page.
+   */
   adminSesion() {
     this.router.navigate(['/registro']);
   }
@@ -79,8 +79,9 @@ export class CabeceraComponent {
     let uid = this.usuario.uid;
 
     this.firestoreService.getNombreUsuario(uid).then(result => {
-        this.nombre = result;
-      console.log(this.nombre)
+      //Se obtiene solo el primer nombre
+      let soloNombre = result.replace(/ .*/, '');
+      this.nombre = soloNombre;
     })
   }
 

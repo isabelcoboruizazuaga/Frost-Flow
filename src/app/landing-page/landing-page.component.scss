@@ -13,7 +13,7 @@ section {
     width: 30vw;
   }
 
-  h1{
+  h1 {
     font-size: get-font(l);
     text-transform: uppercase;
     color: get-color(contrast_primary);
@@ -38,8 +38,6 @@ section {
         position: relative;
         display: inline-block;
 
-        font-size: get-font(l);
-
         animation: flip 3s infinite;
         animation-delay: calc(.5s * var(--i))
       }
@@ -55,7 +53,7 @@ section {
         animation-delay: calc(.5s * var(--i))
       }
 
-      .conge{        
+      .conge {
         width: 10vw;
       }
     }
@@ -96,7 +94,8 @@ section {
       position: relative;
       animation: scatter 1.75s infinite;
     }
-    .vacio{
+
+    .vacio {
       margin-left: 1vw;
     }
 
@@ -146,21 +145,21 @@ section {
   @include flex();
 
   button {
-    margin-left:3vw;
+    margin-left: 3vw;
 
-    background-color:black;
+    background-color: black;
     border-radius: round($number: 2rem);
-    box-shadow:0.7rem 0.7rem 0.7rem get-color(terciary);
-    
+    box-shadow: 0.7rem 0.7rem 0.7rem get-color(terciary);
+
     font-size: get-font(l);
-    color: white;   
+    color: white;
   }
-  
-  button:hover{
+
+  button:hover {
     background-color: get-color(contrast_primary);
-    box-shadow:0.7rem 0.7rem 0.7rem get-color(secondary);
+    box-shadow: 0.7rem 0.7rem 0.7rem get-color(secondary);
   }
-  
+
 }
 
 /*-------ANIMACIONES----------*/
@@ -237,4 +236,101 @@ section {
   100% {
     top: 0;
   }
+}
+
+
+/*-------MEDIA QUERYS----------*/
+
+
+@media screen and (max-width: get-punto-ruptura(xl)) {//1100
+  .gestiona {
+    img {
+      width: 40vw;
+      height: 50vh;
+    }
+
+    .texto {
+      width: 55vw;
+      margin-left: -4rem;
+    }
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(l)) {
+
+  //800px
+  .gestiona {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: start;
+    align-items: start;
+
+    img {
+      width: 80vw;
+      height: 50vh;
+      margin-left: 2rem;
+    }
+
+    .f1 {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .f2 {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .texto {
+      grid-area: 2 / 1 / 3 / 2;
+      margin-left: -3rem;
+      width: fit-content;
+
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 8px;
+
+      .gest {
+        grid-area: 1 / 1 / 2 / 3;
+      }
+
+      .tus {
+        grid-area: 1 / 3 / 2 / 4;
+      }
+
+      .nev {
+        grid-area: 1 / 4 / 2 / 6;
+      }
+
+      .y {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+
+      .cong {
+        grid-area: 2 / 3 / 3 / 5;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: get-punto-ruptura(m)) {
+  .gestiona {
+    .texto {
+      @include flex(column);
+
+      margin-left: 0rem;
+      margin-top: 5rem;
+      width: 90vw;
+
+      font-size: get-font(m) !important;
+
+      .texto_gestiona {
+        img {
+          display: none !important;
+        }
+        
+      }
+    }
+  }
+
 }
