@@ -2,8 +2,8 @@
 
 
 .nevera-item {
-  width: 38vw;
-  height: 35vh;
+  width: 48vw;
+  height: 40vh;
   margin-bottom: 3vh;
 
   background-image: url("./../../../assets/images/congeladorPeque.png");
@@ -13,7 +13,7 @@
   @include flex(row, center, space-around);
 
   .imagenNevera {
-    max-width: 15vw;
+    max-width: 20vw;
     min-width: 10vw;
     max-height: 30vh;
     min-height: 25vh;
@@ -21,7 +21,7 @@
 
   /*Datos*/
   .info {
-    width: 15vw;
+    width: 25vw;
 
     @include flex(column);
 
@@ -41,7 +41,6 @@
       white-space: nowrap;
 
       height: 4rem;
-      width: 15vw;
 
       /*Input*/
       .title-input {
@@ -71,7 +70,8 @@
 
       /*Css para el cambio de imagen en hover*/
       @extend %cambio-imagen-hover;
-      .contenedor{
+
+      .contenedor {
         width: 5vw;
       }
     }
@@ -91,5 +91,77 @@
   100% {
     transform: translateX(-150%);
     left: 100%;
+  }
+}
+
+/*-------MEDIA QUERYS----------*/
+
+@media screen and (max-width: get-punto-ruptura(xl)) {
+  .nevera-item {
+    .actions {
+      margin-left: -15rem;
+
+      .icon {
+        width: 5rem !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(l)) {
+  .nevera-item {
+    width: 90vw;
+    height: 50vh;
+
+    .imagenNevera {
+      max-width: 35vw;
+      min-width: 20vw;
+      max-height: 40vh;
+      min-height: 25vh;
+    }
+
+    .info {
+      width: 50vw;
+    }
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(m)) {
+  .nevera-item {
+    .actions {
+      margin-left: -15rem;
+    }
+  }
+}
+
+
+@media screen and (max-width: get-punto-ruptura(s)) {
+  .nevera-item {
+    width: 90vw;
+    height: 30vh;
+    
+    .actions{      
+      margin-left: -2rem !important;
+      
+      .icon {
+        width: 3rem !important;
+      }  
+    }
+
+    
+    .imagenNevera {
+      max-width: 30vw;
+      min-width: 10vw;
+      max-height: 25vh;
+      min-height: 15vh;
+    }
+
+    .info {
+      width: 60vw;
+
+      .nombre {
+        font-size: get-font(s);
+      }
+    }
   }
 }
