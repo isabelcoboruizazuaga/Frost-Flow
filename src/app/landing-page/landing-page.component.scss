@@ -3,10 +3,12 @@
 section {
   display: grid;
 
+  width: 96vw;
+
   justify-items: center;
   align-items: center;
 
-  margin: 1rem;
+  margin: 2vw;
 
   img {
     height: 60vh;
@@ -374,5 +376,20 @@ section {
 
   .personaliza {
     margin-left: -6rem;
+  }
+
+  .registrarse{
+    @include flex(column,flex-start);
+    width: fit-content;
+    margin-left: 20vw;
+
+    h1{
+      margin: 0;
+      padding: 0;
+    }
+    button{
+      margin: 0;
+      font-size: get-font(m);
+    }
   }
 }
