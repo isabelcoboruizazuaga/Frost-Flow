@@ -16,7 +16,7 @@
 }
 
 body {
-  font-size: get-font("s");
+  font-size: get-font(s);
   background-color: get-color("fondo");
   font-family: $garamond !important;
 
