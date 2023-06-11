@@ -90,6 +90,8 @@ section {
   }
 
   .texto_personaliza {
+    @include flex();
+
     span {
       position: relative;
       animation: scatter 1.75s infinite;
@@ -242,7 +244,9 @@ section {
 /*-------MEDIA QUERYS----------*/
 
 
-@media screen and (max-width: get-punto-ruptura(xl)) {//1100
+@media screen and (max-width: get-punto-ruptura(xl)) {
+
+  //1100
   .gestiona {
     img {
       width: 40vw;
@@ -258,29 +262,30 @@ section {
 
 @media screen and (max-width: get-punto-ruptura(l)) {
 
-  //800px
+  //GESTIONAR
   .gestiona {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: minmax(fit-content, 1fr) 1fr;
     justify-items: start;
     align-items: start;
 
     img {
+      grid-area: 2/1/3/2;
       width: 80vw;
       height: 50vh;
       margin-left: 2rem;
     }
 
     .f1 {
-      grid-area: 1 / 1 / 2 / 2;
+      grid-area: 2 / 1 / 3 / 2;
     }
 
     .f2 {
-      grid-area: 1 / 1 / 2 / 2;
+      grid-area: 2 / 1 / 3 / 2;
     }
 
     .texto {
-      grid-area: 2 / 1 / 3 / 2;
+      grid-area: 1 / 1 / 2 / 2;
       margin-left: -3rem;
       width: fit-content;
 
@@ -310,27 +315,64 @@ section {
       }
     }
   }
+
 }
 
 
 @media screen and (max-width: get-punto-ruptura(m)) {
+  h1 {
+    font-size: get-font(m) !important;
+  }
+
   .gestiona {
+    margin-bottom: 2rem;
+
     .texto {
       @include flex(column);
 
       margin-left: 0rem;
-      margin-top: 5rem;
       width: 90vw;
-
-      font-size: get-font(m) !important;
 
       .texto_gestiona {
         img {
           display: none !important;
         }
-        
+
       }
     }
   }
+}
 
+
+
+@media screen and (max-width: get-punto-ruptura(s)) {
+  .personaliza {
+    @include flex(column);
+
+    img {
+      height: 60vh;
+      width: 80vw;
+    }
+  }
+
+  .productos {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
+@media screen and (max-width: get-punto-ruptura(xs)) {
+  h1 {
+    width: 20rem;
+  }
+
+  //PRODUCTOS CARRUSEL
+  .productos {
+    margin-left: -6rem;
+  }
+
+  .personaliza {
+    margin-left: -6rem;
+  }
 }

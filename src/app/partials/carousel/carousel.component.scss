@@ -4,77 +4,91 @@
 $animationSpeed: 30s;
 
 
-.carousel{
-    @include flex();
-    height: 20vh;
-    width: 90vw;
+$tamanioImg: 10vw;
+.carousel {
+  @include flex();
+  width: 90vw;
 
-    .nevera{
-        height: 20vh;
-        width: 10vw;
+  .cesta {
+    height: calc($tamanioImg + 2vw);
+    width: 10vw;
 
-        z-index: 3;
-    }
+    z-index: 3;
+  }
+
+  .ces-2 {
+    transform: rotate(180deg);
+  }
 }
 
 .slider {
-    width: 70vw;
-    height: 20vh;
+  width: 70vw;
 
-    margin: auto;
-    overflow: hidden;
-    //position: relative;
+  margin: auto;
+  overflow: hidden;
+  //position: relative;
 
-    img {
-        height: 16vh;
-        width: 16vh;
-    
-        border: 1px solid black;
-        border-radius: 20vh;
-    }
+  img {
+    height: $tamanioImg;
+    width: $tamanioImg;
 
-    &::before,
-    &::after {
-        content: "";
+    border: 1px solid black;
+    border-radius: 5rem;
+  }
 
-        height: 20vh;
-        width: 16vh;
+  &::before,
+  &::after {
+    content: "";
 
-        position: absolute;
-        z-index: 2;
-    }
+    height: calc($tamanioImg + 2vw);
+    width: $tamanioImg;
 
-    &::after {
-        right: 0;
-        top: 0;
-        transform: rotateZ(180deg);
-    }
+    position: absolute;
+    z-index: 2;
+  }
 
-    &::before {
-        left: 0;
-        top: 0;
-    }
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
 
-    .slide-track {
-        animation: scroll $animationSpeed linear infinite;
-        display: flex;
-        width: calc(26vh * 14);
-    }
+  &::before {
+    left: 0;
+    top: 0;
+  }
 
-    .slide {
-        height: 16vh;
-        width: 90vh;
-    }
+  .slide-track {
+    animation: scroll $animationSpeed linear infinite;
+    display: flex;
+    width: calc(calc($tamanioImg + 5vw )* 14);
+  }
+
+  .slide {
+    height: $tamanioImg;
+    width: 90vh;
+  }
 }
 
 
 // Animación
+$velocidad: -10vw;
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    100% {
-        transform: translateX(calc(-10vw * 7))
-    }
+  100% {
+    transform: translateX(calc($velocidad * 7))
+  }
 }
+
+
+@media screen and (max-width: get-punto-ruptura(m)) {
+  .slider {
+
+    // Animación
+    $velocidad: -40vw;
+  }
+}
+
