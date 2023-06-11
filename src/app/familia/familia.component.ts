@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, TemplateRef, ViewChild } from '@angular/core';
 import { FirestoreService } from '../shared/services/firestore.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../shared/services/auth.service';
@@ -20,6 +20,9 @@ export class FamiliaComponent {
   fId = "";
   usuarios: any;
   modalReference: any;
+
+  ancho: any;
+  qr: any = 500;
 
   elementType = NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.HIGH;
@@ -48,6 +51,10 @@ export class FamiliaComponent {
    * list based on that family ID.
    */
   ngOnInit() {
+    //Ancho de pantalla  
+    this.ancho = window.innerWidth;
+    this.juzgaAncho();   
+
     //Se obtiene el id de usuario actual
     let usuario = this.authService.getUsuarioActual();
     this.uid = usuario.uid;
@@ -57,6 +64,32 @@ export class FamiliaComponent {
       this.value = this.fId;
       this.actualizarLista();
     });
+  }
+
+ /* This code is adding an event listener to the window object for the "resize" event. When the window
+ is resized, the `onResize` function is called, which updates the `ancho` variable with the new
+ width of the window and calls the `juzgaAncho()` function to determine the appropriate size for a
+ QR code. */
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.ancho = window.innerWidth;
+
+    this.juzgaAncho();    
+  }
+
+ /**
+  * The function adjusts the size of a QR code based on the width of the screen.
+  */
+  juzgaAncho(){
+    if (this.ancho >= 700) {
+      this.qr = 500
+    } else {
+      if (this.ancho >= 550) {
+        this.qr = 400
+      } else {
+        this.qr = 300
+      }
+    }
   }
 
   /**
@@ -74,7 +107,7 @@ export class FamiliaComponent {
             if (result === 'mover') {
               //La cambiamos moviendo las neveras y productos
               this.firestoreService.cambiaFamiliaUsuario(this.uid, this.fId, this.nuevaFamilia, true);
-              this.actualizarFam();             
+              this.actualizarFam();
               this.actualizarLista();
             } else {
               if (result == 'no_mover') {
@@ -102,9 +135,9 @@ export class FamiliaComponent {
   }
 
 
- /**
-  * The function updates a list of users/family members using data from Firestore.
-  */
+  /**
+   * The function updates a list of users/family members using data from Firestore.
+   */
   actualizarLista() {
     this.firestoreService.listarFamiliares(this.fId).then(usuarios => this.usuarios = usuarios);
   }
@@ -113,11 +146,11 @@ export class FamiliaComponent {
    * The function updates a family ID and value, clears the "nuevaFamilia" variable, and calls the "actualizarLista" function after a
    * delay.
    */
-  actualizarFam(){
+  actualizarFam() {
     this.fId = this.nuevaFamilia;
     this.value = this.fId;
-    this.nuevaFamilia="";
-    
-    setTimeout(()=>{this.actualizarLista()}, 1000);
+    this.nuevaFamilia = "";
+
+    setTimeout(() => { this.actualizarLista() }, 1000);
   }
 }

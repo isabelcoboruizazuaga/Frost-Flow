@@ -1,48 +1,86 @@
 @import '../../scss/mixin';
 
 .familia {
-    @include flex(column, flex-start, flex-start);
+  @include flex(column, flex-start, flex-start);
+ngx-qrcode{
+    width: 700;
+}
 
-    margin-left: 10vw;
-    margin-right: 10vw;
+  h1 {
+    margin-left: 2rem;
+  }
 
-    .fam {
-        @include flex(row, center,flex-start);
-        width: 100%;
+  .fam {
+    @include flex(row, center, space-evenly);
+    width: 100%;
 
-        .codigo {
-            @include flex(column);
+    //qr
+    .codigo {
+      @include flex(column);
 
-            padding: 1rem;
-            background-color: white;
-            @extend %borde-round;
+      padding: 1rem;
+      background-color: white;
+      @extend %borde-round;
 
-            img{
-                width: 30vw;
-            }
+      img {
+        width: 30vw;
+      }
+    }
+
+    //Nombres familiares
+    .familiares {
+      margin-left: 10vw;
+      @include flex(column, flex-start);
+
+      .persona {
+        @include flex();
+        margin-bottom: 3vh;
+
+        img {
+          width: 5vw;
+          margin-right: 1rem;
         }
+      }
 
+    }
+  }
 
-        .familiares {
-            margin-left: 10vw;
-            @include flex(column,flex-start);
+  //Formulario cambio familia
+  .cambio {
+    @include flex();
+    width: 100%;
+  }
+}
 
-            .persona {
-                @include flex();
-                margin-bottom: 3vh;
+/*-------MEDIA QUERYS----------*/
+@media screen and (max-width: get-punto-ruptura(xl)) {
+  .familiares {
+    margin-top: 2rem;
+  }
+}
 
-                img {
-                    width: 5vw;
-                    margin-right: 1rem;
-                }
-            }
+@media screen and (max-width: get-punto-ruptura(l)) {}
 
-        }
+@media screen and (max-width: get-punto-ruptura(m)) {
+  .familia {
+    .familiares {
+      margin-left: -15vw;
+
+      h2 {
+        font-size: get-font(s) !important;
+      }
     }
 
     .cambio{
-        @include flex();
+      margin-left: -15vw;
     }
+  }
+}
 
 
+@media screen and (max-width: get-punto-ruptura(xs)) {
+    .familiares, .cambio{
+        margin-left: 2vw !important;
+
+    }
 }
