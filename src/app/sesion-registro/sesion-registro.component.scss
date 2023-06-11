@@ -17,3 +17,48 @@
         background-color: get-color(secondary_transparente);
     }
 }
+
+/*-------MEDIA QUERYS----------*/
+@media screen and (max-width: get-punto-ruptura(xl)) {
+    app-inicio-sesion,app-registro{
+        padding-left: 5rem !important;
+        padding-right: 5rem !important;
+    }
+
+}
+
+@media screen and (max-width: get-punto-ruptura(l)) {
+    .sesion{
+        @include flex(column);
+        height: fit-content;
+
+        app-inicio-sesion,app-registro{
+            padding-left: 5rem !important;
+            padding-right: 5rem !important;
+            margin-bottom: 2rem;
+            max-width: 90vw;
+            width: 90vw;
+        }
+        
+        button{
+            font-size: get-font(xs) !important;
+            padding: 0.5rem !important;
+  
+            width: fit-content;
+            height: fit-content;
+          }
+    }
+}
+
+@media screen and (max-width: get-punto-ruptura(s)) {
+.sesion{
+    app-inicio-sesion,app-registro{
+        padding-left: 0.5rem !important;
+        padding-right: .5rem !important;
+    }
+}
+}
+
+
+@media screen and (max-width: get-punto-ruptura(s)) {
+}
