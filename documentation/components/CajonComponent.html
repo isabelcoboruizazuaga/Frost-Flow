@@ -1178,8 +1178,8 @@ export class CajonComponent {
         &lt;div&gt;
             &lt;div class&#x3D;&quot;caj&quot; (click)&#x3D;&quot;nuevoProducto()&quot;&gt;
                 &lt;div class&#x3D;&quot;contenedor &quot; alt&#x3D;&quot;imagen de un cajón vacío que se llena&quot;&gt;
-                    &lt;img class&#x3D;&quot;img-bot&quot; src&#x3D;&quot;/assets/images/cajonNeveraVacio.png&quot;&gt;
-                    &lt;img class&#x3D;&quot;img-top&quot; src&#x3D;&quot;/assets/images/cajonNeveraLleno.png&quot;&gt;
+                    &lt;img class&#x3D;&quot;img-bot&quot; src&#x3D;&quot;/assets/images/cajonNeveraVacio.png&quot; alt&#x3D;&quot;cajón de nevera vacío&quot;&gt;
+                    &lt;img class&#x3D;&quot;img-top&quot; src&#x3D;&quot;/assets/images/cajonNeveraLleno.png&quot; alt&#x3D;&quot;cajón de nevera lleno&quot;&gt;
                 &lt;/div&gt;
                 &lt;h2&gt;Nuevo producto&lt;/h2&gt;
             &lt;/div&gt;
@@ -1283,11 +1283,12 @@ export class CajonComponent {
     .caj {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 6vh);
 
       justify-items: center;
 
       width: 25vw;
+      height: 30vh;
       margin-top: 5rem;
 
 
@@ -1297,11 +1298,13 @@ export class CajonComponent {
       .contenedor {
         grid-area: 1 / 1 / 6 / 7;
         width: 100%;
+        height: 100%;
         left: 0;
         top: 0;
 
         img {
           width: inherit;
+          height: 100%;
         }
       }
 
@@ -1309,12 +1312,13 @@ export class CajonComponent {
       h2 {
         grid-area: 3 / 2 / 4 / 6;
 
+
         height: 100%;
+        width: fit-content;
         z-index: 100;
 
-        margin-left: -6vw;
         margin-top: 1vh;
-
+        margin-left: 1vw;
         transform: rotate(15deg);
       }
 
@@ -1334,7 +1338,7 @@ export class CajonComponent {
   .div2 {
     height: 80vh;
     margin-top: 6vh;
-    
+
     overflow-x: hidden !important;
 
     .productos {
@@ -1343,9 +1347,9 @@ export class CajonComponent {
     }
 
     .ordenar {
-      @include flex(row,baseline);
+      @include flex(row, baseline);
 
-      select{ 
+      select {
         width: fit-content;
         margin-left: 2rem;
 
@@ -1353,7 +1357,87 @@ export class CajonComponent {
       }
     }
   }
-}</code></pre>
+}
+
+/*-------MEDIA QUERYS----------*/
+@media screen and (max-width: get-punto-ruptura(xl)) {
+  .identif {
+    width: 30vw;
+  }
+
+  .div2 {
+    .productos {
+      width: 65vw !important;
+    }
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(l)) {
+  .cajon {
+    @include flex(column);
+
+    .identif {
+      width: 90vw !important;
+      min-height: 10vh;
+      height: fit-content;
+
+      @include flex(row, center, space-evenly);
+
+      .caj {
+        @include boton();
+
+        display: block;
+
+        width: fit-content;
+        height: fit-content;
+
+        padding: 0.5rem;
+
+        h2 {
+          transform: none;
+          font-family: $titulo2;
+          font-size: get-font(xs);
+          font-weight: get-weight(semiBold);
+          margin: 0 !important;
+        }
+        
+        .contenedor {
+          display: none;
+        }
+      }
+
+      .caj:hover {
+        @include boton-hover();
+
+        .contenedor {
+          display: none;
+        }
+      }
+
+      .acciones {
+        margin-top: 0;
+
+        button{
+          font-size: get-font(xs) !important;
+          padding: 0.5rem !important;
+
+          width: fit-content;
+          height: fit-content;
+        }
+      }
+
+
+    }
+
+    .div2 {
+      .productos {
+        width: 97vw !important;
+      }
+    }
+
+  }
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -1381,7 +1465,7 @@ export class CajonComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="cajon">    <div class="identif ">        <h1>{{nombre}}</h1>        <div>            <div class="caj" (click)="nuevoProducto()">                <div class="contenedor " alt="imagen de un cajón vacío que se llena">                    <img class="img-bot" src="/assets/images/cajonNeveraVacio.png">                    <img class="img-top" src="/assets/images/cajonNeveraLleno.png">                </div>                <h2>Nuevo producto</h2>            </div>        </div>        <div class="acciones">            <button  class="editar" (click)="abre(micontent)">Editar cajón</button>            <button class="borrar" (click)="open(content)">Borrar cajón</button>        </div>    </div>    <div class="div2 overflow-auto">        <div class="ordenar">            <p>Ordenar por...</p>            <select class="form-select" name="orden" [(ngModel)]="orden" (ngModelChange)="onChange($event)">                <option value="caducidad" selected>Fecha de caducidad</option>                <option value="nombreProducto_asc">Nombre Ascendente</option>                <option value="nombreProducto_desc">Nombre Descendente</option>                <option value="paquetes_asc">Cantidad ascendente</option>                <option value="paquetes_desc">Cantidad descendente</option>            </select>        </div>        <div class="productos">            <app-producto-cajon *ngFor="let producto of productos" [producto]="producto"                [idCajon]="id"></app-producto-cajon>        </div>    </div></div><!--Modal de confirmación de borrado--><ng-template #content let-modal>    <div class="modal-header">        <h4 class="modal-title" id="modal-borrar">Borrar {{nombre}}</h4>        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>    </div>    <div class="modal-body">        <form>            <div class="mb-3">                <p>Esta acción no se puede deshacer, perderá toda la información guardada en este cajón</p>                <p>¿Desea continuar?</p>            </div>        </form>    </div>    <div class="modal-footer">        <button type="button" class="btn btn-outline-success" (click)="modal.dismiss()">Cancelar</button>        <button type="button" class="btn btn-outline-danger" (click)="modal.close(\'borrar\')">Borrar</button>    </div></ng-template><!--Modal de edición--><ng-template #micontent let-modal>    <div class="modal-header">        <h4 class="modal-title" id="modal-editar">Editar {{nombre}}</h4>        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(\'Cross click\')"></button>    </div>    <div class="modal-body">        <div class="mb-3">            <label for="nombre">Nombre Cajón</label>            <div class="input-group">                <input [(ngModel)]="nombreCajon" value={{nombre}} id="nombre" class="form-control" name="nombre"                    type="text" />            </div>            <label for="nombre">Tipo Cajón</label>            <select name="select" [(ngModel)]="tipoCajon" id="tipoCajon" class="form-select">                <option value="neve" selected>Nevera</option>                <option value="conge">Congelador</option>                <option value="otro">Otro</option>            </select>        </div>    </div>    <div class="modal-footer">        <button type="button" class="btn  btn-outline-danger" (click)="modal.close(\'cancelar\')">Cancelar</button>        <button type="button" class="btn btn-outline-success" (click)="modal.close(\'editar\')">Editar</button>    </div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="cajon">    <div class="identif ">        <h1>{{nombre}}</h1>        <div>            <div class="caj" (click)="nuevoProducto()">                <div class="contenedor " alt="imagen de un cajón vacío que se llena">                    <img class="img-bot" src="/assets/images/cajonNeveraVacio.png" alt="cajón de nevera vacío">                    <img class="img-top" src="/assets/images/cajonNeveraLleno.png" alt="cajón de nevera lleno">                </div>                <h2>Nuevo producto</h2>            </div>        </div>        <div class="acciones">            <button  class="editar" (click)="abre(micontent)">Editar cajón</button>            <button class="borrar" (click)="open(content)">Borrar cajón</button>        </div>    </div>    <div class="div2 overflow-auto">        <div class="ordenar">            <p>Ordenar por...</p>            <select class="form-select" name="orden" [(ngModel)]="orden" (ngModelChange)="onChange($event)">                <option value="caducidad" selected>Fecha de caducidad</option>                <option value="nombreProducto_asc">Nombre Ascendente</option>                <option value="nombreProducto_desc">Nombre Descendente</option>                <option value="paquetes_asc">Cantidad ascendente</option>                <option value="paquetes_desc">Cantidad descendente</option>            </select>        </div>        <div class="productos">            <app-producto-cajon *ngFor="let producto of productos" [producto]="producto"                [idCajon]="id"></app-producto-cajon>        </div>    </div></div><!--Modal de confirmación de borrado--><ng-template #content let-modal>    <div class="modal-header">        <h4 class="modal-title" id="modal-borrar">Borrar {{nombre}}</h4>        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>    </div>    <div class="modal-body">        <form>            <div class="mb-3">                <p>Esta acción no se puede deshacer, perderá toda la información guardada en este cajón</p>                <p>¿Desea continuar?</p>            </div>        </form>    </div>    <div class="modal-footer">        <button type="button" class="btn btn-outline-success" (click)="modal.dismiss()">Cancelar</button>        <button type="button" class="btn btn-outline-danger" (click)="modal.close(\'borrar\')">Borrar</button>    </div></ng-template><!--Modal de edición--><ng-template #micontent let-modal>    <div class="modal-header">        <h4 class="modal-title" id="modal-editar">Editar {{nombre}}</h4>        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(\'Cross click\')"></button>    </div>    <div class="modal-body">        <div class="mb-3">            <label for="nombre">Nombre Cajón</label>            <div class="input-group">                <input [(ngModel)]="nombreCajon" value={{nombre}} id="nombre" class="form-control" name="nombre"                    type="text" />            </div>            <label for="nombre">Tipo Cajón</label>            <select name="select" [(ngModel)]="tipoCajon" id="tipoCajon" class="form-select">                <option value="neve" selected>Nevera</option>                <option value="conge">Congelador</option>                <option value="otro">Otro</option>            </select>        </div>    </div>    <div class="modal-footer">        <button type="button" class="btn  btn-outline-danger" (click)="modal.close(\'cancelar\')">Cancelar</button>        <button type="button" class="btn btn-outline-success" (click)="modal.close(\'editar\')">Editar</button>    </div></ng-template></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'CajonComponent'};

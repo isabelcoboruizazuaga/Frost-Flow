@@ -152,8 +152,8 @@ export class CajonItemAddComponent {
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;cajon&quot;&gt;
     &lt;h2&gt;Nuevo cajón&lt;/h2&gt;
     &lt;div class&#x3D;&quot;contenedor &quot; alt&#x3D;&quot;imagen deun cajón vacío que se llena&quot;&gt;
-        &lt;img class&#x3D;&quot;img-bot&quot; src&#x3D;&quot;/assets/images/cajonNeveraVacio.png&quot;&gt;
-        &lt;img class&#x3D;&quot;img-top&quot; src&#x3D;&quot;/assets/images/cajonNeveraLleno.png&quot;&gt;
+        &lt;img class&#x3D;&quot;img-bot&quot; src&#x3D;&quot;/assets/images/cajonNeveraVacio.png&quot;  alt&#x3D;&quot;dibujo de un cajón vacío&quot;&gt;
+        &lt;img class&#x3D;&quot;img-top&quot; src&#x3D;&quot;/assets/images/cajonNeveraLleno.png&quot; alt&#x3D;&quot;dibujo de un cajón lleno&quot;&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
@@ -165,40 +165,55 @@ export class CajonItemAddComponent {
                 <pre class="line-numbers"><code class="language-scss">@import &#x27;../../../scss/mixin&#x27;;
 
 .cajon {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 6vh);
+  justify-items: center;
+
+  /*Css para el cambio de imagen en hover*/
+  @extend %cambio-imagen-hover;
+
+  .contenedor {
+    grid-area: 1 / 1 / 6 / 7;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    justify-items: center;
-    
-      /*Css para el cambio de imagen en hover*/
-      @extend %cambio-imagen-hover;
+    height: 100%;
+    left: 0;
+    top: 0;
 
-    .contenedor {
-        grid-area: 1 / 1 / 6 / 7;
-        width: 100%;
-        left: 0;
-        top: 0;
-        img{
-            width: inherit;
-        }
+    img {
+      width: inherit;
+      height: 100%;
     }
+  }
 
-    h2 {
-        grid-area: 3 / 2 / 4 / 6; 
-        z-index: 100;
-        
-        height: 100%;
-        transform: rotate(15deg);
-        margin-left: -4vw;
-        margin-top: 1vh;
+  h2 {
+    grid-area: 3 / 1 / 4 / 6;
+    z-index: 100;
+
+    height: 100%;
+    width: fit-content;
+
+    transform: rotate(15deg);
+    margin-top: 1vh;
+  }
+
+  //Se incluye el título en el hover para que se muestre la imagen
+  h2:hover~.contenedor&gt;.img-top {
+    display: inline;
+  }
+}
+
+/*-------MEDIA QUERYS----------*/
+@media screen and (max-width: get-punto-ruptura(xl)) {
+    app-cajon-item, app-cajon-item-add{
+        width: 40vw !important;
     }
-
-    //Se incluye el título en el hover para que se muestre la imagen
-    h2:hover ~  .contenedor &gt;.img-top {
-        display: inline;
-      }
-}</code></pre>
+  }
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -226,7 +241,7 @@ export class CajonItemAddComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="cajon">    <h2>Nuevo cajón</h2>    <div class="contenedor " alt="imagen deun cajón vacío que se llena">        <img class="img-bot" src="/assets/images/cajonNeveraVacio.png">        <img class="img-top" src="/assets/images/cajonNeveraLleno.png">    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="cajon">    <h2>Nuevo cajón</h2>    <div class="contenedor " alt="imagen deun cajón vacío que se llena">        <img class="img-bot" src="/assets/images/cajonNeveraVacio.png"  alt="dibujo de un cajón vacío">        <img class="img-top" src="/assets/images/cajonNeveraLleno.png" alt="dibujo de un cajón lleno">    </div></div></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'CajonItemAddComponent'};

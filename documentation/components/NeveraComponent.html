@@ -864,7 +864,7 @@ export class NeveraComponent {
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;nevera&quot;&gt;
     &lt;div class&#x3D;&quot;neveraInfo&quot;&gt;
         &lt;h1&gt;{{nombreNevera}}&lt;/h1&gt;
-        &lt;img class&#x3D;&quot;foto_nevera&quot; src&#x3D;&quot;{{urlNevera}}&quot;&gt;
+        &lt;img class&#x3D;&quot;foto_nevera&quot; src&#x3D;&quot;{{urlNevera}}&quot;  alt&#x3D;&quot;imagen de nevera&quot;&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;cajones&quot;&gt;
         &lt;app-cajon-item-add (click)&#x3D;&quot;open(content)&quot;&gt;&lt;/app-cajon-item-add&gt;
@@ -885,7 +885,7 @@ export class NeveraComponent {
             
             &lt;label for&#x3D;&quot;nombre&quot;&gt;Nombre Cajón&lt;/label&gt;
             &lt;div class&#x3D;&quot;input-group&quot;&gt;
-                &lt;input [(ngModel)]&#x3D;&quot;nombreCajon&quot; id&#x3D;&quot;nombre&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;nombre&quot; name&#x3D;&quot;nombre&quot; type&#x3D;&quot;text&quot; /&gt;
+                &lt;input [(ngModel)]&#x3D;&quot;nombreCajon&quot; id&#x3D;&quot;nombre&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;nombre&quot; name&#x3D;&quot;nombre&quot; type&#x3D;&quot;text&quot; required/&gt;
             &lt;/div&gt;       
 
             &lt;label for&#x3D;&quot;nombre&quot;&gt;Tipo Cajón&lt;/label&gt;
@@ -915,44 +915,79 @@ export class NeveraComponent {
                 <pre class="line-numbers"><code class="language-scss">@import &#x27;../../scss/mixin&#x27;;
 
 .nevera {
-    @include flex(row, flex-start, space-around);
+  @include flex(row, flex-start, space-around);
 
-    margin-top: 3vh;
+  margin-top: 3vh;
+
+  .neveraInfo {
+    @include flex(column, flex-start, flex-start);
+
+    width: 40vw;
+    height: 90vh;
+
+    h1 {
+      position: fixed;
+    }
+
+    .foto_nevera {
+      max-width: 40vw;
+      min-width: 30vw;
+      min-height: 50vh;
+      max-height: 75vh;
+
+      position: fixed;
+      margin-top: 5rem;
+    }
+  }
+
+  .cajones {
+    @include flex();
+
+    width: 50vw;
+
+    app-cajon-item,
+    app-cajon-item-add {
+      width: 20vw;
+      height: 30vh;
+
+      margin-left: 5vw;
+      margin-top: 5vh;
+    }
+
+  }
+}
+
+/*-------MEDIA QUERYS----------*/
+@media screen and (max-width: get-punto-ruptura(xl)) {
+
+  app-cajon-item,
+  app-cajon-item-add {
+    width: 40vw !important;
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(s)) {
+  .nevera {
+    @include flex(column);
 
     .neveraInfo {
-        @include flex(column, flex-start, flex-start);
+      height: fit-content;
 
-        width: 40vw;
-        height: 90vh;
 
-        h1 {
-            position: fixed;
-        }
+      h1 {
+        position: relative !important;
+      }
 
-        .foto_nevera {
-            max-width: 40vw;
-            min-width: 30vw;
-            min-height: 50vh;
-            max-height: 75vh;
-            position: fixed;
-            margin-top: 5rem;
-        }
+      .foto_nevera {
+        position: relative !important;
+      }
     }
 
-    .cajones {
-        @include flex();
+  }
 
-        width: 50vw;
 
-        app-cajon-item, app-cajon-item-add{
-            width: 20vw;
-
-            margin-left: 5vw;
-            margin-top: 5vh;
-        }
-
-    }
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -980,7 +1015,7 @@ export class NeveraComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="nevera">    <div class="neveraInfo">        <h1>{{nombreNevera}}</h1>        <img class="foto_nevera" src="{{urlNevera}}">    </div>    <div class="cajones">        <app-cajon-item-add (click)="open(content)"></app-cajon-item-add>        <app-cajon-item *ngFor="let cajon of cajones" [cajon]="cajon"></app-cajon-item>    </div></div><!--Modal de nuevo cajon--><ng-template #content let-modal>    <div class="modal-header">        <h4 class="modal-title" id="modal-basic-title">Nuevo Cajón</h4>        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(\'Cross click\')"></button>    </div>    <div class="modal-body">        <div class="mb-3">                             <label for="nombre">Nombre Cajón</label>            <div class="input-group">                <input [(ngModel)]="nombreCajon" id="nombre" class="form-control" placeholder="nombre" name="nombre" type="text" />            </div>                   <label for="nombre">Tipo Cajón</label>            <select name="select"  [(ngModel)]="tipoCajon" id="tipoCajon" class="form-select">                <option value="neve" selected>Nevera</option>                <option value="conge">Congelador</option>                <option value="otro">Otro</option>              </select>                        <!--<label for="imagen">Selecciona una imagen</label>            <div class="input-group">                <input id="imagen" class="form-control"  type="file" accept="image/*" (change)="onFileSelected($event)"/>            </div>-->        </div>    </div>    <div class="modal-footer">        <button type="button" class="btn  btn-outline-danger" (click)="modal.close(\'cancelar\')">Cancelar</button>        <button type="button" class="btn btn-outline-success" (click)="modal.close(\'submit\')">Crear</button>    </div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="nevera">    <div class="neveraInfo">        <h1>{{nombreNevera}}</h1>        <img class="foto_nevera" src="{{urlNevera}}"  alt="imagen de nevera">    </div>    <div class="cajones">        <app-cajon-item-add (click)="open(content)"></app-cajon-item-add>        <app-cajon-item *ngFor="let cajon of cajones" [cajon]="cajon"></app-cajon-item>    </div></div><!--Modal de nuevo cajon--><ng-template #content let-modal>    <div class="modal-header">        <h4 class="modal-title" id="modal-basic-title">Nuevo Cajón</h4>        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(\'Cross click\')"></button>    </div>    <div class="modal-body">        <div class="mb-3">                             <label for="nombre">Nombre Cajón</label>            <div class="input-group">                <input [(ngModel)]="nombreCajon" id="nombre" class="form-control" placeholder="nombre" name="nombre" type="text" required/>            </div>                   <label for="nombre">Tipo Cajón</label>            <select name="select"  [(ngModel)]="tipoCajon" id="tipoCajon" class="form-select">                <option value="neve" selected>Nevera</option>                <option value="conge">Congelador</option>                <option value="otro">Otro</option>              </select>                        <!--<label for="imagen">Selecciona una imagen</label>            <div class="input-group">                <input id="imagen" class="form-control"  type="file" accept="image/*" (change)="onFileSelected($event)"/>            </div>-->        </div>    </div>    <div class="modal-footer">        <button type="button" class="btn  btn-outline-danger" (click)="modal.close(\'cancelar\')">Cancelar</button>        <button type="button" class="btn btn-outline-success" (click)="modal.close(\'submit\')">Crear</button>    </div></ng-template></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'NeveraComponent'};

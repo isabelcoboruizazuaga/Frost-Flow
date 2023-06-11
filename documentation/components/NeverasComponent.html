@@ -332,8 +332,8 @@ CRUD (Create, Read, Update, Delete) operations on the Firestore database.</li>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="141"
-                            class="link-to-prism">src/app/neveras/neveras.component.ts:141</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">src/app/neveras/neveras.component.ts:145</a></div>
                 </td>
             </tr>
 
@@ -1010,6 +1010,7 @@ export class NeverasComponent {
   */
   addNevera(nId: string) {
 
+    if(this.nombre!&#x3D;&quot;&quot;){
     //Se añade la nevera a la bd
     let nevera &#x3D; new Nevera(nId, this.fid, this.nombre, this.url);
     let neve &#x3D; Object.assign({}, nevera);
@@ -1018,6 +1019,9 @@ export class NeverasComponent {
 
     //Se ractualiza la vista
     this.actualizarLista()
+  }else{
+    alert(&quot;¡La nevera debe tener un nombre!&quot;)
+  }
   }
 
   /**
@@ -1053,12 +1057,12 @@ export class NeverasComponent {
             
             &lt;label for&#x3D;&quot;nombre&quot;&gt;Nombre Nevera&lt;/label&gt;
             &lt;div class&#x3D;&quot;input-group&quot;&gt;
-                &lt;input [(ngModel)]&#x3D;&quot;nombre&quot; id&#x3D;&quot;nombre&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;nombre&quot; name&#x3D;&quot;nombre&quot; type&#x3D;&quot;text&quot; /&gt;
+                &lt;input [(ngModel)]&#x3D;&quot;nombre&quot; id&#x3D;&quot;nombre&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;nombre&quot; name&#x3D;&quot;nombre&quot; type&#x3D;&quot;text&quot; required /&gt;
             &lt;/div&gt;           
             
             &lt;label for&#x3D;&quot;imagen&quot;&gt;Selecciona una imagen&lt;/label&gt;
             &lt;div class&#x3D;&quot;input-group&quot;&gt;
-                &lt;input id&#x3D;&quot;imagen&quot; class&#x3D;&quot;form-control&quot;  type&#x3D;&quot;file&quot; accept&#x3D;&quot;image/*&quot; (change)&#x3D;&quot;onFileSelected($event)&quot;/&gt;&lt;!--(change)&#x3D;&quot;processFile(imageInput)&quot;--&gt;
+                &lt;input id&#x3D;&quot;imagen&quot; class&#x3D;&quot;form-control&quot;  type&#x3D;&quot;file&quot; accept&#x3D;&quot;image/*&quot; (change)&#x3D;&quot;onFileSelected($event)&quot; required/&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
@@ -1116,7 +1120,7 @@ export class NeverasComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="title">    <h1>Mis neveras</h1>    <button class="" (click)="open(content)">Nueva nevera</button></div><div class="neveras" >    <app-nevera-item *ngFor="let nevera of neveras" [nevera]="nevera"></app-nevera-item></div><!--Modal de nueva nevera--><ng-template #content let-modal>    <div class="modal-header">        <h4 class="modal-title" id="modal-basic-title">Nueva Nevera</h4>        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(\'Cross click\')"></button>    </div>    <div class="modal-body">        <div class="mb-3">                             <label for="nombre">Nombre Nevera</label>            <div class="input-group">                <input [(ngModel)]="nombre" id="nombre" class="form-control" placeholder="nombre" name="nombre" type="text" />            </div>                                   <label for="imagen">Selecciona una imagen</label>            <div class="input-group">                <input id="imagen" class="form-control"  type="file" accept="image/*" (change)="onFileSelected($event)"/><!--(change)="processFile(imageInput)"-->            </div>        </div>    </div>    <div class="modal-footer">        <button type="button" class="btn  btn-outline-danger" (click)="modal.close(\'cancelar\')">Cancelar</button>        <button type="button" class="btn btn-outline-success" (click)="modal.close(\'submit\')">Crear</button>    </div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="title">    <h1>Mis neveras</h1>    <button class="" (click)="open(content)">Nueva nevera</button></div><div class="neveras" >    <app-nevera-item *ngFor="let nevera of neveras" [nevera]="nevera"></app-nevera-item></div><!--Modal de nueva nevera--><ng-template #content let-modal>    <div class="modal-header">        <h4 class="modal-title" id="modal-basic-title">Nueva Nevera</h4>        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(\'Cross click\')"></button>    </div>    <div class="modal-body">        <div class="mb-3">                             <label for="nombre">Nombre Nevera</label>            <div class="input-group">                <input [(ngModel)]="nombre" id="nombre" class="form-control" placeholder="nombre" name="nombre" type="text" required />            </div>                                   <label for="imagen">Selecciona una imagen</label>            <div class="input-group">                <input id="imagen" class="form-control"  type="file" accept="image/*" (change)="onFileSelected($event)" required/>            </div>        </div>    </div>    <div class="modal-footer">        <button type="button" class="btn  btn-outline-danger" (click)="modal.close(\'cancelar\')">Cancelar</button>        <button type="button" class="btn btn-outline-success" (click)="modal.close(\'submit\')">Crear</button>    </div></ng-template></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'NeverasComponent'};

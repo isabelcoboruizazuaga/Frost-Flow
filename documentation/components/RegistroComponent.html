@@ -364,13 +364,13 @@ export class RegistroComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;h1&gt;Registrarse&lt;/h1&gt;
-&lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Nombre&quot; #nombre required&gt;
-&lt;input type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Correo electrónico&quot; #email required&gt;
-&lt;input type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Contraseña&quot;  #contrasenia required&gt;
-&lt;button (click)&#x3D;&quot;authService.registrarse(email.value, contrasenia.value, nombre.value)&quot;&gt;Registrarse&lt;/button&gt;
-&lt;button class&#x3D;&quot;btn googleBtn&quot; (click)&#x3D;&quot;authService.googleAuth()&quot;&gt;Registrarse con google&lt;/button&gt;
-</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;registro&quot;&gt;
+    &lt;h1&gt;Registrarse&lt;/h1&gt;
+    &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Nombre&quot; #nombre required&gt;
+    &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Correo electrónico&quot; #email required&gt;
+    &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Contraseña&quot; #contrasenia required&gt;
+    &lt;button (click)&#x3D;&quot;authService.registrarse(email.value, contrasenia.value, nombre.value)&quot;&gt;Registrarse&lt;/button&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="styleData">
@@ -379,22 +379,20 @@ export class RegistroComponent implements OnInit {
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@import &#x27;../../../scss/mixin&#x27;;
 
-section{
-    @include flex(row, center, space-evenly);
+.registro {
+  @include flex(column);
 
-    height: 80vh;
+  input {
+    margin-top: 5vh;
+    font-size: get-font(s);
+  }
 
-    div{
-        @include flex(column);
+  button {
+    margin-top: 5vh;
+  }
 
-        input{
-            margin-top: 5vh;
-        }
-        button{
-            margin-top: 5vh;
-        }
-    }
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -422,7 +420,7 @@ section{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h1>Registrarse</h1><input type="text" placeholder="Nombre" #nombre required><input type="email" placeholder="Correo electrónico" #email required><input type="password" placeholder="Contraseña"  #contrasenia required><button (click)="authService.registrarse(email.value, contrasenia.value, nombre.value)">Registrarse</button><button class="btn googleBtn" (click)="authService.googleAuth()">Registrarse con google</button></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="registro">    <h1>Registrarse</h1>    <input class="form-control" type="text" placeholder="Nombre" #nombre required>    <input class="form-control" type="email" placeholder="Correo electrónico" #email required>    <input class="form-control" type="password" placeholder="Contraseña" #contrasenia required>    <button (click)="authService.registrarse(email.value, contrasenia.value, nombre.value)">Registrarse</button></div></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'RegistroComponent'};

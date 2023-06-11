@@ -702,7 +702,7 @@ export class CabeceraComponent {
    * in the user&#x27;s authentication state
    */
   constructor(private router: Router, public authService: AuthService, public firestoreService: FirestoreService, public auth: Auth &#x3D; getAuth()) {
-   
+
     /* &#x60;onAuthStateChanged&#x60; is a method provided by the Firebase Authentication library that listens for
    changes in the user&#x27;s authentication state. In this case, it is being used to update the user&#x27;s
    name displayed in the header section of the web application whenever the user logs in or logs
@@ -719,9 +719,9 @@ export class CabeceraComponent {
     this.actualizarNombre()
   }
 
- /**
-  * This function navigates the user to the registration page.
-  */
+  /**
+   * This function navigates the user to the registration page.
+   */
   adminSesion() {
     this.router.navigate([&#x27;/registro&#x27;]);
   }
@@ -745,8 +745,9 @@ export class CabeceraComponent {
     let uid &#x3D; this.usuario.uid;
 
     this.firestoreService.getNombreUsuario(uid).then(result &#x3D;&gt; {
-        this.nombre &#x3D; result;
-      console.log(this.nombre)
+      //Se obtiene solo el primer nombre
+      let soloNombre &#x3D; result.replace(/ .*/, &#x27;&#x27;);
+      this.nombre &#x3D; soloNombre;
     })
   }
 
@@ -756,42 +757,40 @@ export class CabeceraComponent {
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;header&quot;&gt;
   &lt;div class&#x3D;&quot;identificacion&quot; routerLink&#x3D;&quot;/inicio&quot;&gt;
-    &lt;img src&#x3D;&quot;/assets/icons/logo1.png&quot; class&#x3D;&quot;logo&quot; alt&#x3D;&quot;image&quot;&gt;
+    &lt;img src&#x3D;&quot;/assets/icons/logo1.png&quot; class&#x3D;&quot;logo&quot; alt&#x3D;&quot;Frost Flow&quot;&gt;
     &lt;h1&gt;Frost Flow&lt;/h1&gt;
   &lt;/div&gt;
-  &lt;nav class&#x3D;&quot;navbar&quot;&gt;
+  &lt;nav class&#x3D;&quot;minavbar&quot;&gt;
     &lt;ul&gt;
       &lt;!--Enlaces--&gt;
       &lt;li routerLink&#x3D;&quot;/neveras&quot; *ngIf&#x3D;&quot;(nombre !&#x3D; &#x27;Iniciar Sesión&#x27;);&quot;&gt;
-        &lt;img src&#x3D;&quot;/assets/icons/fridge.png&quot; class&#x3D;&quot;icon&quot; alt&#x3D;&quot;image&quot;&gt;
+        &lt;img src&#x3D;&quot;/assets/icons/fridge.png&quot; class&#x3D;&quot;icon&quot; alt&#x3D;&quot;icono de nevera&quot;&gt;
       &lt;/li&gt;
       &lt;li routerLink&#x3D;&quot;/familia&quot;  *ngIf&#x3D;&quot;(nombre !&#x3D; &#x27;Iniciar Sesión&#x27;);&quot;&gt;
-        &lt;img src&#x3D;&quot;/assets/icons/family.png&quot; class&#x3D;&quot;icon&quot; alt&#x3D;&quot;image&quot;&gt;
+        &lt;img src&#x3D;&quot;/assets/icons/family.png&quot; class&#x3D;&quot;icon&quot; alt&#x3D;&quot;icono de familia&quot;&gt;
       &lt;/li&gt;
       &lt;!--Botón de inicio de sesión--&gt;
       &lt;li *ngIf&#x3D;&quot;(nombre &#x3D;&#x3D; &#x27;Iniciar Sesión&#x27;);else other_content &quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn&quot; (click)&#x3D;&quot;adminSesion()&quot;&gt;
-          &lt;img src&#x3D;&quot;/assets/icons/user.png&quot; class&#x3D;&quot;icon&quot; alt&#x3D;&quot;image&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;botonsimple btn&quot; (click)&#x3D;&quot;adminSesion()&quot;&gt;
+          &lt;img src&#x3D;&quot;/assets/icons/user.png&quot; class&#x3D;&quot;botonsimple icon&quot; alt&#x3D;&quot;icono de usuario&quot;&gt;
           {{nombre}}
         &lt;/button&gt;
       &lt;/li&gt;
-
+      &lt;!-- Dropdown sesión --&gt;
       &lt;ng-template #other_content&gt;
         &lt;li ngbDropdown class&#x3D;&quot;d-inline-block&quot;&gt;
-          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn midropdown&quot; id&#x3D;&quot;dropdownBasic1&quot; ngbDropdownToggle&gt;
-            &lt;img src&#x3D;&quot;/assets/icons/user.png&quot; class&#x3D;&quot;icon&quot; alt&#x3D;&quot;image&quot;&gt;
+          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;botonsimple btn midropdown&quot;  id&#x3D;&quot;dropdownBasic1&quot; ngbDropdownToggle&gt;
+            &lt;img src&#x3D;&quot;/assets/icons/user.png&quot; class&#x3D;&quot;icon&quot; alt&#x3D;&quot;icono de usuario&quot;&gt;
             {{nombre}}
           &lt;/button&gt;
           &lt;div ngbDropdownMenu aria-labelledby&#x3D;&quot;dropdownBasic1&quot; class&#x3D;&quot;midropdown&quot;&gt;
-            &lt;button ngbDropdownItem (click)&#x3D;&quot;cerrarSesion()&quot;&gt;Cerrar sesión&lt;/button&gt;
+            &lt;button ngbDropdownItem class&#x3D;&quot;botonsimple btn&quot; (click)&#x3D;&quot;cerrarSesion()&quot;&gt;Cerrar sesión&lt;/button&gt;
           &lt;/div&gt;
         &lt;/li&gt;
       &lt;/ng-template&gt;
-
-
-
     &lt;/ul&gt;
   &lt;/nav&gt;
+  
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -804,74 +803,120 @@ export class CabeceraComponent {
 
 
 .header {
-    @include flex(row, center, space-between);
+  @include flex(row, center);
 
-    width: 100%;
-    height: 100%;    
+  width: 100%;
+  height: 100%;
 
-    background-color: get-color(primary);
+  background-color: get-color(primary);
+  color: black;
+
+  h1 {
+    font-family: $titulo;
+    font-size: get-font(xxl);
+    text-shadow: none;
     color: black;
+  }
+
+
+  .identificacion {
+    @include flex();
+    cursor: pointer;
+
+    .logo {
+      height: 5rem;
+      width: 10rem;
+
+      filter: invert(00%) sepia(0%) saturate(0%) hue-rotate(292deg) brightness(0%) contrast(200%);
+
+      margin-right: 1rem;
+    }
+  }
+
+  //Botones de acción
+  .minavbar {
+    margin-right: 3vw;
+    margin-left: auto;
     
-    h1{
-        font-family: $titulo;
-        font-size: get-font(xxl);
-        text-shadow: none;
-        color: black;
-    }
+    width: fit-content;
 
+    ul {
+      @include flex(row, flex-end);
+      width: fit-content;
 
-    .identificacion {
-        @include flex();        
+      li:first-child{
+        margin-left: 0;
+      }
+      li {
+        margin-left: 2rem;
+
+        //Botón de sesión
+        .btn {
+          @include flex();
+
+          font-weight: bold;
+          font-size: get-font(m);
+
+          //Icono de usuario
+          .icon {
+            all: unset;
+            padding-right: 1rem;
+
+            height: 3rem;
+            width: 3rem;
+
+          }
+        }
+      }
+
+      .d-inline-block {
         cursor: pointer;
+        width: auto;
 
-        .logo {
-            height: 5rem;
-            width: 10rem;
+        button,
+        .midropdown {
+          width: 100%;
+          padding: 0.2rem;
 
-            filter: invert(00%) sepia(0%) saturate(0%) hue-rotate(292deg) brightness(0%) contrast(200%);
-
-            margin-right: 1rem;
+          font-size: 1.6rem;
+          background-color: get-color(primary);
         }
+      }
+
+      .d-inline-block :hover {
+        text-decoration: underline;
+      }
     }
 
-    //Botones de acción
-    .navbar {
-        margin-right: 3vw;
-        ul {
-            @include flex(row,flex-end);
+  }
 
-            li {
-                margin-left: 2rem;
+  .icon {
+    height: 3rem;
+    width: 3rem;
+  }
+}
 
-                .btn {
-                    all: unset;
-                    @include flex();
-                }
-            }
-
-            .d-inline-block{
-                cursor: pointer;
-                width: auto;
-
-                button, .midropdown{
-                    width:100%;
-                    background-color: get-color(primary);
-                }
-            }
-
-            .d-inline-block :hover{
-                text-decoration: underline;
-            }
-        }
+//Media querys
+@media screen and (max-width: get-punto-ruptura(l)){ //800px
+  .header {
+    .identificacion {
+      h1 {
+        display: none;
+      }
 
     }
+  }
+}
 
-    .icon {
-        height: 3rem;
-        width: 3rem;
+@media screen and (max-width: get-punto-ruptura(xl)){ //1100
+  .header {
+    @include flex(row, center, flex-start);
+    .minavbar{
+      margin-left: 1rem;
     }
-
-}</code></pre>
+  }
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -899,7 +944,7 @@ export class CabeceraComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="header">  <div class="identificacion" routerLink="/inicio">    <img src="/assets/icons/logo1.png" class="logo" alt="image">    <h1>Frost Flow</h1>  </div>  <nav class="navbar">    <ul>      <!--Enlaces-->      <li routerLink="/neveras" *ngIf="(nombre != \'Iniciar Sesión\');">        <img src="/assets/icons/fridge.png" class="icon" alt="image">      </li>      <li routerLink="/familia"  *ngIf="(nombre != \'Iniciar Sesión\');">        <img src="/assets/icons/family.png" class="icon" alt="image">      </li>      <!--Botón de inicio de sesión-->      <li *ngIf="(nombre == \'Iniciar Sesión\');else other_content ">        <button type="button" class="btn" (click)="adminSesion()">          <img src="/assets/icons/user.png" class="icon" alt="image">          {{nombre}}        </button>      </li>      <ng-template #other_content>        <li ngbDropdown class="d-inline-block">          <button type="button" class="btn midropdown" id="dropdownBasic1" ngbDropdownToggle>            <img src="/assets/icons/user.png" class="icon" alt="image">            {{nombre}}          </button>          <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="midropdown">            <button ngbDropdownItem (click)="cerrarSesion()">Cerrar sesión</button>          </div>        </li>      </ng-template>    </ul>  </nav></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="header">  <div class="identificacion" routerLink="/inicio">    <img src="/assets/icons/logo1.png" class="logo" alt="Frost Flow">    <h1>Frost Flow</h1>  </div>  <nav class="minavbar">    <ul>      <!--Enlaces-->      <li routerLink="/neveras" *ngIf="(nombre != \'Iniciar Sesión\');">        <img src="/assets/icons/fridge.png" class="icon" alt="icono de nevera">      </li>      <li routerLink="/familia"  *ngIf="(nombre != \'Iniciar Sesión\');">        <img src="/assets/icons/family.png" class="icon" alt="icono de familia">      </li>      <!--Botón de inicio de sesión-->      <li *ngIf="(nombre == \'Iniciar Sesión\');else other_content ">        <button type="button" class="botonsimple btn" (click)="adminSesion()">          <img src="/assets/icons/user.png" class="botonsimple icon" alt="icono de usuario">          {{nombre}}        </button>      </li>      <!-- Dropdown sesión -->      <ng-template #other_content>        <li ngbDropdown class="d-inline-block">          <button type="button" class="botonsimple btn midropdown"  id="dropdownBasic1" ngbDropdownToggle>            <img src="/assets/icons/user.png" class="icon" alt="icono de usuario">            {{nombre}}          </button>          <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="midropdown">            <button ngbDropdownItem class="botonsimple btn" (click)="cerrarSesion()">Cerrar sesión</button>          </div>        </li>      </ng-template>    </ul>  </nav>  </div></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'CabeceraComponent'};

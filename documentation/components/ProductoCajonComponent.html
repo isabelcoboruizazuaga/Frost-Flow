@@ -773,22 +773,27 @@ export class ProductoCajonComponent {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;prod row&quot;&gt;    
-    &lt;img src&#x3D;&quot;{{producto.fotoProducto}}&quot; class&#x3D;&quot;fotoProd col-2&quot; alt&#x3D;&quot;image&quot; &gt;
-    &lt;h3 class&#x3D;&quot; col-1 paquetes&quot;&gt;{{producto.paquetes}}&lt;/h3&gt;
-    &lt;div  class&#x3D;&quot;col-3&quot;&gt;
-        &lt;h3 class&#x3D;&quot;title&quot;&gt;{{producto.nombreProducto}}&lt;/h3&gt;
-        &lt;h3 class&#x3D;&quot;title&quot;&gt;{{caducidad}}&lt;/h3&gt;
-    &lt;/div&gt;
-    &lt;p  class&#x3D;&quot;col-3&quot;&gt;{{producto.cantidad[0]+ &quot; &quot;+producto.cantidad[1]}}&lt;/p&gt;    
-    &lt;img  class&#x3D;&quot;col-1&quot; src&#x3D;&quot;/assets/icons/add.png&quot; class&#x3D;&quot;icon edit&quot; alt&#x3D;&quot;image&quot; (click)&#x3D;&quot;sumarPaquete()&quot; (click)&#x3D;&quot;$event.stopPropagation()&quot;&gt;
-    &lt;img  class&#x3D;&quot;col-1&quot; src&#x3D;&quot;/assets/icons/remove.png&quot; class&#x3D;&quot;icon edit&quot; alt&#x3D;&quot;image&quot; (click)&#x3D;&quot;restarPaquete()&quot; (click)&#x3D;&quot;$event.stopPropagation()&quot;&gt;
-	&lt;div class&#x3D;&quot;contenedor col-1&quot; alt&#x3D;&quot;image&quot;  (click)&#x3D;&quot;open(content)&quot; (click)&#x3D;&quot;$event.stopPropagation()&quot;&gt;
-		&lt;img  alt&#x3D;&quot;contenedor vacío&quot; class&#x3D;&quot;icon img-bot&quot; src&#x3D;&quot;/assets/icons/garbage.png&quot;&gt;
-		&lt;img alt&#x3D;&quot;contenedor lleno&quot; class&#x3D;&quot;icon img-top&quot; src&#x3D;&quot;/assets/icons/garbageFull.png&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;prod row&quot;&gt;
+	&lt;div class&#x3D;&quot;row col-9&quot; &gt;
+		&lt;img src&#x3D;&quot;{{producto.fotoProducto}}&quot; class&#x3D;&quot;fotoProd col-3&quot; alt&#x3D;&quot;imagen de un producto&quot;&gt;
+		&lt;h3 class&#x3D;&quot; col-1 paquetes&quot;&gt;{{producto.paquetes}}&lt;/h3&gt;
+		&lt;div class&#x3D;&quot;col-4&quot;&gt;
+			&lt;h3 class&#x3D;&quot;title&quot;&gt;{{producto.nombreProducto}}&lt;/h3&gt;
+			&lt;h3 class&#x3D;&quot;title&quot;&gt;{{caducidad}}&lt;/h3&gt;
+		&lt;/div&gt;
+		&lt;p class&#x3D;&quot;col-3&quot;&gt;{{producto.cantidad[0]+ &quot; &quot;+producto.cantidad[1]}}&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;col-3 row actions&quot;&gt;
+		&lt;img class&#x3D;&quot;col-1&quot; src&#x3D;&quot;/assets/icons/add.png&quot; class&#x3D;&quot;icon edit&quot; alt&#x3D;&quot;icono de sumar&quot; (click)&#x3D;&quot;sumarPaquete()&quot;
+			(click)&#x3D;&quot;$event.stopPropagation()&quot;&gt;
+		&lt;img class&#x3D;&quot;col-1&quot; src&#x3D;&quot;/assets/icons/remove.png&quot; class&#x3D;&quot;icon edit&quot; alt&#x3D;&quot;icono de restar&quot; (click)&#x3D;&quot;restarPaquete()&quot;
+			(click)&#x3D;&quot;$event.stopPropagation()&quot;&gt;
+		&lt;div class&#x3D;&quot;contenedor col-1&quot; alt&#x3D;&quot;papelera vacía que se llena&quot; (click)&#x3D;&quot;open(content)&quot; (click)&#x3D;&quot;$event.stopPropagation()&quot;&gt;
+			&lt;img class&#x3D;&quot;icon img-bot&quot; src&#x3D;&quot;/assets/icons/garbage.png&quot; alt&#x3D;&quot;icono de papelera&quot;&gt;
+			&lt;img class&#x3D;&quot;icon img-top&quot; src&#x3D;&quot;/assets/icons/garbageFull.png&quot; alt&#x3D;&quot;icono de papelera llena&quot;&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-
 
 &lt;!--Modal de confirmación de borrado--&gt;
 &lt;ng-template #content let-modal&gt;
@@ -800,7 +805,7 @@ export class ProductoCajonComponent {
 		&lt;form&gt;
 			&lt;div class&#x3D;&quot;mb-3&quot;&gt;
 				&lt;p&gt;Esta acción no se puede deshacer, se borrará el producto por completo del cajón&lt;/p&gt;
-                &lt;p&gt;¿Desea continuar?&lt;/p&gt;
+				&lt;p&gt;¿Desea continuar?&lt;/p&gt;
 			&lt;/div&gt;
 		&lt;/form&gt;
 	&lt;/div&gt;
@@ -808,8 +813,7 @@ export class ProductoCajonComponent {
 		&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;&quot;modal.dismiss()&quot;&gt;Cancelar&lt;/button&gt;
 		&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;&quot;modal.close(&#x27;borrar&#x27;)&quot;&gt;Borrar&lt;/button&gt;
 	&lt;/div&gt;
-&lt;/ng-template&gt;
-</code></pre>
+&lt;/ng-template&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="styleData">
@@ -817,45 +821,86 @@ export class ProductoCajonComponent {
                     <code>./producto-cajon.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@import &#x27;../../../scss/mixin&#x27;;
-.prod{
-    @include flex(row, center,space-evenly);
 
+.prod {
+  @include flex(row, center, space-evenly);
+
+  height: 100%;
+  width: 96%;
+  margin-bottom: 2rem;
+  margin-right: 2vw !important;
+
+  .row {
+    margin: 0;
+    padding: 0;
+
+    @include flex();
+  }
+
+  .col-4,
+  .col-3 {
+    text-align: center;
+  }
+
+
+  .fotoProd {
     height: 100%;
-    width: 96%;
-    margin-bottom: 2rem;
+  }
 
-    div{
-        @include flex(column);
+  .icon {
+    width: 4vw;
+  }
+
+  .edit:hover {
+    @include colorIcono();
+  }
+
+  /*Css para el cambio de imagen en hover*/
+  @extend %cambio-imagen-hover;
+
+  .contenedor {
+    .img-top {
+      //arreglo respecto a la colocación de bootstrap
+      left: 12px;
+    }
+  }
+}
+
+/*-------MEDIA QUERYS----------*/
+@media screen and (max-width: get-punto-ruptura(xl)) {}
+
+@media screen and (max-width: get-punto-ruptura(l)) {
+  .prod {
+    width: 98%;
+    .icon {
+      width: 3rem !important;
+    }
+  }
+
+  .contenedor .icon {
+    width: 4vw !important;
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(m)) {
+  h3 {
+    font-size: get-font(s) !important;
+  }
+
+  .prod {
+    @include flex(column);
+    margin-left: .25rem;
+
+    .row {
+      width: 100%;
     }
 
-    .col-3{
-        text-align: center;
+    .icon{        
+      width: 4rem !important;
     }
 
-    
-    .fotoProd{
-        max-width: 10vw;
-        height: 100%;
-    }
-
-    .icon{
-        width: 4vw;
-    }
-    
-    .edit:hover{
-        @include colorIcono();
-    }
-
-    /*Css para el cambio de imagen en hover*/
-    @extend %cambio-imagen-hover;
-    .contenedor{
-      width: 4vw;
-
-      .img-top{
-        //arreglo respecto a la colocación de bootstrap
-        left: 12px;
-      }
-    }
+    border: 1px solid black;
+  }
 }</code></pre>
     </div>
 
@@ -884,7 +929,7 @@ export class ProductoCajonComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="prod row">        <img src="{{producto.fotoProducto}}" class="fotoProd col-2" alt="image" >    <h3 class=" col-1 paquetes">{{producto.paquetes}}</h3>    <div  class="col-3">        <h3 class="title">{{producto.nombreProducto}}</h3>        <h3 class="title">{{caducidad}}</h3>    </div>    <p  class="col-3">{{producto.cantidad[0]+ " "+producto.cantidad[1]}}</p>        <img  class="col-1" src="/assets/icons/add.png" class="icon edit" alt="image" (click)="sumarPaquete()" (click)="$event.stopPropagation()">    <img  class="col-1" src="/assets/icons/remove.png" class="icon edit" alt="image" (click)="restarPaquete()" (click)="$event.stopPropagation()">	<div class="contenedor col-1" alt="image"  (click)="open(content)" (click)="$event.stopPropagation()">		<img  alt="contenedor vacío" class="icon img-bot" src="/assets/icons/garbage.png">		<img alt="contenedor lleno" class="icon img-top" src="/assets/icons/garbageFull.png">	</div></div><!--Modal de confirmación de borrado--><ng-template #content let-modal>	<div class="modal-header">		<h4 class="modal-title" id="modal-basic-title">Borrar {{producto.nombreProducto}}</h4>		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>	</div>	<div class="modal-body">		<form>			<div class="mb-3">				<p>Esta acción no se puede deshacer, se borrará el producto por completo del cajón</p>                <p>¿Desea continuar?</p>			</div>		</form>	</div>	<div class="modal-footer">		<button type="button" class="btn btn-danger" (click)="modal.dismiss()">Cancelar</button>		<button type="button" class="btn btn-success" (click)="modal.close(\'borrar\')">Borrar</button>	</div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="prod row">	<div class="row col-9" >		<img src="{{producto.fotoProducto}}" class="fotoProd col-3" alt="imagen de un producto">		<h3 class=" col-1 paquetes">{{producto.paquetes}}</h3>		<div class="col-4">			<h3 class="title">{{producto.nombreProducto}}</h3>			<h3 class="title">{{caducidad}}</h3>		</div>		<p class="col-3">{{producto.cantidad[0]+ " "+producto.cantidad[1]}}</p>	</div>	<div class="col-3 row actions">		<img class="col-1" src="/assets/icons/add.png" class="icon edit" alt="icono de sumar" (click)="sumarPaquete()"			(click)="$event.stopPropagation()">		<img class="col-1" src="/assets/icons/remove.png" class="icon edit" alt="icono de restar" (click)="restarPaquete()"			(click)="$event.stopPropagation()">		<div class="contenedor col-1" alt="papelera vacía que se llena" (click)="open(content)" (click)="$event.stopPropagation()">			<img class="icon img-bot" src="/assets/icons/garbage.png" alt="icono de papelera">			<img class="icon img-top" src="/assets/icons/garbageFull.png" alt="icono de papelera llena">		</div>	</div></div><!--Modal de confirmación de borrado--><ng-template #content let-modal>	<div class="modal-header">		<h4 class="modal-title" id="modal-basic-title">Borrar {{producto.nombreProducto}}</h4>		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>	</div>	<div class="modal-body">		<form>			<div class="mb-3">				<p>Esta acción no se puede deshacer, se borrará el producto por completo del cajón</p>				<p>¿Desea continuar?</p>			</div>		</form>	</div>	<div class="modal-footer">		<button type="button" class="btn btn-danger" (click)="modal.dismiss()">Cancelar</button>		<button type="button" class="btn btn-success" (click)="modal.close(\'borrar\')">Borrar</button>	</div></ng-template></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'ProductoCajonComponent'};

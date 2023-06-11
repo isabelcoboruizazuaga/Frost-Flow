@@ -789,10 +789,8 @@ export class NeveraItemComponent {
   open(content: any) {
 		this.modalService.open(content, { ariaLabelledBy: &#x27;modal-basic-title&#x27; }).result.then((result) &#x3D;&gt; {
       if (result &#x3D;&#x3D;&#x3D; &#x27;borrar&#x27;) {
-        this.firestoreService.borraNevera(this.nevera.idNevera).then((exito)&#x3D;&gt;{
-          if (exito&#x3D;&#x3D;true){
-            this.neverasComponent.actualizarLista();
-          }
+        this.firestoreService.borraNevera(this.nevera.idNevera).then(()&#x3D;&gt;{
+              this.neverasComponent.actualizarLista();
          })
       }
     })
@@ -804,7 +802,7 @@ export class NeveraItemComponent {
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;nevera-item&quot; (click)&#x3D;&quot;verNevera()&quot;&gt;
-	&lt;img class&#x3D;&quot;imagenNevera&quot; src&#x3D;&quot;{{nevera.fotoNevera}}&quot; alt&#x3D;&quot;&quot;&gt;
+	&lt;img class&#x3D;&quot;imagenNevera&quot; src&#x3D;&quot;{{nevera.fotoNevera}}&quot; alt&#x3D;&quot;imagen de una nevera&quot;&gt;
 	&lt;div class&#x3D;&quot;info&quot;&gt;
 		&lt;div class&#x3D;&quot;nombre&quot;&gt;
 			&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;title-input&quot; [attr.id]&#x3D;&quot;&#x27;nombre-&#x27; +nevera.idNevera&quot;
@@ -813,12 +811,12 @@ export class NeveraItemComponent {
 		&lt;/div&gt;
 		&lt;div class&#x3D;&quot;actions&quot;&gt;
 			&lt;div class&#x3D;&quot;contenedor &quot; alt&#x3D;&quot;image&quot; (click)&#x3D;&quot;editar()&quot; (click)&#x3D;&quot;$event.stopPropagation()&quot;&gt;
-				&lt;img class&#x3D;&quot;icon img-bot&quot; src&#x3D;&quot;/assets/icons/edit.png&quot;&gt;
-				&lt;img class&#x3D;&quot;img-top icon&quot; src&#x3D;&quot;/assets/icons/editing.png&quot;&gt;
+				&lt;img class&#x3D;&quot;icon img-bot&quot; src&#x3D;&quot;/assets/icons/edit.png&quot; alt&#x3D;&quot;icono de lapiz&quot;&gt;
+				&lt;img class&#x3D;&quot;img-top icon&quot; src&#x3D;&quot;/assets/icons/editing.png&quot; alt&#x3D;&quot;icono de lapiz con tinta&quot;&gt;
 			&lt;/div&gt;
 			&lt;div class&#x3D;&quot;contenedor &quot; alt&#x3D;&quot;image&quot; (click)&#x3D;&quot;open(content)&quot; (click)&#x3D;&quot;$event.stopPropagation()&quot;&gt;
-				&lt;img class&#x3D;&quot; icon img-bot&quot; src&#x3D;&quot;/assets/icons/garbage.png&quot;&gt;
-				&lt;img class&#x3D;&quot;icon img-top&quot; src&#x3D;&quot;/assets/icons/garbageFull.png&quot;&gt;
+				&lt;img class&#x3D;&quot; icon img-bot&quot; src&#x3D;&quot;/assets/icons/garbage.png&quot; alt&#x3D;&quot;icono de papelera&quot;&gt;
+				&lt;img class&#x3D;&quot;icon img-top&quot; src&#x3D;&quot;/assets/icons/garbageFull.png&quot; alt&#x3D;&quot;icono de papelera llena&quot;&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
@@ -853,8 +851,8 @@ export class NeveraItemComponent {
 
 
 .nevera-item {
-  width: 38vw;
-  height: 35vh;
+  width: 48vw;
+  height: 40vh;
   margin-bottom: 3vh;
 
   background-image: url(&quot;./../../../assets/images/congeladorPeque.png&quot;);
@@ -864,7 +862,7 @@ export class NeveraItemComponent {
   @include flex(row, center, space-around);
 
   .imagenNevera {
-    max-width: 15vw;
+    max-width: 20vw;
     min-width: 10vw;
     max-height: 30vh;
     min-height: 25vh;
@@ -872,7 +870,7 @@ export class NeveraItemComponent {
 
   /*Datos*/
   .info {
-    width: 15vw;
+    width: 25vw;
 
     @include flex(column);
 
@@ -892,7 +890,6 @@ export class NeveraItemComponent {
       white-space: nowrap;
 
       height: 4rem;
-      width: 15vw;
 
       /*Input*/
       .title-input {
@@ -922,7 +919,8 @@ export class NeveraItemComponent {
 
       /*Css para el cambio de imagen en hover*/
       @extend %cambio-imagen-hover;
-      .contenedor{
+
+      .contenedor {
         width: 5vw;
       }
     }
@@ -942,6 +940,78 @@ export class NeveraItemComponent {
   100% {
     transform: translateX(-150%);
     left: 100%;
+  }
+}
+
+/*-------MEDIA QUERYS----------*/
+
+@media screen and (max-width: get-punto-ruptura(xl)) {
+  .nevera-item {
+    .actions {
+      margin-left: -15rem;
+
+      .icon {
+        width: 5rem !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(l)) {
+  .nevera-item {
+    width: 90vw;
+    height: 50vh;
+
+    .imagenNevera {
+      max-width: 35vw;
+      min-width: 20vw;
+      max-height: 40vh;
+      min-height: 25vh;
+    }
+
+    .info {
+      width: 50vw;
+    }
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(m)) {
+  .nevera-item {
+    .actions {
+      margin-left: -15rem;
+    }
+  }
+}
+
+
+@media screen and (max-width: get-punto-ruptura(s)) {
+  .nevera-item {
+    width: 90vw;
+    height: 30vh;
+    
+    .actions{      
+      margin-left: -2rem !important;
+      
+      .icon {
+        width: 3rem !important;
+      }  
+    }
+
+    
+    .imagenNevera {
+      max-width: 30vw;
+      min-width: 10vw;
+      max-height: 25vh;
+      min-height: 15vh;
+    }
+
+    .info {
+      width: 60vw;
+
+      .nombre {
+        font-size: get-font(s);
+      }
+    }
   }
 }
 </code></pre>
@@ -972,7 +1042,7 @@ export class NeveraItemComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="nevera-item" (click)="verNevera()">	<img class="imagenNevera" src="{{nevera.fotoNevera}}" alt="">	<div class="info">		<div class="nombre">			<input type="text" class="title-input" [attr.id]="\'nombre-\' +nevera.idNevera"				value="{{nevera.nombreNevera}}" (click)="$event.stopPropagation()"				[attr.disabled]="disabled ? \'\' : null" (keyup.enter)="guardarCambios()" (focusout)="focusOutFunction()">		</div>		<div class="actions">			<div class="contenedor " alt="image" (click)="editar()" (click)="$event.stopPropagation()">				<img class="icon img-bot" src="/assets/icons/edit.png">				<img class="img-top icon" src="/assets/icons/editing.png">			</div>			<div class="contenedor " alt="image" (click)="open(content)" (click)="$event.stopPropagation()">				<img class=" icon img-bot" src="/assets/icons/garbage.png">				<img class="icon img-top" src="/assets/icons/garbageFull.png">			</div>		</div>	</div></div><!--Modal de confirmación de borrado--><ng-template #content let-modal>	<div class="modal-header">		<h4 class="modal-title" id="modal-basic-title">Borrar {{nevera.nombreNevera}}</h4>		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>	</div>	<div class="modal-body">		<form>			<div class="mb-3">				<p>Esta acción no se puede deshacer, perderá toda la información guardada en esta nevera</p>				<p>¿Desea continuar?</p>			</div>		</form>	</div>	<div class="modal-footer">		<button type="button" class="btn btn-outline-danger" (click)="modal.close(\'borrar\')">Borrar</button>		<button type="button" class="btn btn-outline-success" (click)="modal.dismiss()">Cancelar</button>	</div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="nevera-item" (click)="verNevera()">	<img class="imagenNevera" src="{{nevera.fotoNevera}}" alt="imagen de una nevera">	<div class="info">		<div class="nombre">			<input type="text" class="title-input" [attr.id]="\'nombre-\' +nevera.idNevera"				value="{{nevera.nombreNevera}}" (click)="$event.stopPropagation()"				[attr.disabled]="disabled ? \'\' : null" (keyup.enter)="guardarCambios()" (focusout)="focusOutFunction()">		</div>		<div class="actions">			<div class="contenedor " alt="image" (click)="editar()" (click)="$event.stopPropagation()">				<img class="icon img-bot" src="/assets/icons/edit.png" alt="icono de lapiz">				<img class="img-top icon" src="/assets/icons/editing.png" alt="icono de lapiz con tinta">			</div>			<div class="contenedor " alt="image" (click)="open(content)" (click)="$event.stopPropagation()">				<img class=" icon img-bot" src="/assets/icons/garbage.png" alt="icono de papelera">				<img class="icon img-top" src="/assets/icons/garbageFull.png" alt="icono de papelera llena">			</div>		</div>	</div></div><!--Modal de confirmación de borrado--><ng-template #content let-modal>	<div class="modal-header">		<h4 class="modal-title" id="modal-basic-title">Borrar {{nevera.nombreNevera}}</h4>		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>	</div>	<div class="modal-body">		<form>			<div class="mb-3">				<p>Esta acción no se puede deshacer, perderá toda la información guardada en esta nevera</p>				<p>¿Desea continuar?</p>			</div>		</form>	</div>	<div class="modal-footer">		<button type="button" class="btn btn-outline-danger" (click)="modal.close(\'borrar\')">Borrar</button>		<button type="button" class="btn btn-outline-success" (click)="modal.dismiss()">Cancelar</button>	</div></ng-template></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'NeveraItemComponent'};

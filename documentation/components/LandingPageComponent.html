@@ -123,19 +123,149 @@
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#irSesion" >irSesion</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/landing-page/landing-page.component.ts:10</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>This is a constructor function that takes in a router object as a parameter and assigns it to a
+private property.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>Used to navigate between different views or components.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="irSesion"></a>
+                    <span class="name">
+                        <span ><b>irSesion</b></span>
+                        <a href="#irSesion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>irSesion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/landing-page/landing-page.component.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function navigates the user to the registration page.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 @Component({
   selector: &#x27;app-landing-page&#x27;,
@@ -145,67 +275,85 @@
 
 export class LandingPageComponent {
 
+  /**
+   * This is a constructor function that takes in a router object as a parameter and assigns it to a
+   * private property.
+   * @param {Router} router - Used to navigate between different views or components.
+   */
+  constructor(private router: Router) {
+  }
+
+  /**
+   * This function navigates the user to the registration page.
+   */
+  irSesion() {
+    this.router.navigate([&#x27;/registro&#x27;]);
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;gestiona&quot;&gt;
-    &lt;img id&#x3D;&quot;f1&quot; src&#x3D;&quot;/assets/images/nevera_cerrada2.png&quot;&gt;
-    &lt;img id&#x3D;&quot;f2&quot; src&#x3D;&quot;/assets/images/nevera_abierta2.png&quot;&gt;
+    &lt;img id&#x3D;&quot;f1&quot; src&#x3D;&quot;/assets/images/nevera_cerrada2.png&quot; alt&#x3D;&quot;dibujo de nevera cerrada&quot;&gt;
+    &lt;img id&#x3D;&quot;f2&quot; src&#x3D;&quot;/assets/images/nevera_abierta2.png&quot; alt&#x3D;&quot;dibujo de nevera abierta&quot;&gt;
     &lt;h1 class&#x3D;&quot;texto&quot;&gt;
-        &lt;div class&#x3D;&quot;texto_gestiona&quot;&gt;
+        &lt;div class&#x3D;&quot;texto_gestiona gest&quot;&gt;
             &lt;span style&#x3D;&quot;--i:1&quot;&gt;Gestiona &lt;/span&gt;
-            &lt;img style&#x3D;&quot;--i:1&quot; src&#x3D;&quot;/assets/images/neveraRoja.png&quot;&gt;
+            &lt;img style&#x3D;&quot;--i:1&quot; src&#x3D;&quot;/assets/images/neveraRoja.png&quot; alt&#x3D;&quot;dibujo de nevera roja&quot;&gt;
         &lt;/div&gt;
-        &lt;div class&#x3D;&quot;texto_gestiona&quot;&gt;
+        &lt;div class&#x3D;&quot;texto_gestiona tus&quot;&gt;
             &lt;span style&#x3D;&quot;--i:2&quot;&gt;tus &lt;/span&gt;
-            &lt;img style&#x3D;&quot;--i:2&quot; src&#x3D;&quot;/assets/images/neveraOrange.png&quot;&gt;
+            &lt;img style&#x3D;&quot;--i:2&quot; src&#x3D;&quot;/assets/images/neveraOrange.png&quot; alt&#x3D;&quot;dibujo de nevera naranja&quot;&gt;
         &lt;/div&gt;
-        &lt;div class&#x3D;&quot;texto_gestiona&quot;&gt;
+        &lt;div class&#x3D;&quot;texto_gestiona nev&quot;&gt;
             &lt;span style&#x3D;&quot;--i:3&quot;&gt;neveras &lt;/span&gt;
-            &lt;img style&#x3D;&quot;--i:3&quot; src&#x3D;&quot;/assets/images/neveraGreen.png&quot;&gt;
+            &lt;img style&#x3D;&quot;--i:3&quot; src&#x3D;&quot;/assets/images/neveraGreen.png&quot; alt&#x3D;&quot;dibujo de nevera verde&quot;&gt;
         &lt;/div&gt;
-        &lt;div class&#x3D;&quot;texto_gestiona&quot;&gt;
+        &lt;div class&#x3D;&quot;texto_gestiona y&quot;&gt;
             &lt;span style&#x3D;&quot;--i:4&quot;&gt;y &lt;/span&gt;
-            &lt;img style&#x3D;&quot;--i:4&quot; src&#x3D;&quot;/assets/images/neveraPurple.png&quot;&gt;
+            &lt;img style&#x3D;&quot;--i:4&quot; src&#x3D;&quot;/assets/images/neveraPurple.png&quot; alt&#x3D;&quot;dibujo de nevera morada&quot;&gt;
         &lt;/div&gt;
-        &lt;div class&#x3D;&quot;texto_gestiona&quot;&gt;
+        &lt;div class&#x3D;&quot;texto_gestiona cong&quot;&gt;
             &lt;span style&#x3D;&quot;--i:5&quot;&gt;congeladores &lt;/span&gt;
-            &lt;img style&#x3D;&quot;--i:5&quot; class&#x3D;&quot;conge&quot; src&#x3D;&quot;/assets/images/congelador.png&quot;&gt;
+            &lt;img style&#x3D;&quot;--i:5&quot; class&#x3D;&quot;conge&quot; src&#x3D;&quot;/assets/images/congelador.png&quot; alt&#x3D;&quot;dibujo de congelador verde menta&quot;&gt;
         &lt;/div&gt;
     &lt;/h1&gt;
 &lt;/section&gt;
 
 &lt;section class&#x3D;&quot;personaliza&quot;&gt;
-    &lt;img id&#x3D;&quot;f2 img&quot; src&#x3D;&quot;/assets/images/nevera_llena.png&quot;&gt;
     &lt;h1 class&#x3D;&quot;texto_personaliza&quot; aria-label&#x3D;&quot;Personaliza los cajones&quot;&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;P&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;e&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;r&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;s&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;o&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;n&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;a&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;l&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;i&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;z&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;a&lt;/span&gt;
+        &lt;div&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;P&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;e&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;r&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;s&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;o&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;n&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;a&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;l&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;i&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;z&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;a&lt;/span&gt;
+        &lt;/div&gt;
         &lt;span aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;vacio&quot;&gt; &lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;l&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;o&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;s&lt;/span&gt;
+        &lt;div&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;l&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;o&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;s&lt;/span&gt;
+        &lt;/div&gt;
         &lt;span aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;vacio&quot;&gt; &lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;c&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;a&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;j&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;o&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;n&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;e&lt;/span&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;s&lt;/span&gt;
+        &lt;div&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;c&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;a&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;j&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;o&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;n&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;e&lt;/span&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;s&lt;/span&gt;
+        &lt;/div&gt;
     &lt;/h1&gt;
-
-
+    &lt;img id&#x3D;&quot;f2 img&quot; src&#x3D;&quot;/assets/images/nevera_llena.png&quot; alt&#x3D;&quot;dibujo de nevera llena&quot;&gt;
 &lt;/section&gt;
 
 
@@ -213,13 +361,13 @@ export class LandingPageComponent {
     &lt;h1&gt;Crea y añade productos&lt;/h1&gt;
     &lt;app-carousel&gt;&lt;/app-carousel&gt;
 &lt;/section&gt;
-&lt;section class&#x3D;&quot;familia&quot;&gt;
-    &lt;img id&#x3D;&quot;f1&quot; src&#x3D;&quot;/assets/images/neveraC.png&quot;&gt;
+&lt;!-- &lt;section class&#x3D;&quot;familia&quot;&gt;
+    &lt;img id&#x3D;&quot;f1&quot; src&#x3D;&quot;/assets/images/neveraC.png&quot; alt&#x3D;&quot;dibujo de familia con una nevera&quot;&gt;
     &lt;h1&gt;Hazlo junto a tu familia&lt;/h1&gt;
-&lt;/section&gt;
+&lt;/section&gt; --&gt;
 &lt;section class&#x3D;&quot;registrarse&quot;&gt;
     &lt;h1&gt;Empieza ya&lt;/h1&gt;
-    &lt;button class&#x3D;&quot;btn&quot;&gt;Registrarse&lt;/button&gt;
+    &lt;button class&#x3D;&quot;btn&quot;  (click)&#x3D;&quot;irSesion()&quot;&gt;Registrarse&lt;/button&gt;
 &lt;/section&gt;</code></pre>
     </div>
 
@@ -232,17 +380,19 @@ export class LandingPageComponent {
 section {
   display: grid;
 
+  width: 96vw;
+
   justify-items: center;
   align-items: center;
 
-  margin: 1rem;
+  margin: 2vw;
 
   img {
     height: 60vh;
     width: 30vw;
   }
 
-  h1{
+  h1 {
     font-size: get-font(l);
     text-transform: uppercase;
     color: get-color(contrast_primary);
@@ -267,8 +417,6 @@ section {
         position: relative;
         display: inline-block;
 
-        font-size: get-font(l);
-
         animation: flip 3s infinite;
         animation-delay: calc(.5s * var(--i))
       }
@@ -284,7 +432,7 @@ section {
         animation-delay: calc(.5s * var(--i))
       }
 
-      .conge{        
+      .conge {
         width: 10vw;
       }
     }
@@ -321,11 +469,14 @@ section {
   }
 
   .texto_personaliza {
+    @include flex();
+
     span {
       position: relative;
       animation: scatter 1.75s infinite;
     }
-    .vacio{
+
+    .vacio {
       margin-left: 1vw;
     }
 
@@ -375,21 +526,21 @@ section {
   @include flex();
 
   button {
-    margin-left:3vw;
+    margin-left: 3vw;
 
-    background-color:black;
+    background-color: black;
     border-radius: round($number: 2rem);
-    box-shadow:0.7rem 0.7rem 0.7rem get-color(terciary);
-    
+    box-shadow: 0.7rem 0.7rem 0.7rem get-color(terciary);
+
     font-size: get-font(l);
-    color: white;   
+    color: white;
   }
-  
-  button:hover{
+
+  button:hover {
     background-color: get-color(contrast_primary);
-    box-shadow:0.7rem 0.7rem 0.7rem get-color(secondary);
+    box-shadow: 0.7rem 0.7rem 0.7rem get-color(secondary);
   }
-  
+
 }
 
 /*-------ANIMACIONES----------*/
@@ -467,6 +618,158 @@ section {
     top: 0;
   }
 }
+
+
+/*-------MEDIA QUERYS----------*/
+
+
+@media screen and (max-width: get-punto-ruptura(xl)) {
+
+  //1100
+  .gestiona {
+    img {
+      width: 40vw;
+      height: 50vh;
+    }
+
+    .texto {
+      width: 55vw;
+      margin-left: -4rem;
+    }
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(l)) {
+
+  //GESTIONAR
+  .gestiona {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(fit-content, 1fr) 1fr;
+    justify-items: start;
+    align-items: start;
+
+    img {
+      grid-area: 2/1/3/2;
+      width: 80vw;
+      height: 50vh;
+      margin-left: 2rem;
+    }
+
+    .f1 {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .f2 {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .texto {
+      grid-area: 1 / 1 / 2 / 2;
+      margin-left: -3rem;
+      width: fit-content;
+
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 8px;
+
+      .gest {
+        grid-area: 1 / 1 / 2 / 3;
+      }
+
+      .tus {
+        grid-area: 1 / 3 / 2 / 4;
+      }
+
+      .nev {
+        grid-area: 1 / 4 / 2 / 6;
+      }
+
+      .y {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+
+      .cong {
+        grid-area: 2 / 3 / 3 / 5;
+      }
+    }
+  }
+
+}
+
+
+@media screen and (max-width: get-punto-ruptura(m)) {
+  h1 {
+    font-size: get-font(m) !important;
+  }
+
+  .gestiona {
+    margin-bottom: 2rem;
+
+    .texto {
+      @include flex(column);
+
+      margin-left: 0rem;
+      width: 90vw;
+
+      .texto_gestiona {
+        img {
+          display: none !important;
+        }
+
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: get-punto-ruptura(s)) {
+  .personaliza {
+    @include flex(column);
+
+    img {
+      height: 60vh;
+      width: 80vw;
+    }
+  }
+
+  .productos {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
+@media screen and (max-width: get-punto-ruptura(xs)) {
+  h1 {
+    width: 20rem;
+  }
+
+  //PRODUCTOS CARRUSEL
+  .productos {
+    margin-left: -6rem;
+  }
+
+  .personaliza {
+    margin-left: -6rem;
+  }
+
+  .registrarse{
+    @include flex(column,flex-start);
+    width: fit-content;
+    margin-left: 20vw;
+
+    h1{
+      margin: 0;
+      padding: 0;
+    }
+    button{
+      margin: 0;
+      font-size: get-font(m);
+    }
+  }
+}
 </code></pre>
     </div>
 
@@ -495,7 +798,7 @@ section {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><section class="gestiona">    <img id="f1" src="/assets/images/nevera_cerrada2.png">    <img id="f2" src="/assets/images/nevera_abierta2.png">    <h1 class="texto">        <div class="texto_gestiona">            <span style="--i:1">Gestiona </span>            <img style="--i:1" src="/assets/images/neveraRoja.png">        </div>        <div class="texto_gestiona">            <span style="--i:2">tus </span>            <img style="--i:2" src="/assets/images/neveraOrange.png">        </div>        <div class="texto_gestiona">            <span style="--i:3">neveras </span>            <img style="--i:3" src="/assets/images/neveraGreen.png">        </div>        <div class="texto_gestiona">            <span style="--i:4">y </span>            <img style="--i:4" src="/assets/images/neveraPurple.png">        </div>        <div class="texto_gestiona">            <span style="--i:5">congeladores </span>            <img style="--i:5" class="conge" src="/assets/images/congelador.png">        </div>    </h1></section><section class="personaliza">    <img id="f2 img" src="/assets/images/nevera_llena.png">    <h1 class="texto_personaliza" aria-label="Personaliza los cajones">        <span aria-hidden="true">P</span>        <span aria-hidden="true">e</span>        <span aria-hidden="true">r</span>        <span aria-hidden="true">s</span>        <span aria-hidden="true">o</span>        <span aria-hidden="true">n</span>        <span aria-hidden="true">a</span>        <span aria-hidden="true">l</span>        <span aria-hidden="true">i</span>        <span aria-hidden="true">z</span>        <span aria-hidden="true">a</span>        <span aria-hidden="true" class="vacio"> </span>        <span aria-hidden="true">l</span>        <span aria-hidden="true">o</span>        <span aria-hidden="true">s</span>        <span aria-hidden="true" class="vacio"> </span>        <span aria-hidden="true">c</span>        <span aria-hidden="true">a</span>        <span aria-hidden="true">j</span>        <span aria-hidden="true">o</span>        <span aria-hidden="true">n</span>        <span aria-hidden="true">e</span>        <span aria-hidden="true">s</span>    </h1></section><section class="productos">    <h1>Crea y añade productos</h1>    <app-carousel></app-carousel></section><section class="familia">    <img id="f1" src="/assets/images/neveraC.png">    <h1>Hazlo junto a tu familia</h1></section><section class="registrarse">    <h1>Empieza ya</h1>    <button class="btn">Registrarse</button></section></div>'
+        var COMPONENT_TEMPLATE = '<div><section class="gestiona">    <img id="f1" src="/assets/images/nevera_cerrada2.png" alt="dibujo de nevera cerrada">    <img id="f2" src="/assets/images/nevera_abierta2.png" alt="dibujo de nevera abierta">    <h1 class="texto">        <div class="texto_gestiona gest">            <span style="--i:1">Gestiona </span>            <img style="--i:1" src="/assets/images/neveraRoja.png" alt="dibujo de nevera roja">        </div>        <div class="texto_gestiona tus">            <span style="--i:2">tus </span>            <img style="--i:2" src="/assets/images/neveraOrange.png" alt="dibujo de nevera naranja">        </div>        <div class="texto_gestiona nev">            <span style="--i:3">neveras </span>            <img style="--i:3" src="/assets/images/neveraGreen.png" alt="dibujo de nevera verde">        </div>        <div class="texto_gestiona y">            <span style="--i:4">y </span>            <img style="--i:4" src="/assets/images/neveraPurple.png" alt="dibujo de nevera morada">        </div>        <div class="texto_gestiona cong">            <span style="--i:5">congeladores </span>            <img style="--i:5" class="conge" src="/assets/images/congelador.png" alt="dibujo de congelador verde menta">        </div>    </h1></section><section class="personaliza">    <h1 class="texto_personaliza" aria-label="Personaliza los cajones">        <div>            <span aria-hidden="true">P</span>            <span aria-hidden="true">e</span>            <span aria-hidden="true">r</span>            <span aria-hidden="true">s</span>            <span aria-hidden="true">o</span>            <span aria-hidden="true">n</span>            <span aria-hidden="true">a</span>            <span aria-hidden="true">l</span>            <span aria-hidden="true">i</span>            <span aria-hidden="true">z</span>            <span aria-hidden="true">a</span>        </div>        <span aria-hidden="true" class="vacio"> </span>        <div>            <span aria-hidden="true">l</span>            <span aria-hidden="true">o</span>            <span aria-hidden="true">s</span>        </div>        <span aria-hidden="true" class="vacio"> </span>        <div>            <span aria-hidden="true">c</span>            <span aria-hidden="true">a</span>            <span aria-hidden="true">j</span>            <span aria-hidden="true">o</span>            <span aria-hidden="true">n</span>            <span aria-hidden="true">e</span>            <span aria-hidden="true">s</span>        </div>    </h1>    <img id="f2 img" src="/assets/images/nevera_llena.png" alt="dibujo de nevera llena"></section><section class="productos">    <h1>Crea y añade productos</h1>    <app-carousel></app-carousel></section><!-- <section class="familia">    <img id="f1" src="/assets/images/neveraC.png" alt="dibujo de familia con una nevera">    <h1>Hazlo junto a tu familia</h1></section> --><section class="registrarse">    <h1>Empieza ya</h1>    <button class="btn"  (click)="irSesion()">Registrarse</button></section></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'LandingPageComponent'};

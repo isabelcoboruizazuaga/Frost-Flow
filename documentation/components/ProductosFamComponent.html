@@ -1086,7 +1086,7 @@ export class ProductosFamComponent {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;titulo-prod&quot;&gt;
     &lt;h1&gt;Productos&lt;/h1&gt;
     &lt;button (click)&#x3D;&quot;open(content)&quot;&gt;Crear Nuevo producto&lt;/button&gt;
 &lt;/div&gt;
@@ -1129,9 +1129,15 @@ export class ProductosFamComponent {
                 <pre class="line-numbers"><code class="language-scss">@import &#x27;../../scss/mixin&#x27;;
 .prod{
     margin: 3rem;
+    margin-top: 1rem;
   
 }
-</code></pre>
+
+.titulo-prod{
+    @include flex(row,center,space-between);
+    margin: 1rem;
+    margin-bottom: 0rem;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -1159,7 +1165,7 @@ export class ProductosFamComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div>    <h1>Productos</h1>    <button (click)="open(content)">Crear Nuevo producto</button></div><div class="prod">    <app-producto-item *ngFor="let producto of productos" [producto]="producto" [idCajon]="idCajon"></app-producto-item></div><!--Modal de nuevo producto--><ng-template #content let-modal>    <div class="modal-header">        <h4 class="modal-title" id="modal-basic-title">Nuevo Producto</h4>        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(\'Cross click\')"></button>    </div>    <div class="modal-body">        <div class="mb-3">                             <label for="nombre">Nombre Producto</label>            <div class="input-group">                <input [(ngModel)]="nombre" id="nombre" class="form-control" placeholder="nombre" name="nombre" type="text" />            </div>                                   <label for="imagen">Selecciona una imagen</label>            <div class="input-group">                <input id="imagen" class="form-control"  type="file" accept="image/*" (change)="onFileSelected($event)"/><!--(change)="processFile(imageInput)"-->            </div>        </div>    </div>    <div class="modal-footer">        <button type="button" class="btn  btn-outline-danger" (click)="modal.close(\'cancelar\')">Cancelar</button>        <button type="button" class="btn btn-outline-success" (click)="modal.close(\'submit\')">Crear</button>    </div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="titulo-prod">    <h1>Productos</h1>    <button (click)="open(content)">Crear Nuevo producto</button></div><div class="prod">    <app-producto-item *ngFor="let producto of productos" [producto]="producto" [idCajon]="idCajon"></app-producto-item></div><!--Modal de nuevo producto--><ng-template #content let-modal>    <div class="modal-header">        <h4 class="modal-title" id="modal-basic-title">Nuevo Producto</h4>        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(\'Cross click\')"></button>    </div>    <div class="modal-body">        <div class="mb-3">                             <label for="nombre">Nombre Producto</label>            <div class="input-group">                <input [(ngModel)]="nombre" id="nombre" class="form-control" placeholder="nombre" name="nombre" type="text" />            </div>                                   <label for="imagen">Selecciona una imagen</label>            <div class="input-group">                <input id="imagen" class="form-control"  type="file" accept="image/*" (change)="onFileSelected($event)"/><!--(change)="processFile(imageInput)"-->            </div>        </div>    </div>    <div class="modal-footer">        <button type="button" class="btn  btn-outline-danger" (click)="modal.close(\'cancelar\')">Cancelar</button>        <button type="button" class="btn btn-outline-success" (click)="modal.close(\'submit\')">Crear</button>    </div></ng-template></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'ProductosFamComponent'};

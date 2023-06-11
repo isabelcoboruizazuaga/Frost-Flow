@@ -855,7 +855,7 @@ export class ProductoItemComponent {
     let cId &#x3D; this.idCajon
 
     let cant: [number, string] &#x3D; [this.cantidad, this.descCantidad];
-    let caducidad&#x3D; Timestamp.fromDate(new Date(this.caducidad.year, this.caducidad.month, this.caducidad.day));
+    let caducidad&#x3D; Timestamp.fromDate(new Date(this.caducidad.year, this.caducidad.month-1, this.caducidad.day));
 
     this.firestoreService.productoExiste(pfId, cId, caducidad, cant).then(
       productos &#x3D;&gt; {
@@ -909,12 +909,12 @@ export class ProductoItemComponent {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;produ row align-items-center&quot;&gt;
-    &lt;img src&#x3D;&quot;{{producto.fotoProducto}}&quot; class&#x3D;&quot;fotoProd col-2&quot; alt&#x3D;&quot;image&quot;&gt;
-    &lt;h2 class&#x3D;&quot;col-2 mx-1 &quot;&gt;{{producto.nombreProducto}}&lt;/h2&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;produ &quot;&gt;
+    &lt;img src&#x3D;&quot;{{producto.fotoProducto}}&quot; class&#x3D;&quot;fotoProd &quot; alt&#x3D;&quot;imagen de un producto&quot;&gt;
+    &lt;h2 class&#x3D;&quot; mx-1 &quot;&gt;{{producto.nombreProducto}}&lt;/h2&gt;
     
-    &lt;input class&#x3D;&quot;col-1 mx-1 form-control cant&quot; type&#x3D;&quot;number&quot; name&#x3D;&quot;cantidad1&quot; id&#x3D;&quot;cantidad1&quot;[(ngModel)]&#x3D;&quot;cantidad&quot; required min&#x3D;&quot;0.1&quot; step&#x3D;&quot;0.1&quot; appNumerosdecimales&gt;
-    &lt;select class&#x3D;&quot;col-1 form-select mx-1&quot; name&#x3D;&quot;select&quot; [(ngModel)]&#x3D;&quot;descCantidad&quot;&gt;
+    &lt;input class&#x3D;&quot; mx-1 form-control cant&quot; type&#x3D;&quot;number&quot; name&#x3D;&quot;cantidad1&quot; id&#x3D;&quot;cantidad1&quot;[(ngModel)]&#x3D;&quot;cantidad&quot; required min&#x3D;&quot;0.1&quot; step&#x3D;&quot;0.1&quot; appNumerosdecimales&gt;
+    &lt;select class&#x3D;&quot; form-select mx-1&quot; name&#x3D;&quot;select&quot; [(ngModel)]&#x3D;&quot;descCantidad&quot;&gt;
         &lt;option value&#x3D;&quot;kilogramos&quot; selected&gt;Kilogramos&lt;/option&gt;
         &lt;option value&#x3D;&quot;gramos&quot;&gt;Gramos&lt;/option&gt;
         &lt;option value&#x3D;&quot;raciones&quot;&gt;Raciones&lt;/option&gt;
@@ -922,7 +922,7 @@ export class ProductoItemComponent {
         &lt;option value&#x3D;&quot;piezas&quot;&gt;Piezas&lt;/option&gt;
     &lt;/select&gt;
     
-    &lt;div class&#x3D;&quot;col-2 form-floating cadu mx-1&quot;&gt;
+    &lt;div class&#x3D;&quot; form-floating cadu mx-1&quot;&gt;
         &lt;div class&#x3D;&quot;input-group cadu-picker form-floating&quot;&gt;
             &lt;input class&#x3D;&quot;form-control &quot; placeholder&#x3D;&quot;dd/mm/yyyy&quot; name&#x3D;&quot;caducidad&quot; id&#x3D;&quot;caducidad&quot; [(ngModel)]&#x3D;&quot;caducidad&quot; ngbDatepicker
                 #d&#x3D;&quot;ngbDatepicker&quot; required /&gt;
@@ -940,14 +940,18 @@ export class ProductoItemComponent {
         &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class&#x3D;&quot;paquetes col-1 form-floating mx-1 &quot;&gt;
+    &lt;div class&#x3D;&quot;paquetes form-floating mx-1 &quot;&gt;
         &lt;input class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;a&quot; type&#x3D;&quot;number&quot; name&#x3D;&quot;paquetes&quot; id&#x3D;&quot;paquetes&quot; [(ngModel)]&#x3D;&quot;paquetes&quot; value&#x3D;&quot;1&quot;
             required min&#x3D;&quot;1&quot;
             oninput&#x3D;&quot;this.value &#x3D;!!this.value &amp;&amp; Math.abs(this.value) &gt;&#x3D; 1 ? Math.abs(this.value) : null&quot;&gt;
             &lt;label class&#x3D;&quot;paquete-label&quot; for&#x3D;&quot;paquetes&quot;&gt;Paquetes&lt;/label&gt;
     &lt;/div&gt;
-    &lt;button class&#x3D;&quot;col-2 add mx-5 &quot; type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;aniadir()&quot;&gt;Añadir al cajón&lt;/button&gt;
-    &lt;img src&#x3D;&quot;/assets/icons/garbage.png&quot; class&#x3D;&quot;icon col-1 &quot; alt&#x3D;&quot;image&quot; (click)&#x3D;&quot;open(content)&quot; (click)&#x3D;&quot;$event.stopPropagation()&quot; *ngIf&#x3D;&quot;this.producto.idFamilia&quot;&gt;
+    &lt;button class&#x3D;&quot; add mx-5 &quot; type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;aniadir()&quot;&gt;Añadir al cajón&lt;/button&gt;
+    &lt;div class&#x3D;&quot;contenedor &quot; (click)&#x3D;&quot;open(content)&quot; (click)&#x3D;&quot;$event.stopPropagation()&quot; *ngIf&#x3D;&quot;this.producto.idFamilia&quot;&gt;
+		&lt;img  class&#x3D;&quot;icon img-bot&quot; src&#x3D;&quot;/assets/icons/garbage.png&quot; alt&#x3D;&quot;icono de papelera&quot;&gt;
+		&lt;img  class&#x3D;&quot;icon img-top&quot; src&#x3D;&quot;/assets/icons/garbageFull.png&quot; alt&#x3D;&quot;icono de papelera llena&quot;&gt;
+	&lt;/div&gt;
+    &lt;!-- &lt;img src&#x3D;&quot;/assets/icons/garbage.png&quot; class&#x3D;&quot;icon col-1 &quot; alt&#x3D;&quot;image&quot; (click)&#x3D;&quot;open(content)&quot; (click)&#x3D;&quot;$event.stopPropagation()&quot; &gt; --&gt;
 &lt;/div&gt;
 
 
@@ -980,7 +984,7 @@ export class ProductoItemComponent {
                 <pre class="line-numbers"><code class="language-scss">@import &#x27;../../../scss/mixin&#x27;;
 
 .produ {
-  // @include flex(row, center,space-evenly);
+  @include flex(row, center, space-evenly);
 
   height: 100%;
   width: 100%;
@@ -992,6 +996,17 @@ export class ProductoItemComponent {
 
   background-color: get-color(secondary_transparente);
 
+  .calendario {
+    background-color: get-color(secondary);
+    color: black;
+  }
+
+  .calendario:hover {
+    background-color: get-color(transparency_terciary);
+    color: white;
+  }
+
+  /*Anchos de los componentes*/
   select,
   .add,
   .cant {
@@ -1001,14 +1016,15 @@ export class ProductoItemComponent {
 
   .cant {
     width: 5rem;
+    padding: 0;
   }
 
-  button {
-    box-shadow: none;
+  .cadu {
+    width: 15rem;
   }
 
-  button:hover {
-    box-shadow: none;
+  .paquetes {
+    width: 8rem;
   }
 
   .fotoProd {
@@ -1016,6 +1032,7 @@ export class ProductoItemComponent {
     max-height: 30vh;
   }
 
+  /*Botón añadir*/
   .add {
     margin-left: 2rem;
     box-shadow: 0.7rem 0.7rem 0.7rem get-color(terciary);
@@ -1024,8 +1041,45 @@ export class ProductoItemComponent {
   .add:hover {
     box-shadow: 0.7rem 0.7rem 0.7rem get-color(secondary);
   }
+
+  /*etiquetas e inputs*/
+  label {
+    font-size: get-font(xs);
+  }
+
+  input {
+    font-size: get-font(m);
+  }
+
+  /*Css para el cambio de imagen en hover*/
+  @extend %cambio-imagen-hover;
+
+  .contenedor {
+    width: 4vw;
+
+    .icon {
+      width: 7vw;
+    }
+  }
 }
-</code></pre>
+
+/*-------MEDIA QUERYS----------*/
+@media screen and (max-width: get-punto-ruptura(l)) {
+  .produ {
+    .icon {
+      width: 4rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(s)) {
+  .produ {
+    @include flex(column);
+  }
+  .produ &gt; *{
+    margin-top: 1rem;
+  }
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -1053,7 +1107,7 @@ export class ProductoItemComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="produ row align-items-center">    <img src="{{producto.fotoProducto}}" class="fotoProd col-2" alt="image">    <h2 class="col-2 mx-1 ">{{producto.nombreProducto}}</h2>        <input class="col-1 mx-1 form-control cant" type="number" name="cantidad1" id="cantidad1"[(ngModel)]="cantidad" required min="0.1" step="0.1" appNumerosdecimales>    <select class="col-1 form-select mx-1" name="select" [(ngModel)]="descCantidad">        <option value="kilogramos" selected>Kilogramos</option>        <option value="gramos">Gramos</option>        <option value="raciones">Raciones</option>        <option value="filetes">Filetes</option>        <option value="piezas">Piezas</option>    </select>        <div class="col-2 form-floating cadu mx-1">        <div class="input-group cadu-picker form-floating">            <input class="form-control " placeholder="dd/mm/yyyy" name="caducidad" id="caducidad" [(ngModel)]="caducidad" ngbDatepicker                #d="ngbDatepicker" required />                <label for="caducidad">Caducidad</label>                <button class="btn btn-outline-secondary calendario" (click)="d.toggle()" type="button">                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"                        class="bi bi-calendar-week" viewBox="0 0 16 16">                        <path                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />                        <path                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />                    </svg>                </button>                    </div>    </div>    <div class="paquetes col-1 form-floating mx-1 ">        <input class="form-control" placeholder="a" type="number" name="paquetes" id="paquetes" [(ngModel)]="paquetes" value="1"            required min="1"            oninput="this.value =!!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null">            <label class="paquete-label" for="paquetes">Paquetes</label>    </div>    <button class="col-2 add mx-5 " type="submit" (click)="aniadir()">Añadir al cajón</button>    <img src="/assets/icons/garbage.png" class="icon col-1 " alt="image" (click)="open(content)" (click)="$event.stopPropagation()" *ngIf="this.producto.idFamilia"></div><!--Modal de confirmación de borrado--><ng-template #content let-modal>	<div class="modal-header">		<h4 class="modal-title" id="modal-basic-title">Borrar {{producto.nombreProducto}}</h4>		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>	</div>	<div class="modal-body">		<form>			<div class="mb-3">				<p>Esta acción no se puede deshacer, perderá todos los productos con estos datos</p>                <p>¿Desea continuar?</p>			</div>		</form>	</div>	<div class="modal-footer">		<button type="button" class="btn btn-danger" (click)="modal.dismiss()">Cancelar</button>		<button type="button" class="btn btn-success" (click)="modal.close(\'borrar\')">Borrar</button>	</div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="produ ">    <img src="{{producto.fotoProducto}}" class="fotoProd " alt="imagen de un producto">    <h2 class=" mx-1 ">{{producto.nombreProducto}}</h2>        <input class=" mx-1 form-control cant" type="number" name="cantidad1" id="cantidad1"[(ngModel)]="cantidad" required min="0.1" step="0.1" appNumerosdecimales>    <select class=" form-select mx-1" name="select" [(ngModel)]="descCantidad">        <option value="kilogramos" selected>Kilogramos</option>        <option value="gramos">Gramos</option>        <option value="raciones">Raciones</option>        <option value="filetes">Filetes</option>        <option value="piezas">Piezas</option>    </select>        <div class=" form-floating cadu mx-1">        <div class="input-group cadu-picker form-floating">            <input class="form-control " placeholder="dd/mm/yyyy" name="caducidad" id="caducidad" [(ngModel)]="caducidad" ngbDatepicker                #d="ngbDatepicker" required />                <label for="caducidad">Caducidad</label>                <button class="btn btn-outline-secondary calendario" (click)="d.toggle()" type="button">                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"                        class="bi bi-calendar-week" viewBox="0 0 16 16">                        <path                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />                        <path                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />                    </svg>                </button>                    </div>    </div>    <div class="paquetes form-floating mx-1 ">        <input class="form-control" placeholder="a" type="number" name="paquetes" id="paquetes" [(ngModel)]="paquetes" value="1"            required min="1"            oninput="this.value =!!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null">            <label class="paquete-label" for="paquetes">Paquetes</label>    </div>    <button class=" add mx-5 " type="submit" (click)="aniadir()">Añadir al cajón</button>    <div class="contenedor " (click)="open(content)" (click)="$event.stopPropagation()" *ngIf="this.producto.idFamilia">		<img  class="icon img-bot" src="/assets/icons/garbage.png" alt="icono de papelera">		<img  class="icon img-top" src="/assets/icons/garbageFull.png" alt="icono de papelera llena">	</div>    <!-- <img src="/assets/icons/garbage.png" class="icon col-1 " alt="image" (click)="open(content)" (click)="$event.stopPropagation()" > --></div><!--Modal de confirmación de borrado--><ng-template #content let-modal>	<div class="modal-header">		<h4 class="modal-title" id="modal-basic-title">Borrar {{producto.nombreProducto}}</h4>		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>	</div>	<div class="modal-body">		<form>			<div class="mb-3">				<p>Esta acción no se puede deshacer, perderá todos los productos con estos datos</p>                <p>¿Desea continuar?</p>			</div>		</form>	</div>	<div class="modal-footer">		<button type="button" class="btn btn-danger" (click)="modal.dismiss()">Cancelar</button>		<button type="button" class="btn btn-success" (click)="modal.close(\'borrar\')">Borrar</button>	</div></ng-template></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'ProductoItemComponent'};

@@ -366,13 +366,18 @@ export class InicioSesionComponent  implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;inicio-sesion works!&lt;/p&gt;
-&lt;h1&gt;Iniciar sesión&lt;/h1&gt;
-&lt;input type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Correo electrónico&quot; #email required&gt;
-&lt;input type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Contraseña&quot; #password required&gt;
-&lt;button (click)&#x3D;&quot;authService.inicioSesion(email.value, password.value)&quot;&gt;Iniciar sesión&lt;/button&gt;
-&lt;button class&#x3D;&quot;btn googleBtn btn-danger&quot; (click)&#x3D;&quot;authService.googleAuth()&quot;&gt;Iniciar sesión con google&lt;/button&gt;
-</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;inicio-ses&quot;&gt;
+    &lt;h1&gt;Iniciar sesión&lt;/h1&gt;
+    &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Correo electrónico&quot; #email required&gt;
+    &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Contraseña&quot; #password required&gt;
+    &lt;button (click)&#x3D;&quot;authService.inicioSesion(email.value, password.value)&quot;&gt;Iniciar sesión&lt;/button&gt;
+    &lt;div class&#x3D;&quot;google-btn googleBtn&quot; (click)&#x3D;&quot;authService.googleAuth()&quot;&gt;
+        &lt;div class&#x3D;&quot;google-icon-wrapper&quot;&gt;
+          &lt;img class&#x3D;&quot;google-icon&quot; src&#x3D;&quot;https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg&quot; alt&#x3D;&quot;icono de google&quot;/&gt;
+        &lt;/div&gt;
+        &lt;p class&#x3D;&quot;btn-text&quot;&gt;&lt;b&gt;Iniciar sesión con google&lt;/b&gt;&lt;/p&gt;
+      &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="styleData">
@@ -380,16 +385,64 @@ export class InicioSesionComponent  implements OnInit {
                     <code>./inicio-sesion.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@import &#x27;../../../scss/mixin&#x27;;
-div{
-    @include flex(column);
 
-    input{
-        margin-top: 5vh;
+.inicio-ses {
+  @include flex(column);
+
+  input {
+    margin-top: 5vh;
+    font-size: get-font(s);
+  }
+
+  button {
+    margin-top: 5vh;
+  }
+
+  //Estilos botón de google
+  .google-btn {
+    cursor: pointer;
+    
+    width: 20rem;
+    height: 3rem;
+
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+
+    google-icon-wrapper {
+      position: absolute;
+      margin-top: 1px;
+      margin-left: 1px;
+
+      width: 3rem;
+      height: 3rem;
+
+      border-radius: 2px;
+      background-color: white;
     }
-    button{
-        margin-top: 5vh;
+
+    .google-icon {
+      position: absolute;
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+
+      width: 2rem;
+      height: 2rem;
     }
-}</code></pre>
+
+    .btn-text {
+      float: right;
+      margin: .35rem .3rem 0 0;
+      letter-spacing: 0.2px;
+      font-size: get-font(s);
+    }
+
+    &amp;:hover {
+      box-shadow: 0 0 6px get-color(primary);
+    }
+  }
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -417,7 +470,7 @@ div{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>inicio-sesion works!</p><h1>Iniciar sesión</h1><input type="email" placeholder="Correo electrónico" #email required><input type="password" placeholder="Contraseña" #password required><button (click)="authService.inicioSesion(email.value, password.value)">Iniciar sesión</button><button class="btn googleBtn btn-danger" (click)="authService.googleAuth()">Iniciar sesión con google</button></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="inicio-ses">    <h1>Iniciar sesión</h1>    <input class="form-control" type="email" placeholder="Correo electrónico" #email required>    <input class="form-control" type="password" placeholder="Contraseña" #password required>    <button (click)="authService.inicioSesion(email.value, password.value)">Iniciar sesión</button>    <div class="google-btn googleBtn" (click)="authService.googleAuth()">        <div class="google-icon-wrapper">          <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="icono de google"/>        </div>        <p class="btn-text"><b>Iniciar sesión con google</b></p>      </div></div></div>'
     var COMPONENTS = [{'name': 'AddProductosAdminComponent', 'selector': 'app-add-productos-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CajonComponent', 'selector': 'app-cajon'},{'name': 'CajonItemAddComponent', 'selector': 'app-cajon-item-add'},{'name': 'CajonItemComponent', 'selector': 'app-cajon-item'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'InicioSesionComponent', 'selector': 'app-inicio-sesion'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'NeveraComponent', 'selector': 'app-nevera'},{'name': 'NeveraItemComponent', 'selector': 'app-nevera-item'},{'name': 'NeverasComponent', 'selector': 'app-neveras'},{'name': 'PieComponent', 'selector': 'app-pie'},{'name': 'ProductoCajonComponent', 'selector': 'app-producto-cajon'},{'name': 'ProductoItemComponent', 'selector': 'app-producto-item'},{'name': 'ProductosFamComponent', 'selector': 'app-productos-fam'},{'name': 'PruebasComponent', 'selector': 'app-pruebas'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SesionRegistroComponent', 'selector': 'app-sesion-registro'}];
     var DIRECTIVES = [{'name': 'NumerosdecimalesDirective', 'selector': '[appNumerosdecimales]'}];
     var ACTUAL_COMPONENT = {'name': 'InicioSesionComponent'};
