@@ -3,6 +3,7 @@ import { Auth, getAuth } from '@angular/fire/auth';
 import { DocumentData, Firestore, OrderByDirection, collection, deleteDoc, doc, getDoc, getDocs, getFirestore, orderBy, query, setDoc, updateDoc, where } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { deleteObject, getStorage, ref, } from '@angular/fire/storage';
+import { Familia } from '../modelos/familia';
 
 @Injectable({
   providedIn: 'root'
@@ -469,6 +470,27 @@ export class FirestoreService {
       exito = true
     );
     return exito;
+  }
+
+  
+
+  /**
+   * This TypeScript function creates a new family object, formats it, and adds it to the database.
+   * @param {string} nFId - nFId is a string parameter that represents the unique identifier for a new
+   * family being created.
+   * @returns The `setDoc` function is being returned, which is used to add the newly created family
+   * object to the database.
+   */
+  nuevaFamilia(nFId:string) {
+    //Creación de familia
+    let familia = new Familia(nFId);
+
+    //Formato del objeto
+    let fam = Object.assign({},familia);
+
+    //Adición de familia a la bd
+    const familiaRef = doc(this.db, 'familias', nFId);
+    return setDoc(familiaRef, fam, { merge: true });
   }
 
  /**

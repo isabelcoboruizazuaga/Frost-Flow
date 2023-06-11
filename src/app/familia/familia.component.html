@@ -22,10 +22,32 @@
     <div class="cambio">
         <input type="text" [(ngModel)]="nuevaFamilia" placeholder="Código familia" required/>
         <button (click)="cambiarFamilia()">Cambiar a familia</button>
+        <button (click)="open(content)">Independizarse a familia</button>
     </div>
 </section>
 
-<!--Modal de confirmación de borrado-->
+<!--Modal de confirmación de creación de familia-->
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-nueva">Independizarse</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <p>Se irá a una nueva familia donde esté solo, no tendrá acceso a las neveras y productos de la familia actual</p>
+                <p>¿Desea continuar?</p>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success" (click)="modal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-outline-danger" (click)="modal.close('independizarse')">Aceptar</button>
+    </div>
+</ng-template>
+
+
+<!--Modal de confirmación de cambio de familia-->
 <ng-template #modal_cambio let-modal>
 	<div class="modal-header">
 		<h4 class="modal-title" id="modal_cambio">Cambiar de familia</h4>

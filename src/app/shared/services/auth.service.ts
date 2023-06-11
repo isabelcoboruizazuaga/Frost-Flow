@@ -198,8 +198,6 @@ export class AuthService {
     //Adición de familia a la bd
     const familiaRef = doc(this.db, 'familias', fId);
     return setDoc(familiaRef, fam, { merge: true });
-
-
   }
 
   /* //Enviar email de verificación

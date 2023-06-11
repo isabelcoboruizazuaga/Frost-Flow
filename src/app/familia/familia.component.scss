@@ -59,20 +59,12 @@ ngx-qrcode{
   }
 }
 
-@media screen and (max-width: get-punto-ruptura(l)) {}
-
 @media screen and (max-width: get-punto-ruptura(m)) {
   .familia {
     .familiares {
-      margin-left: -15vw;
-
       h2 {
         font-size: get-font(s) !important;
       }
-    }
-
-    .cambio{
-      margin-left: -15vw;
     }
   }
 }

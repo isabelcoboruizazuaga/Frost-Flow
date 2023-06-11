@@ -3,6 +3,7 @@ import { FirestoreService } from '../shared/services/firestore.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../shared/services/auth.service';
 import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from '@techiediaries/ngx-qrcode';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-familia',
@@ -53,7 +54,7 @@ export class FamiliaComponent {
   ngOnInit() {
     //Ancho de pantalla  
     this.ancho = window.innerWidth;
-    this.juzgaAncho();   
+    this.juzgaAncho();
 
     //Se obtiene el id de usuario actual
     let usuario = this.authService.getUsuarioActual();
@@ -66,21 +67,21 @@ export class FamiliaComponent {
     });
   }
 
- /* This code is adding an event listener to the window object for the "resize" event. When the window
- is resized, the `onResize` function is called, which updates the `ancho` variable with the new
- width of the window and calls the `juzgaAncho()` function to determine the appropriate size for a
- QR code. */
+  /* This code is adding an event listener to the window object for the "resize" event. When the window
+  is resized, the `onResize` function is called, which updates the `ancho` variable with the new
+  width of the window and calls the `juzgaAncho()` function to determine the appropriate size for a
+  QR code. */
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.ancho = window.innerWidth;
 
-    this.juzgaAncho();    
+    this.juzgaAncho();
   }
 
- /**
-  * The function adjusts the size of a QR code based on the width of the screen.
-  */
-  juzgaAncho(){
+  /**
+   * The function adjusts the size of a QR code based on the width of the screen.
+   */
+  juzgaAncho() {
     if (this.ancho >= 700) {
       this.qr = 500
     } else {
@@ -90,6 +91,21 @@ export class FamiliaComponent {
         this.qr = 300
       }
     }
+  }
+
+  open(content: any) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-nueva' }).result.then((result) => {
+      if (result === 'independizarse') {
+        //Se genera una nueva familia
+        let nfId = uuidv4();
+        this.firestoreService.nuevaFamilia(nfId).then(() => {
+          //Se cambia a la familia creada
+          this.firestoreService.cambiaFamiliaUsuario(this.uid, this.fId, nfId, false);
+          this.actualizarFam();
+          this.actualizarLista();
+        })
+      }
+    })
   }
 
   /**
