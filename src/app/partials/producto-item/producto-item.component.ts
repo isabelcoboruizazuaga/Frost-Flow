@@ -69,7 +69,7 @@ export class ProductoItemComponent {
     let cId = this.idCajon
 
     let cant: [number, string] = [this.cantidad, this.descCantidad];
-    let caducidad= Timestamp.fromDate(new Date(this.caducidad.year, this.caducidad.month, this.caducidad.day));
+    let caducidad= Timestamp.fromDate(new Date(this.caducidad.year, this.caducidad.month-1, this.caducidad.day));
 
     this.firestoreService.productoExiste(pfId, cId, caducidad, cant).then(
       productos => {

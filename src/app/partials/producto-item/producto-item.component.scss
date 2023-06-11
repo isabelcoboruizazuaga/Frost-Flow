@@ -1,7 +1,7 @@
 @import '../../../scss/mixin';
 
 .produ {
-  // @include flex(row, center,space-evenly);
+  @include flex(row, center, space-evenly);
 
   height: 100%;
   width: 100%;
@@ -13,15 +13,17 @@
 
   background-color: get-color(secondary_transparente);
 
-  .calendario{ 
+  .calendario {
     background-color: get-color(secondary);
     color: black;
   }
-  .calendario:hover{   
+
+  .calendario:hover {
     background-color: get-color(transparency_terciary);
     color: white;
   }
 
+  /*Anchos de los componentes*/
   select,
   .add,
   .cant {
@@ -31,14 +33,15 @@
 
   .cant {
     width: 5rem;
+    padding: 0;
   }
 
-  button {
-    box-shadow: none;
+  .cadu {
+    width: 15rem;
   }
 
-  button:hover {
-    box-shadow: none;
+  .paquetes {
+    width: 8rem;
   }
 
   .fotoProd {
@@ -46,6 +49,7 @@
     max-height: 30vh;
   }
 
+  /*Botón añadir*/
   .add {
     margin-left: 2rem;
     box-shadow: 0.7rem 0.7rem 0.7rem get-color(terciary);
@@ -55,24 +59,41 @@
     box-shadow: 0.7rem 0.7rem 0.7rem get-color(secondary);
   }
 
-  label{
+  /*etiquetas e inputs*/
+  label {
     font-size: get-font(xs);
   }
-  input{
+
+  input {
     font-size: get-font(m);
   }
 
-   /*Css para el cambio de imagen en hover*/
-   @extend %cambio-imagen-hover;
-   .contenedor{
-     width: 4vw;
+  /*Css para el cambio de imagen en hover*/
+  @extend %cambio-imagen-hover;
 
-     .icon{
-      width: 7vw;;
+  .contenedor {
+    width: 4vw;
+
+    .icon {
+      width: 7vw;
     }
-     .img-top{
-       //arreglo respecto a la colocación de bootstrap
-        left: 12px;
-     }
-   }
+  }
+}
+
+/*-------MEDIA QUERYS----------*/
+@media screen and (max-width: get-punto-ruptura(l)) {
+  .produ {
+    .icon {
+      width: 4rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: get-punto-ruptura(s)) {
+  .produ {
+    @include flex(column);
+  }
+  .produ > *{
+    margin-top: 1rem;
+  }
 }
