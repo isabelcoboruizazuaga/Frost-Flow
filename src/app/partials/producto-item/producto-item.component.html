@@ -1,5 +1,5 @@
 <div class="produ ">
-    <img src="{{producto.fotoProducto}}" class="fotoProd " alt="image">
+    <img src="{{producto.fotoProducto}}" class="fotoProd " alt="imagen de un producto">
     <h2 class=" mx-1 ">{{producto.nombreProducto}}</h2>
     
     <input class=" mx-1 form-control cant" type="number" name="cantidad1" id="cantidad1"[(ngModel)]="cantidad" required min="0.1" step="0.1" appNumerosdecimales>
@@ -36,9 +36,9 @@
             <label class="paquete-label" for="paquetes">Paquetes</label>
     </div>
     <button class=" add mx-5 " type="submit" (click)="aniadir()">Añadir al cajón</button>
-    <div class="contenedor " alt="image"  (click)="open(content)" (click)="$event.stopPropagation()" *ngIf="this.producto.idFamilia">
-		<img  alt="papelera vacía" class="icon img-bot" src="/assets/icons/garbage.png">
-		<img alt="papelera llena" class="icon img-top" src="/assets/icons/garbageFull.png">
+    <div class="contenedor " (click)="open(content)" (click)="$event.stopPropagation()" *ngIf="this.producto.idFamilia">
+		<img  class="icon img-bot" src="/assets/icons/garbage.png" alt="icono de papelera">
+		<img  class="icon img-top" src="/assets/icons/garbageFull.png" alt="icono de papelera llena">
 	</div>
     <!-- <img src="/assets/icons/garbage.png" class="icon col-1 " alt="image" (click)="open(content)" (click)="$event.stopPropagation()" > -->
 </div>

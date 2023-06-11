@@ -1,6 +1,6 @@
 <div class="prod row">
 	<div class="row col-9" >
-		<img src="{{producto.fotoProducto}}" class="fotoProd col-3" alt="image">
+		<img src="{{producto.fotoProducto}}" class="fotoProd col-3" alt="imagen de un producto">
 		<h3 class=" col-1 paquetes">{{producto.paquetes}}</h3>
 		<div class="col-4">
 			<h3 class="title">{{producto.nombreProducto}}</h3>
@@ -9,13 +9,13 @@
 		<p class="col-3">{{producto.cantidad[0]+ " "+producto.cantidad[1]}}</p>
 	</div>
 	<div class="col-3 row actions">
-		<img class="col-1" src="/assets/icons/add.png" class="icon edit" alt="image" (click)="sumarPaquete()"
+		<img class="col-1" src="/assets/icons/add.png" class="icon edit" alt="icono de sumar" (click)="sumarPaquete()"
 			(click)="$event.stopPropagation()">
-		<img class="col-1" src="/assets/icons/remove.png" class="icon edit" alt="image" (click)="restarPaquete()"
+		<img class="col-1" src="/assets/icons/remove.png" class="icon edit" alt="icono de restar" (click)="restarPaquete()"
 			(click)="$event.stopPropagation()">
-		<div class="contenedor col-1" alt="image" (click)="open(content)" (click)="$event.stopPropagation()">
-			<img alt="contenedor vacío" class="icon img-bot" src="/assets/icons/garbage.png">
-			<img alt="contenedor lleno" class="icon img-top" src="/assets/icons/garbageFull.png">
+		<div class="contenedor col-1" alt="papelera vacía que se llena" (click)="open(content)" (click)="$event.stopPropagation()">
+			<img class="icon img-bot" src="/assets/icons/garbage.png" alt="icono de papelera">
+			<img class="icon img-top" src="/assets/icons/garbageFull.png" alt="icono de papelera llena">
 		</div>
 	</div>
 </div>

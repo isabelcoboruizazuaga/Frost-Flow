@@ -1,21 +1,21 @@
 <div class="header">
   <div class="identificacion" routerLink="/inicio">
-    <img src="/assets/icons/logo1.png" class="logo" alt="image">
+    <img src="/assets/icons/logo1.png" class="logo" alt="Frost Flow">
     <h1>Frost Flow</h1>
   </div>
   <nav class="minavbar">
     <ul>
       <!--Enlaces-->
       <li routerLink="/neveras" *ngIf="(nombre != 'Iniciar Sesión');">
-        <img src="/assets/icons/fridge.png" class="icon" alt="image">
+        <img src="/assets/icons/fridge.png" class="icon" alt="icono de nevera">
       </li>
       <li routerLink="/familia"  *ngIf="(nombre != 'Iniciar Sesión');">
-        <img src="/assets/icons/family.png" class="icon" alt="image">
+        <img src="/assets/icons/family.png" class="icon" alt="icono de familia">
       </li>
       <!--Botón de inicio de sesión-->
       <li *ngIf="(nombre == 'Iniciar Sesión');else other_content ">
         <button type="button" class="botonsimple btn" (click)="adminSesion()">
-          <img src="/assets/icons/user.png" class="botonsimple icon" alt="image">
+          <img src="/assets/icons/user.png" class="botonsimple icon" alt="icono de usuario">
           {{nombre}}
         </button>
       </li>
@@ -23,7 +23,7 @@
       <ng-template #other_content>
         <li ngbDropdown class="d-inline-block">
           <button type="button" class="botonsimple btn midropdown"  id="dropdownBasic1" ngbDropdownToggle>
-            <img src="/assets/icons/user.png" class="icon" alt="image">
+            <img src="/assets/icons/user.png" class="icono de usuario" alt="image">
             {{nombre}}
           </button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="midropdown">
