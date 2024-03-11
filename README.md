@@ -2,15 +2,15 @@ This project was made as a final project for the Web Development course, this pr
 **The purpose of this project is completly educational.**
 
 For creating this webpage the following technologies have been used:
--- Angular
--- Typescript
--- JavaScript
--- Html5
--- Css
--- Sass
--- Bootstrap
--- Firebase services (hosting, login, storage)
--- Clip Studio Paint
+- Angular
+- Typescript
+- JavaScript
+- Html5
+- Css
+- Sass
+- Bootstrap
+- Firebase services (hosting, login, storage)
+- Clip Studio Paint for icons and images
 
 **Frost-Flow can be find hosted [here](https://tfg-congelador.firebaseapp.com/inicio).**
 
