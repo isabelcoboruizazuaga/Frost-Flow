@@ -1,3 +1,23 @@
+This project was made as a final project for the Web Development course, this project was a key part of the evaluation proccess. 
+**The purpose of this project is completly educational.**
+
+For creating this webpage the following technologies have been used:
+-- Angular
+-- Typescript
+-- JavaScript
+-- Html5
+-- Css
+-- Sass
+-- Bootstrap
+-- Firebase services (hosting, login, storage)
+-- Clip Studio Paint
+
+**Frost-Flow can be find hosted [here](https://tfg-congelador.firebaseapp.com/inicio).**
+
+
+
+--------------------------------------------------
+
 # TfgCongelador
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
